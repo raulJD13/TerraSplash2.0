@@ -1,6 +1,47 @@
+# APP VERSION 2
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flujo de Trabajo con Git en Dos Ordenadores
+
+Este proyecto se trabaja en dos ordenadores (por ejemplo, uno en clase y otro en casa). Sigue estos pasos para mantener el repositorio sincronizado en ambos equipos sin necesidad de clonar cada vez.
+
+### 1. Primera vez en cada ordenador
+   - En el ordenador de clase, ya deberías tener el proyecto.
+   - En el ordenador de casa, realiza un `git clone` del repositorio la primera vez que trabajes en él:
+     ```bash
+     git clone https://github.com/usuario/nombre-del-repositorio.git
+     ```
+
+### 2. Antes de empezar a trabajar (en cualquiera de los dos ordenadores)
+   - Asegúrate de tener la última versión del proyecto desde GitHub ejecutando:
+     ```bash
+     git pull origin main
+     ```
+
+### 3. Durante el trabajo
+   - Realiza tus cambios en el proyecto como de costumbre (añade o edita archivos, realiza pruebas, etc.).
+
+### 4. Al terminar de trabajar
+   - Guarda y sube los cambios a GitHub para que estén disponibles en el otro ordenador:
+     ```bash
+     git add .  # Añade todos los cambios
+     git commit -m "Describe los cambios realizados"  # Guarda los cambios en un commit
+     git push origin main  # Sube los cambios a GitHub
+     ```
+
+### 5. Al cambiar de ordenador
+   - Cuando vayas a trabajar en el otro ordenador (de clase a casa o de casa a clase), asegúrate de hacer un `git pull` para traer los últimos cambios:
+     ```bash
+     git pull origin main
+     ```
+
+### Notas Importantes
+- **Evita trabajar en ambos ordenadores al mismo tiempo sin hacer `push` o `pull`** antes de cambiar, para evitar conflictos.
+- **Manejo de Conflictos**: Si Git muestra un conflicto al hacer `pull`, revisa los archivos afectados y resuelve los cambios para continuar.
+
+Siguiendo este flujo de trabajo, podrás mantener el proyecto sincronizado en ambos equipos sin problemas.
+
 
 ## Available Scripts
 

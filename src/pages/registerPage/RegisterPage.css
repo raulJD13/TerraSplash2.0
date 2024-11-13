@@ -1,0 +1,56 @@
+.register-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  background-color: #f0f8ff;
+}
+
+.register-back-button {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.h1-register {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: black;
+  padding-left: 25px;
+}
+
+.register-form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.input-field {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.register-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #333;
+}

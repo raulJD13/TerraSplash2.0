@@ -1,0 +1,26 @@
+.selection-word {
+  background-color: #8a8a8f; /* Fondo gris */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px; /* Bordes redondeados */
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el cursor */
+.selection-word:hover {
+  background-color: #7a7a7f; /* Cambio de color al pasar el cursor */
+  transform: translateY(-3px); /* Levanta el componente ligeramente */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Efecto de "presionado" */
+.selection-word:active {
+  transform: translateY(0); /* Vuelve a la posición original al hacer clic */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Vuelve a la sombra inicial */
+}
