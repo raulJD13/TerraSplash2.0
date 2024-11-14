@@ -1,22 +1,41 @@
-.homepage-container{
-    background-color: #f0f8ff;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+.homepage-container {
+  background-color: #f0f8ff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.selection-container{
-    padding-top: 60px;
-    padding-bottom: 60px;
-    
+.selection-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.cardlocation-water-container{
-    padding-bottom: 35px;
+.cardlocation-water-container {
+  padding-bottom: 35px;
 }
 
-.cardlocation-land-container{
-    padding-bottom: 60px;
+.cardlocation-land-container {
+  padding-bottom: 60px;
 }
+
+.event-of-the-week {
+  padding-bottom: 60px;
+}
+
+.card-event-week {
+  padding-bottom: 60px;
+}
+
+.most-visited {
+  padding-bottom: 60px;
+}
+
+.image-card-container {
+    width: 350px;
+    height: 200px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 100px;
+  }

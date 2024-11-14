@@ -1,0 +1,59 @@
+.carousel-container {
+  width: 100%;
+  max-width: 100%; 
+  margin: auto;
+}
+
+.carousel-slide {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: rgba(255, 0, 0, 0.8); 
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.image-info {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image-name {
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.image-rating {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.star-filled {
+  color: #FFD700; 
+}
+
+.star-empty {
+  color: rgba(255, 255, 255, 0.5); 
+}

@@ -12,7 +12,7 @@ function RegisterPageSecond() {
 
   const handleSignUpClick = (event) => {
     event.preventDefault();
-    navigate("/homepage");
+    navigate("/home");
   };
 
   return (

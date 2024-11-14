@@ -1,0 +1,46 @@
+.event-card {
+  position: relative;
+  width: 300px; 
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+}
+
+.event-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(29, 29, 29, 0.8);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-name-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.event-price {
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.bookmark-icon {
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}

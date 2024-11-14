@@ -6,7 +6,8 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
-}
+  background-image:"../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg" ;
+} 
 
 .card-location .overlay {
   position: absolute;

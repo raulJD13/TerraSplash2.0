@@ -11,7 +11,7 @@ function LoginPage() {
 
   const handleNextClick = (event) => {
     event.preventDefault();
-    navigate("/homepage");
+    navigate("/home");
   };
 
   return (
