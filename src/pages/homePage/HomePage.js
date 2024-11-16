@@ -7,6 +7,8 @@ import ImageCard from "../../components/imageCard/ImageCard";
 import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import Carousel from "../../components/carousel/Carousel";
 import Footer from "../../components/footer/Footer";
+import { useNavigate } from "react-router-dom";
+
 // import Carousel from "../../components/carousel/Carousel";
 
 // const images = [
@@ -16,6 +18,17 @@ import Footer from "../../components/footer/Footer";
 // ];
 
 function HomePage() {
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (type) => {
+    if (type === "land") {
+      navigate("/landActivities");
+    } else if (type === "water") {
+      navigate("/waterActivities");
+    }
+  };
+
   return (
     <div className="homepage-container">
       <Header />
@@ -28,6 +41,7 @@ function HomePage() {
         <CardLocation
           type="water"
           imageUrl={TestImage}
+          onClick={() => handleCardClick('water')}
         />
       </div>
 
@@ -35,6 +49,7 @@ function HomePage() {
         <CardLocation
           type="land"
           imageUrl={TestImage}
+          onClick={() => handleCardClick('land')}
         />
       </div>
 

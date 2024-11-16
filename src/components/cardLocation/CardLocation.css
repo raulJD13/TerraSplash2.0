@@ -6,8 +6,17 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  background-image:"../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg" ;
-} 
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards; 
+}
+
+.card-location:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
 
 .card-location .overlay {
   position: absolute;
@@ -15,11 +24,28 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.5); /* Gris con transparencia */
+  background-color: rgba(0, 0, 0, 0.4); 
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 30px;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.card-location:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.6); 
+  transform: scale(1.02); 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
