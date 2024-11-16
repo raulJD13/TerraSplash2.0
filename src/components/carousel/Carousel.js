@@ -1,37 +1,42 @@
-import React from 'react';
-import Slider from 'react-slick';
-import { FaHeart, FaStar } from 'react-icons/fa';
-import './Carousel.css';
+import React, { useState } from "react";
+import "./Carousel.css";
 
-const Carousel = ({ images }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+const Carousel = ({ children }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? children.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === children.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
-    <Slider {...settings} className="carousel-container">
-      {images.map((image, index) => (
-        <div key={index} className="carousel-slide">
-          <img src={image.src} alt={image.name} className="carousel-image" />
-          <FaHeart className="heart-icon" />
-          <div className="image-info">
-            <div className="image-name">{image.name}</div>
-            <div className="image-rating">
-              {[...Array(5)].map((star, i) => (
-                <FaStar
-                  key={i}
-                  className={i < image.rating ? 'star-filled' : 'star-empty'}
-                />
-              ))}
-            </div>
+    <div className="carousel-container">
+      <button className="carousel-button prev" onClick={handlePrev}>
+        {"<"}
+      </button>
+      <div className="carousel-content">
+        {children.map((child, index) => (
+          <div
+            className={`carousel-item ${
+              index === currentIndex ? "active" : "inactive"
+            }`}
+            key={index}
+          >
+            {child}
           </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </div>
+      <button className="carousel-button next" onClick={handleNext}>
+        {">"}
+      </button>
+    </div>
   );
 };
 

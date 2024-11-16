@@ -1,59 +1,48 @@
 .carousel-container {
-  width: 100%;
-  max-width: 100%; 
-  margin: auto;
-}
-
-.carousel-slide {
   position: relative;
-  border-radius: 15px;
+  width: 350px; /* Ancho fijo según las tarjetas */
+  height: 200px; /* Altura fija según las tarjetas */
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 auto; /* Centrar el carrusel */
 }
 
-.carousel-image {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
+.carousel-content {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
 }
 
-.heart-icon {
+.carousel-item {
+  flex: 0 0 350px; /* Ancho fijo para cada tarjeta */
+  height: 200px; /* Altura fija */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+
+.carousel-button {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  color: rgba(255, 0, 0, 0.8); 
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.image-info {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 10;
 }
 
-.image-name {
-  background-color: rgba(0, 0, 0, 0.7); 
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 5px;
+.carousel-button.prev {
+  left: 10px;
 }
 
-.image-rating {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.star-filled {
-  color: #FFD700; 
-}
-
-.star-empty {
-  color: rgba(255, 255, 255, 0.5); 
+.carousel-button.next {
+  right: 10px;
 }

@@ -4,6 +4,8 @@ import LoginPage from './pages/loginPage/LoginPage';
 import RegisterPage from './pages/registerPage/RegisterPage';
 import RegisterPageSecond from './pages/registerPageSecond/RegisterPageSecond';
 import HomePage from './pages/homePage/HomePage';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 function App() {
   return (

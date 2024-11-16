@@ -41,9 +41,9 @@
 
 .star {
   font-size: 1.2em;
-  color: #ccc; /* Color de estrella vacía */
+  color: #ccc; 
 }
 
 .star.filled {
-  color: gold; /* Color de estrella llena */
+  color: gold; 
 }

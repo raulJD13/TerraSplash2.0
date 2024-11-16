@@ -5,6 +5,8 @@ import CardLocation from "../../components/cardLocation/CardLocation";
 import EventWeek from "../../components/eventWeek/EventWeek";
 import ImageCard from "../../components/imageCard/ImageCard";
 import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
+import Carousel from "../../components/carousel/Carousel";
+import Footer from "../../components/footer/Footer";
 // import Carousel from "../../components/carousel/Carousel";
 
 // const images = [
@@ -25,14 +27,14 @@ function HomePage() {
       <div className="cardlocation-water-container">
         <CardLocation
           type="water"
-          imageUrl="../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg"
+          imageUrl={TestImage}
         />
       </div>
 
       <div className="cardlocation-land-container">
         <CardLocation
           type="land"
-          imageUrl="../../images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg"
+          imageUrl={TestImage}
         />
       </div>
 
@@ -41,18 +43,28 @@ function HomePage() {
       </div>
       <div className="card-event-week">
         <EventWeek
-          image={"../../images/carolin-thiergart-InmE4I_bqWA-unsplash.jpg"}
+          image={TestImage}
           name="Roque nublo"
           location="Gran Canaria"
-          price="12€"
+          price="12"
         />
       </div>
       <div className="most-visited">
         <Title text="Most Visited Activities" />
       </div>
-      <div className="image-card-container">
-        <ImageCard imageUrl={TestImage} name="Playa de Maspalomas" rating={4} />
+
+      <div className="carousel-section">
+        <Carousel>
+          <ImageCard
+            imageUrl={TestImage}
+            name="Playa de Maspalomas"
+            rating={4}
+          />
+          <ImageCard imageUrl={TestImage} name="Puerto de Mogán" rating={5} />
+          <ImageCard imageUrl={TestImage} name="Roque Nublo" rating={3} />
+        </Carousel>
       </div>
+      <Footer />
     </div>
   );
 }
