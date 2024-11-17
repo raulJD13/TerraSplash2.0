@@ -8,7 +8,8 @@ const ImageCard = ({ imageUrl, name, rating }) => {
   };
 
   return (
-    <div className="image-card" style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div className="image-card">
+      <img src={imageUrl} alt={name} className="image-card-img" />
       <div className="heart-icon">❤️</div>
       <div className="image-info">
         <div className="image-name">{name}</div>

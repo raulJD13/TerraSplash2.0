@@ -1,28 +1,23 @@
 .carousel-container {
   position: relative;
-  width: 350px; /* Ancho fijo según las tarjetas */
-  height: 200px; /* Altura fija según las tarjetas */
+  width: 350px; 
+  height: 250px; 
   overflow: hidden;
-  margin: 0 auto; /* Centrar el carrusel */
+  margin: 0 auto;
 }
 
 .carousel-content {
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out; 
+  width: 100%; 
 }
 
 .carousel-item {
-  flex: 0 0 350px; /* Ancho fijo para cada tarjeta */
-  height: 200px; /* Altura fija */
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  flex: 0 0 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.carousel-item.active {
-  opacity: 1;
+  position: relative; 
 }
 
 

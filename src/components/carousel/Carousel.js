@@ -21,14 +21,9 @@ const Carousel = ({ children }) => {
       <button className="carousel-button prev" onClick={handlePrev}>
         {"<"}
       </button>
-      <div className="carousel-content">
+      <div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {children.map((child, index) => (
-          <div
-            className={`carousel-item ${
-              index === currentIndex ? "active" : "inactive"
-            }`}
-            key={index}
-          >
+          <div className="carousel-item" key={index}>
             {child}
           </div>
         ))}
