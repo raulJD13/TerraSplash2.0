@@ -1,37 +1,52 @@
+/* Contenedor general del header */
 .header {
   width: 100%;
+  max-width: 100vw;
   height: 90px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribuye los elementos */
   background-color: #f8f8f8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0 20px; 
+  padding: 0 20px;
+  box-sizing: border-box; 
 }
 
+/* Logo */
 .logoHeader {
-  width: 80px;
-  height: 80px;
-  cursor: pointer; 
+  width: 70px;
+  height: auto;
+  cursor: pointer; /* Hace clickeable el logo */
 }
 
+/* Contenedor del logo (opcional) */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Nombre de la aplicación */
 .app-name {
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
   text-align: center;
-  flex-grow: 1;
-  font-weight: 600; 
+  flex-grow: 1; /* Esto asegura que el título ocupe el espacio central */
 }
 
+/* Icono del usuario */
 .user-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px; 
+  width: 50px;
   height: 50px;
-  cursor: pointer; 
-  transition: transform 0.3s ease; 
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .user-icon:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1); /* Pequeña animación al pasar el cursor */
 }

@@ -16,15 +16,12 @@ function Header() {
 
   return (
     <header className="header">
-      <img
-        src={logo}
-        alt="TerraSplash Logo"
-        className="logoHeader"
-        onClick={goToHomePage}
-      />
+      <div className="logo-container" onClick={goToHomePage}>
+        <img src={logo} alt="TerraSplash Logo" className="logoHeader" />
+      </div>
       <h1 className="app-name">TerraSplash</h1>
       <div className="user-icon" onClick={goToProfilePage}>
-        <UserOutlined style={{ fontSize: '32px', color: '#333' }} />
+        <UserOutlined style={{ fontSize: "32px", color: "#333" }} />
       </div>
     </header>
   );

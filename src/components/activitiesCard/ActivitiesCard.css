@@ -1,0 +1,24 @@
+.activities-card {
+  position: relative;
+  width: 178px; /* Ajusta el tamaño según lo que necesites */
+  height: 188px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del contenedor */
+}
+
+.activities-card-text {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Sombra del texto */
+  font-weight: bold;
+  text-align: center;
+}
