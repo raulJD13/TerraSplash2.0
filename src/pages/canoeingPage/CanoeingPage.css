@@ -1,0 +1,21 @@
+.canoeing-page-container {
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-top: 50px; 
+  min-height: 100vh; 
+  box-sizing: border-box; 
+  padding-bottom: 40px;
+}
+
+.canoeing-page-cards {
+  padding-top: 40px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px; 
+  width: 100%; 
+  max-width: 400px; 
+}

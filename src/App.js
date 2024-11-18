@@ -6,6 +6,7 @@ import RegisterPageSecond from './pages/registerPageSecond/RegisterPageSecond';
 import HomePage from './pages/homePage/HomePage';
 import WaterActivitiesPage from './pages/waterActivitiesPage/WaterActivitiesPage';
 import LandaActivitiesPage from './pages/landActivitiesPage/LandActivitiesPage';
+import CanoeingPage from './pages/canoeingPage/CanoeingPage';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 
@@ -22,7 +23,8 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/waterActivities" element={<WaterActivitiesPage />} />
         <Route path="/landActivities" element={<LandaActivitiesPage />} />
-
+        <Route path="/waterActivities/canoeing" element={<CanoeingPage />} />
+        
       </Routes>
     </Router>
       

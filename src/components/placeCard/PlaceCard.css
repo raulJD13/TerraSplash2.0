@@ -1,0 +1,51 @@
+.place-card {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 350px;
+  height: 100px;
+  margin: 10px;
+}
+
+.place-card-left {
+  flex: 2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.place-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.place-rating {
+  display: flex;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.bookmark-icon {
+  align-self: flex-end;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.bookmark-icon:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+
+.place-card-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
