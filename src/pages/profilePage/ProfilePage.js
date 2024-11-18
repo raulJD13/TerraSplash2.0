@@ -12,9 +12,7 @@ function ProfilePage() {
           sdcsdc
           <div className="">
             sdcsdc
-            <div className="profile-grid">
-
-            </div>
+            <div className="profile-grid"></div>
           </div>
         </div>
       </div>

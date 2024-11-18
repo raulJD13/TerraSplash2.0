@@ -9,16 +9,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .activities-card-text {
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 1.2em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Sombra del texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
   font-weight: bold;
   text-align: center;
 }
