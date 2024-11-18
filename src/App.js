@@ -8,6 +8,7 @@ import WaterActivitiesPage from './pages/waterActivitiesPage/WaterActivitiesPage
 import LandaActivitiesPage from './pages/landActivitiesPage/LandActivitiesPage';
 import CanoeingPage from './pages/canoeingPage/CanoeingPage';
 import TransparentKayackPage from './pages/transparentKayackPage/TransparentKayackPage';
+import ProfilePage from './pages/profilePage/ProfilePage';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<FrontPage/>}/>
         <Route path='/front' element={<FrontPage/>}/>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/registersecond" element={<RegisterPageSecond />} />
         <Route path="/home" element={<HomePage />} />
@@ -26,7 +28,6 @@ function App() {
         <Route path="/landActivities" element={<LandaActivitiesPage />} />
         <Route path="/waterActivities/canoeing" element={<CanoeingPage />} />
         <Route path="/waterActivities/canoeing/transparent-kayak" element={<TransparentKayackPage />} />
-
       </Routes>
     </Router>
       
