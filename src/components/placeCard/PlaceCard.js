@@ -1,7 +1,7 @@
 import { StarFilled, StarOutlined, BookOutlined } from "@ant-design/icons";
 import "./PlaceCard.css";
 
-function PlaceCard({ name, rating, imageUrl }) {
+function PlaceCard({ name, rating, imageUrl, onClick }) {
   const renderStars = () => {
     const totalStars = 5;
     const stars = [];
@@ -18,7 +18,7 @@ function PlaceCard({ name, rating, imageUrl }) {
   };
 
   return (
-    <div className="place-card">
+    <div className="place-card" onClick={onClick}>
       <div className="place-card-left">
         <h3 className="place-name">{name}</h3>
         <div className="place-rating">{renderStars()}</div>

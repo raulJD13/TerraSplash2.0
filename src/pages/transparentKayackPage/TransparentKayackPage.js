@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Map from "../../components/map/Map";
 import CommentsSection from "../../components/commentsSection/CommentsSection";
-
 import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import "./TransparentKayackPage.css";
 
@@ -31,7 +30,7 @@ function TransparentKayackPage() {
             </p>
           </div>
           <img
-            src={TestImage} // Image example
+            src={TestImage} 
             alt="Transparent Kayak"
             className="activity-image"
           />
