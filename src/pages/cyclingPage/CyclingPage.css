@@ -1,5 +1,7 @@
-.windsurfing-page-container {
-  background-color: #f0f8ff;
+.cycling-page-container {
+  background-color: #e6eaf4;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   padding-top: 50px;
   min-height: 100vh;
@@ -7,7 +9,7 @@
   padding-bottom: 40px;
 }
 
-.windsurfing-page-cards {
+.cycling-page-cards {
   padding-top: 40px;
   padding-bottom: 100px;
   display: flex;

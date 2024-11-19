@@ -1,0 +1,22 @@
+.hiking-page-container {
+    background-color: #eaf4e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+  }
+  
+  .hiking-page-cards {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
