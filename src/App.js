@@ -26,9 +26,7 @@ function App() {
           <Route path="/waterActivities" element={<WaterActivitiesPage />} />
           <Route path="/landActivities" element={<LandaActivitiesPage />} />
           <Route path="/waterActivities/canoeing" element={<CanoeingPage />} />
-          <Route
-            path="/waterActivities/canoeing/transparent-kayak"
-            element={<TransparentKayackPage />}
+          <Route path="/waterActivities/canoeing/transparent-kayak" element={<TransparentKayackPage />}
           />
         </Routes>
       </Router>
