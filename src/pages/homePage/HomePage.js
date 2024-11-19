@@ -18,7 +18,6 @@ import { useNavigate } from "react-router-dom";
 // ];
 
 function HomePage() {
-
   const navigate = useNavigate();
 
   const handleCardClick = (type) => {
@@ -41,7 +40,7 @@ function HomePage() {
         <CardLocation
           type="water"
           imageUrl={TestImage}
-          onClick={() => handleCardClick('water')}
+          onClick={() => handleCardClick("water")}
         />
       </div>
 
@@ -49,7 +48,7 @@ function HomePage() {
         <CardLocation
           type="land"
           imageUrl={TestImage}
-          onClick={() => handleCardClick('land')}
+          onClick={() => handleCardClick("land")}
         />
       </div>
 
@@ -59,9 +58,11 @@ function HomePage() {
       <div className="card-event-week">
         <EventWeek
           image={TestImage}
-          name="Roque nublo"
-          location="Gran Canaria"
-          price="12"
+          name="Beach Party"
+          location="Las Palmas de Gran Canaria"
+          price={25}
+          rating={4}
+          description="Join us for an amazing beach party with live music, drinks, and great vibes!"
         />
       </div>
       <div className="most-visited">

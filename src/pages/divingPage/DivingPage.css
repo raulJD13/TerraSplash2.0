@@ -1,0 +1,22 @@
+.diving-page-container {
+    background-color: #e0ffff; /* Aqua-like background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+  }
+  
+  .diving-page-cards {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  

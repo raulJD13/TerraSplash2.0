@@ -9,6 +9,11 @@ import LandaActivitiesPage from "./pages/landActivitiesPage/LandActivitiesPage";
 import CanoeingPage from "./pages/canoeingPage/CanoeingPage";
 import TransparentKayackPage from "./pages/transparentKayackPage/TransparentKayackPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+import FishingPage from "./pages/fishingPage/FishingPage";
+import DivingPage from "./pages/divingPage/DivingPage";
+import WindsurfingPage from "./pages/windsurfingPage/WindsurfingPage"; 
+import ParasailingPage from "./pages/parasailingPage/ParasailingPage"; 
+import JetSkiingPage from "./pages/jetSkiingPage/JetSkiingPage"; 
 import "@fortawesome/fontawesome-free/css/all.css";
 
 function App() {
@@ -26,8 +31,12 @@ function App() {
           <Route path="/waterActivities" element={<WaterActivitiesPage />} />
           <Route path="/landActivities" element={<LandaActivitiesPage />} />
           <Route path="/waterActivities/canoeing" element={<CanoeingPage />} />
-          <Route path="/waterActivities/canoeing/transparent-kayak" element={<TransparentKayackPage />}
-          />
+          <Route path="/waterActivities/fishing" element={<FishingPage />} />
+          <Route path="/waterActivities/diving" element={<DivingPage />} />
+          <Route path="/waterActivities/windsurfing" element={<WindsurfingPage />} /> {/* Nueva ruta */}
+          <Route path="/waterActivities/parasailing" element={<ParasailingPage />} /> {/* Nueva ruta */}
+          <Route path="/waterActivities/jet-skiing" element={<JetSkiingPage />} /> {/* Nueva ruta */}
+          <Route path="/waterActivities/canoeing/transparent-kayak" element={<TransparentKayackPage />} />
         </Routes>
       </Router>
     </>

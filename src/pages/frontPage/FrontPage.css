@@ -56,5 +56,6 @@ button:first-child {
 }
 
 button:last-child {
-  color: white;
+  color: #333;
+  ;
 }
