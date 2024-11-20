@@ -1,19 +1,18 @@
-import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
 import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
-import "./ClimbingPage.css";
+import "./SkydivingPage.css";
 
-function ClimbingPage() {
+function SkydivingPage() {
   const navigate = useNavigate();
 
   const handleCardClick = (type) => {
     const routes = {
-      "Mountain Peaks": "/landActivities/climbing/mountain-peaks",
-      "Rock Walls": "/landActivities/climbing/rock-walls",
+      "Tandem Jump": "/landActivities/skydiving/tandem-jump",
+      "High Altitude": "/landActivities/skydiving/high-altitude",
     };
 
     if (routes[type]) {
@@ -24,20 +23,20 @@ function ClimbingPage() {
   return (
     <>
       <Header />
-      <div className="climbing-page-container">
-        <Title text="Climbing" />
-        <div className="climbing-page-cards">
+      <div className="skydiving-page-container">
+        <Title text="Skydiving" />
+        <div className="skydiving-page-cards">
           <PlaceCard
-            name="Mountain Peaks"
+            name="Tandem Jump"
             rating={5}
             imageUrl={TestImage}
-            onClick={() => handleCardClick("Mountain Peaks")}
+            onClick={() => handleCardClick("Tandem Jump")}
           />
           <PlaceCard
-            name="Rock Walls"
+            name="High Altitude"
             rating={4}
             imageUrl={TestImage}
-            onClick={() => handleCardClick("Rock Walls")}
+            onClick={() => handleCardClick("High Altitude")}
           />
         </div>
       </div>
@@ -46,4 +45,4 @@ function ClimbingPage() {
   );
 }
 
-export default ClimbingPage;
+export default SkydivingPage;

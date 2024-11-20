@@ -1,4 +1,4 @@
-.climbing-page-container {
+.motocross-page-container {
   background-color: #f0f8ff;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   padding-bottom: 40px;
 }
 
-.climbing-page-cards {
+.motocross-page-cards {
   padding-top: 40px;
   padding-bottom: 100px;
   display: flex;

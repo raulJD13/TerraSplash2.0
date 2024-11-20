@@ -5,15 +5,15 @@ import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
 import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
-import "./ClimbingPage.css";
+import "./MotocrossPage.css";
 
-function ClimbingPage() {
+function MotocrossPage() {
   const navigate = useNavigate();
 
   const handleCardClick = (type) => {
     const routes = {
-      "Mountain Peaks": "/landActivities/climbing/mountain-peaks",
-      "Rock Walls": "/landActivities/climbing/rock-walls",
+      "Desert Tracks": "/landActivities/motocross/desert-tracks",
+      "Forest Trails": "/landActivities/motocross/forest-trails",
     };
 
     if (routes[type]) {
@@ -24,20 +24,20 @@ function ClimbingPage() {
   return (
     <>
       <Header />
-      <div className="climbing-page-container">
-        <Title text="Climbing" />
-        <div className="climbing-page-cards">
+      <div className="motocross-page-container">
+        <Title text="Motocross" />
+        <div className="motocross-page-cards">
           <PlaceCard
-            name="Mountain Peaks"
+            name="Desert Tracks"
             rating={5}
             imageUrl={TestImage}
-            onClick={() => handleCardClick("Mountain Peaks")}
+            onClick={() => handleCardClick("Desert Tracks")}
           />
           <PlaceCard
-            name="Rock Walls"
+            name="Forest Trails"
             rating={4}
             imageUrl={TestImage}
-            onClick={() => handleCardClick("Rock Walls")}
+            onClick={() => handleCardClick("Forest Trails")}
           />
         </div>
       </div>
@@ -46,4 +46,4 @@ function ClimbingPage() {
   );
 }
 
-export default ClimbingPage;
+export default MotocrossPage;
