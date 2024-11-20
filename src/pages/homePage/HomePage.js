@@ -9,14 +9,6 @@ import Carousel from "../../components/carousel/Carousel";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 
-// import Carousel from "../../components/carousel/Carousel";
-
-// const images = [
-//   { src: '../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg', name: 'Playa de Maspalomas', rating: 4 },
-//   { src: '../../images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg', name: 'Puerto de Mogán', rating: 5 },
-//   { src: '../../images/descarga.jpg', name: 'Roque Nublo', rating: 3 },
-// ];
-
 function HomePage() {
   const navigate = useNavigate();
 

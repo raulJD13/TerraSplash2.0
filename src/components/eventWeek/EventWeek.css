@@ -1,67 +1,85 @@
 .event-card {
   position: relative;
-  width: 300px;
-  border-radius: 10px;
+  width: 320px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de la imagen */
+.event-image-container {
+  position: relative;
 }
 
 .event-image {
   width: 100%;
-  height: 150px;
+  height: 350px; /* Imagen más grande */
   object-fit: cover;
 }
 
+/* Overlay unificado para localización y precio */
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+  color: #fff;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column; /* Contenido en columna */
+  align-items: flex-start; /* Alineación a la izquierda */
+  gap: 5px; /* Espaciado entre localización y precio */
+}
+
+.event-location {
+  font-size: 1em;
+  font-weight: 400;
+  opacity: 0.9; /* Leve transparencia */
+}
+
+.event-price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Icono de marcador */
+.bookmark-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.bookmark-icon:hover {
+  color: #ffd700;
+}
+
+/* Información del evento */
 .event-info {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 10px;
 }
 
-.event-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .event-name {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
   margin: 0;
 }
 
-.event-location {
-  font-size: 0.9em;
-  color: #777;
-  margin: 5px 0 0;
-}
-
-.bookmark-icon {
-  color: #666;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.bookmark-icon:hover {
-  color: #000;
-}
-
-.event-description {
-  font-size: 0.9em;
-  color: #555;
-  line-height: 1.4;
-}
-
-.event-footer {
+.event-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,12 +91,18 @@
 }
 
 .star-icon {
-  font-size: 1em;
+  font-size: 1.2em;
   color: #ccc;
 }
 
 .star-icon.filled {
-  color: #ffd700; /* Color dorado para estrellas llenas */
+  color: #ffd700;
+}
+
+.event-description {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.4;
 }
 
 .more-info-button {
@@ -86,9 +110,11 @@
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
