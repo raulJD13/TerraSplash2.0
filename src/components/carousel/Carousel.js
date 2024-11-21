@@ -1,29 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Carousel.css";
 
 const Carousel = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isManual, setIsManual] = useState(false);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? children.length - 1 : prevIndex - 1
     );
-  };
+    setIsManual(true);
+  }, [children.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === children.length - 1 ? 0 : prevIndex + 1
     );
-  };
+    setIsManual(true);
+  }, [children.length]);
+
+  useEffect(() => {
+    if (isManual) return; // Si es manual, no activar el temporizador automático
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === children.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [currentIndex, children.length, isManual]);
+
+  useEffect(() => {
+    if (isManual) {
+      // Desactiva el modo manual después de un tiempo para que el temporizador vuelva
+      const manualTimeout = setTimeout(() => setIsManual(false), 5000);
+      return () => clearTimeout(manualTimeout);
+    }
+  }, [isManual]);
 
   return (
     <div className="carousel-container">
       <button className="carousel-button prev" onClick={handlePrev}>
         {"<"}
       </button>
-      <div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+      <div
+        className="carousel-content"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          width: `${children.length * 100}%`,
+        }}
+      >
         {children.map((child, index) => (
-          <div className="carousel-item" key={index}>
+          <div
+            className="carousel-item"
+            key={index}
+            style={{
+              flex: `0 0 ${100 / children.length}%`,
+              borderRadius: "15px",
+              overflow: "hidden",
+            }}
+          >
             {child}
           </div>
         ))}
