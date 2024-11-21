@@ -7,11 +7,14 @@ import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import "./TransparentKayackPage.css";
 
 function TransparentKayackPage() {
-  const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-  const location="Las Canteras, Las Palmas";
-  const difficulty="Beginner";
+  const text =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  const location = "Las Canteras, Las Palmas";
+  const difficulty = "Beginner";
   const distance = "2.3 km";
-  const availability="3//4";
+  const availability = "3//4";
+  const latitude = 28.1275;
+  const length = -15.4314 ;
   return (
     <>
       <Header />
@@ -35,19 +38,17 @@ function TransparentKayackPage() {
             </p>
           </div>
           <img
-            src={TestImage} 
+            src={TestImage}
             alt="Transparent Kayak"
             className="activity-image"
           />
         </div>
         <div className="activity-description">
-          <p>
-            {text}
-          </p>
+          <p>{text}</p>
         </div>
         <button className="join-button">Join</button>
         <div className="activity-map">
-          <Map location={{ lat: 28.1275, lng: -15.4314 }} />
+          <Map location={{ lat: {latitude}, lng: {length} }} />
         </div>
         <CommentsSection />
       </div>
