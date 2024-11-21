@@ -1,7 +1,15 @@
-import { StarFilled, StarOutlined, BookOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { StarFilled, StarOutlined } from "@ant-design/icons";
+import { FaBookmark } from "react-icons/fa";
 import "./PlaceCard.css";
 
 function PlaceCard({ name, rating, imageUrl, onClick }) {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const toggleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
+  };
+
   const renderStars = () => {
     const totalStars = 5;
     const stars = [];
@@ -21,8 +29,16 @@ function PlaceCard({ name, rating, imageUrl, onClick }) {
     <div className="place-card" onClick={onClick}>
       <div className="place-card-left">
         <h3 className="place-name">{name}</h3>
-        <div className="place-rating">{renderStars()}</div>
-        <BookOutlined className="bookmark-icon" />
+        <div className="place-card-bottom">
+          <div className="place-rating">{renderStars()}</div>
+          <FaBookmark
+            className={`bookmark-place-card-icon ${isBookmarked ? "selected" : ""}`}
+            onClick={(e) => {
+              e.stopPropagation(); 
+              toggleBookmark();
+            }}
+          />
+        </div>
       </div>
       <div
         className="place-card-image"

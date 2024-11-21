@@ -24,22 +24,31 @@
   margin: 0;
 }
 
-.place-rating {
+.place-card-bottom {
   display: flex;
-  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 5px;
 }
 
-.bookmark-icon {
-  align-self: flex-end;
+.place-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.bookmark-place-card-icon {
   font-size: 18px;
   color: #666;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.bookmark-icon:hover {
+.bookmark-place-card-icon:hover {
   transform: scale(1.2);
+}
+
+.bookmark-place-card-icon.selected {
+  font-weight: bold;
   color: #000;
 }
 

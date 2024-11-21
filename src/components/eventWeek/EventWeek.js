@@ -1,12 +1,19 @@
+import React, { useState } from "react";
 import "./EventWeek.css"; // Archivo CSS actualizado
 import { FaBookmark, FaStar, FaRegStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const EventWeek = ({ image, name, location, price, rating, description }) => {
+  const [isBookmarked, setIsBookmarked] = useState(false); // Estado para el ícono de bookmark
   const navigate = useNavigate();
 
   const handleMoreInfo = () => {
     navigate(`/event/${name.replace(/\s+/g, "-").toLowerCase()}`);
+  };
+
+  const toggleBookmark = (e) => {
+    e.stopPropagation(); // Evitar que se active `handleMoreInfo` si se hace clic en el ícono
+    setIsBookmarked((prev) => !prev);
   };
 
   const renderStars = () => {
@@ -33,7 +40,11 @@ const EventWeek = ({ image, name, location, price, rating, description }) => {
           <span className="event-location">{location}</span>
           <span className="event-price">€{price}</span>
         </div>
-        <FaBookmark className="bookmark-icon" />
+        {/* Bookmark con estado */}
+        <FaBookmark
+          className={`bookmark-event-week-icon ${isBookmarked ? "selected" : ""}`}
+          onClick={toggleBookmark}
+        />
       </div>
 
       {/* Información del evento */}

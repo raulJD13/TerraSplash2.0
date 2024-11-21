@@ -13,7 +13,7 @@ const ImageCard = ({ imageUrl, name, rating }) => {
   return (
     <div className="image-card">
       <img src={imageUrl} alt={name} className="image-card-img" />
-      <div className="bookmark-icon">
+      <div className="bookmark-profile-icon">
         <FaBookmark />
       </div>
       <div className="image-info">
