@@ -7,6 +7,11 @@ import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import "./TransparentKayackPage.css";
 
 function TransparentKayackPage() {
+  const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  const location="Las Canteras, Las Palmas";
+  const difficulty="Beginner";
+  const distance = "2.3 km";
+  const availability="3//4";
   return (
     <>
       <Header />
@@ -17,16 +22,16 @@ function TransparentKayackPage() {
         <div className="activity-details">
           <div className="activity-info">
             <p>
-              <strong>Location:</strong> Las Canteras, Las Palmas
+              <strong>Location:</strong> {location}
             </p>
             <p>
-              <strong>Difficulty:</strong> Beginner
+              <strong>Difficulty:</strong> {difficulty}
             </p>
             <p>
-              <strong>Distance:</strong> 2.3 km
+              <strong>Distance:</strong> {distance}
             </p>
             <p>
-              <strong>Availability:</strong> 4/5
+              <strong>Availability:</strong> {availability}
             </p>
           </div>
           <img
@@ -37,10 +42,7 @@ function TransparentKayackPage() {
         </div>
         <div className="activity-description">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            {text}
           </p>
         </div>
         <button className="join-button">Join</button>
