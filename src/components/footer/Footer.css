@@ -22,3 +22,14 @@
   color: #1890ff;
   transform: scale(1.2); 
 }
+
+/* Clase específica para el icono de bookmark */
+.bookmark-footer-icon {
+  color: #333; /* Aseguramos que el color sea igual que los demás iconos */
+  font-size: 24px; /* Tamaño de fuente igual al de los otros iconos */
+}
+
+.footer-icon:hover {
+  color: #1890ff;
+  transform: scale(1.2); 
+}

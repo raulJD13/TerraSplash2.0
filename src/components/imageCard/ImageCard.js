@@ -1,5 +1,6 @@
 import "./ImageCard.css";
 import { FaBookmark } from "react-icons/fa";
+import { useState } from "react";
 
 const ImageCard = ({ imageUrl, name, rating }) => {
   const renderStars = () => {
@@ -10,10 +11,20 @@ const ImageCard = ({ imageUrl, name, rating }) => {
     ));
   };
 
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const toggleBookmark = (e) => {
+    e.stopPropagation(); // Evitar que el clic en el marcador afecte otros eventos
+    setIsBookmarked(!isBookmarked);
+  };
+
   return (
     <div className="image-card">
       <img src={imageUrl} alt={name} className="image-card-img" />
-      <div className="bookmark-profile-icon">
+      <div
+        className={`bookmark-profile-icon ${isBookmarked ? "selected" : ""}`}
+        onClick={toggleBookmark}
+      >
         <FaBookmark />
       </div>
       <div className="image-info">

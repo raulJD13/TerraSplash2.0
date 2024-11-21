@@ -1,10 +1,9 @@
-import React from "react";
 import {
   HomeOutlined,
   HeartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { FaBookmark } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";  // Cambié FaBookmark a FaRegBookmark
 import { useNavigate } from "react-router-dom";
 
 import "./Footer.css";
@@ -31,10 +30,10 @@ const Footer = () => {
         <HeartOutlined />
       </div>
       <div
-        className="footer-icon"
+        className="footer-icon bookmark-footer-icon"
         onClick={() => handleNavigation("/profile")}
       >
-        <FaBookmark />
+        <FaRegBookmark />  {/* Usé FaRegBookmark aquí */}
       </div>
       <div
         className="footer-icon"

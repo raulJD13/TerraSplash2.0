@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import { FaBookmark } from "react-icons/fa";
 import "./PlaceCard.css";
