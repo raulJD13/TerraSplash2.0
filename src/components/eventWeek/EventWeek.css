@@ -19,7 +19,7 @@
 
 .event-image {
   width: 100%;
-  height: 350px; 
+  height: 350px;
   object-fit: cover;
 }
 
@@ -27,19 +27,19 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 10px 15px;
   display: flex;
-  flex-direction: column; 
-  align-items: flex-start; 
-  gap: 5px; 
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .event-location {
   font-size: 1em;
   font-weight: 400;
-  opacity: 0.9; 
+  opacity: 0.9;
 }
 
 .event-price {
@@ -64,10 +64,9 @@
 }
 
 .bookmark-event-week-icon.selected {
-  color: #000; /* Color negro para "seleccionado" */
+  color: #000;
   font-weight: bold; /* Negrita cuando está seleccionado */
 }
-
 
 /* Información del evento */
 .event-info {

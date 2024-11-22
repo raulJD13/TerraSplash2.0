@@ -12,7 +12,7 @@ const EventWeek = ({ image, name, location, price, rating, description }) => {
   };
 
   const toggleBookmark = (e) => {
-    e.stopPropagation(); // Evitar que se active `handleMoreInfo` si se hace clic en el ícono
+    e.stopPropagation(); 
     setIsBookmarked((prev) => !prev);
   };
 
