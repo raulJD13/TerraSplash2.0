@@ -21,6 +21,12 @@ function HorsebackPage() {
     }
   };
 
+  // Array de lugares para mapear las tarjetas
+  const places = [
+    { name: "Countryside Rides", rating: 5 },
+    { name: "Beach Rides", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -28,20 +34,18 @@ function HorsebackPage() {
         <div className="horseback-title">
           <Title text="Horseback Riding" />
         </div>
-
         <div className="horseback-page-cards">
-          <PlaceCard
-            name="Countryside Rides"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Countryside Rides")}
-          />
-          <PlaceCard
-            name="Beach Rides"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Beach Rides")}
-          />
+          {/* Mapeo de las tarjetas con un retraso escalonado usando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para controlar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

@@ -15,10 +15,8 @@ function JetSkiingPage() {
       "Beachside Rides": "/waterActivities/jetskiing/beachside-rides",
       "Sunset Skiing": "/waterActivities/jetskiing/sunset-skiing",
       "Tropical Waves": "/waterActivities/jetskiing/tropical-waves",
-      "Adrenaline Jet Skiing":
-        "/waterActivities/jetskiing/adrenaline-jet-skiing",
-      "Professional Jet Skiing":
-        "/waterActivities/jetskiing/professional-jet-skiing",
+      "Adrenaline Jet Skiing": "/waterActivities/jetskiing/adrenaline-jet-skiing",
+      "Professional Jet Skiing": "/waterActivities/jetskiing/professional-jet-skiing",
     };
 
     if (routes[type]) {
@@ -26,51 +24,35 @@ function JetSkiingPage() {
     }
   };
 
+  // Array con los lugares y sus datos
+  const places = [
+    { name: "Ocean Jet Skiing", rating: 5 },
+    { name: "Beachside Rides", rating: 4 },
+    { name: "Sunset Skiing", rating: 3 },
+    { name: "Tropical Waves", rating: 4 },
+    { name: "Adrenaline Jet Skiing", rating: 5 },
+    { name: "Professional Jet Skiing", rating: 3 },
+  ];
+
   return (
     <>
       <Header />
       <div className="jetskiing-page-container">
         <div className="jet-title">
-          <Title text="Jet Skiing" />   
+          <Title text="Jet Skiing" />
         </div>
-     
         <div className="jetskiing-page-cards">
-          <PlaceCard
-            name="Ocean Jet Skiing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Ocean Jet Skiing")}
-          />
-          <PlaceCard
-            name="Beachside Rides"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Beachside Rides")}
-          />
-          <PlaceCard
-            name="Sunset Skiing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Sunset Skiing")}
-          />
-          <PlaceCard
-            name="Tropical Waves"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Waves")}
-          />
-          <PlaceCard
-            name="Adrenaline Jet Skiing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Adrenaline Jet Skiing")}
-          />
-          <PlaceCard
-            name="Professional Jet Skiing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Professional Jet Skiing")}
-          />
+          {/* Mapeo dinámico de las tarjetas con retraso escalonado */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para manejar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

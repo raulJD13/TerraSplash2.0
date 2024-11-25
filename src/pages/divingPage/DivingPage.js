@@ -11,13 +11,11 @@ function DivingPage() {
 
   const handleCardClick = (type) => {
     const routes = {
-      "Coral Reef Exploration":
-        "/waterActivities/diving/coral-reef-exploration",
+      "Coral Reef Exploration": "/waterActivities/diving/coral-reef-exploration",
       "Deep Diving Adventure": "/waterActivities/diving/deep-diving-adventure",
       "Underwater Caves": "/waterActivities/diving/underwater-caves",
       "Tropical Diving": "/waterActivities/diving/tropical-diving",
-      "Marine Life Exploration":
-        "/waterActivities/diving/marine-life-exploration",
+      "Marine Life Exploration": "/waterActivities/diving/marine-life-exploration",
       "Diving in Paradise": "/waterActivities/diving/diving-in-paradise",
     };
 
@@ -25,6 +23,16 @@ function DivingPage() {
       navigate(routes[type]);
     }
   };
+
+  // Array de lugares
+  const places = [
+    { name: "Coral Reef Exploration", rating: 5 },
+    { name: "Deep Diving Adventure", rating: 4 },
+    { name: "Underwater Caves", rating: 5 },
+    { name: "Tropical Diving", rating: 3 },
+    { name: "Marine Life Exploration", rating: 4 },
+    { name: "Diving in Paradise", rating: 3 },
+  ];
 
   return (
     <>
@@ -34,42 +42,17 @@ function DivingPage() {
           <Title text="Diving" />
         </div>
         <div className="diving-page-cards">
-          <PlaceCard
-            name="Coral Reef Exploration"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Coral Reef Exploration")}
-          />
-          <PlaceCard
-            name="Deep Diving Adventure"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Deep Diving Adventure")}
-          />
-          <PlaceCard
-            name="Underwater Caves"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Underwater Caves")}
-          />
-          <PlaceCard
-            name="Tropical Diving"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Diving")}
-          />
-          <PlaceCard
-            name="Marine Life Exploration"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Marine Life Exploration")}
-          />
-          <PlaceCard
-            name="Diving in Paradise"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Diving in Paradise")}
-          />
+          {/* Mapear las tarjetas de lugar con índice para la animación */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

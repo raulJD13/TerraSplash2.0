@@ -21,6 +21,12 @@ function ClimbingPage() {
     }
   };
 
+  // Definimos las tarjetas y sus propiedades
+  const places = [
+    { name: "Mountain Peaks", rating: 5 },
+    { name: "Rock Walls", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -29,18 +35,17 @@ function ClimbingPage() {
           <Title text="Climbing" />
         </div>
         <div className="climbing-page-cards">
-          <PlaceCard
-            name="Mountain Peaks"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Mountain Peaks")}
-          />
-          <PlaceCard
-            name="Rock Walls"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Rock Walls")}
-          />
+          {/* Renderizamos las tarjetas de lugar, pasando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para el retraso dinámico
+            />
+          ))}
         </div>
       </div>
       <Footer />

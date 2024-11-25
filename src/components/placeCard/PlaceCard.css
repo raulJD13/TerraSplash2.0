@@ -1,3 +1,16 @@
+/* Animación inicial */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Comienza ligeramente desplazado hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Se desliza suavemente hacia su posición final */
+  }
+}
+
+/* Estilo base de la tarjeta */
 .place-card {
   display: flex;
   align-items: center;
@@ -8,8 +21,16 @@
   width: 350px;
   height: 100px;
   margin: 10px;
+  opacity: 0; /* Comienza invisible */
+  animation: fadeInUp 0.6s ease-out forwards; /* Animación con duración y tipo */
 }
 
+/* Retraso dinámico gestionado desde React */
+.place-card {
+  animation-delay: var(--delay, 0s); /* Retraso dinámico calculado por el índice */
+}
+
+/* Estilos de la parte izquierda de la tarjeta */
 .place-card-left {
   flex: 2;
   padding: 10px;
@@ -18,12 +39,14 @@
   justify-content: space-between;
 }
 
+/* Estilo del nombre del lugar */
 .place-name {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
+/* Estilo de la parte inferior de la tarjeta */
 .place-card-bottom {
   display: flex;
   justify-content: space-between;
@@ -31,11 +54,13 @@
   margin-top: 5px;
 }
 
+/* Estilo de las estrellas */
 .place-rating {
   display: flex;
   gap: 2px;
 }
 
+/* Estilo del ícono de favoritos */
 .bookmark-place-card-icon {
   font-size: 18px;
   color: #666;
@@ -52,6 +77,7 @@
   color: #000;
 }
 
+/* Estilo de la imagen */
 .place-card-image {
   flex: 1;
   background-size: cover;

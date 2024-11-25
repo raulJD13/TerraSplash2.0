@@ -37,6 +37,15 @@ function CanoeingPage() {
     console.log("Eliminar seleccionado");
   };
 
+  const places = [
+    { name: "Transparent Kayak", rating: 3 },
+    { name: "Crystal Clear Waters", rating: 4 },
+    { name: "Relaxing Paddle", rating: 5 },
+    { name: "Tropical Canoeing", rating: 2 },
+    { name: "Adventure Ride", rating: 4 },
+    { name: "Serene Waters", rating: 3 },
+  ];
+
   return (
     <>
       <Header />
@@ -45,48 +54,22 @@ function CanoeingPage() {
           <Title text="Canoeing" />
         </div>
         <div className="canoeing-page-cards">
-          <PlaceCard
-            name="Transparent Kayak"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Transparent Kayak")}
-          />
-          <PlaceCard
-            name="Crystal Clear Waters"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Crystal Clear Waters")}
-          />
-          <PlaceCard
-            name="Relaxing Paddle"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Relaxing Paddle")}
-          />
-          <PlaceCard
-            name="Tropical Canoeing"
-            rating={2}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Canoeing")}
-          />
-          <PlaceCard
-            name="Adventure Ride"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Adventure Ride")}
-          />
-          <PlaceCard
-            name="Serene Waters"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Serene Waters")}
-          />
+          {/* Renderizamos las tarjetas de lugar, pasando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para el retraso dinámico
+            />
+          ))}
         </div>
         <FloatingButton
           onAdd={handleAdd}
           onEdit={handleEdit}
           onDelete={handleDelete}
-          
         />
       </div>
       <Footer />

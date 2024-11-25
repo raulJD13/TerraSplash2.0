@@ -27,6 +27,16 @@ function ParasailingPage() {
     }
   };
 
+  // Array de los lugares para el mapeo dinámico
+  const places = [
+    { name: "Sky High Parasailing", rating: 5 },
+    { name: "Ocean View Parasailing", rating: 4 },
+    { name: "Sunset Parasailing", rating: 3 },
+    { name: "Island Parasailing", rating: 4 },
+    { name: "Tropical Skies", rating: 5 },
+    { name: "Adventure Parasailing", rating: 3 },
+  ];
+
   return (
     <>
       <Header />
@@ -35,42 +45,17 @@ function ParasailingPage() {
           <Title text="Parasailing" />
         </div>
         <div className="parasailing-page-cards">
-          <PlaceCard
-            name="Sky High Parasailing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Sky High Parasailing")}
-          />
-          <PlaceCard
-            name="Ocean View Parasailing"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Ocean View Parasailing")}
-          />
-          <PlaceCard
-            name="Sunset Parasailing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Sunset Parasailing")}
-          />
-          <PlaceCard
-            name="Island Parasailing"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Island Parasailing")}
-          />
-          <PlaceCard
-            name="Tropical Skies"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Skies")}
-          />
-          <PlaceCard
-            name="Adventure Parasailing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Adventure Parasailing")}
-          />
+          {/* Mapeo dinámico de las tarjetas con un retraso escalonado */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para manejar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

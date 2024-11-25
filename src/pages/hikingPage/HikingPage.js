@@ -21,6 +21,12 @@ function HikingPage() {
     }
   };
 
+  // Array de lugares para mapear las tarjetas
+  const places = [
+    { name: "Mountain Trails", rating: 5 },
+    { name: "Scenic Views", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -29,18 +35,17 @@ function HikingPage() {
           <Title text="Hiking" />
         </div>
         <div className="hiking-page-cards">
-          <PlaceCard
-            name="Mountain Trails"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Mountain Trails")}
-          />
-          <PlaceCard
-            name="Scenic Views"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Scenic Views")}
-          />
+          {/* Mapeo de las tarjetas con un retraso escalonado usando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para controlar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

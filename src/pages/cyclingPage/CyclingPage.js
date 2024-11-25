@@ -21,6 +21,12 @@ function CyclingPage() {
     }
   };
 
+  // Definimos las tarjetas con sus datos
+  const places = [
+    { name: "Forest Trails", rating: 5 },
+    { name: "City Rides", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -29,18 +35,17 @@ function CyclingPage() {
           <Title text="Cycling" />
         </div>
         <div className="cycling-page-cards">
-          <PlaceCard
-            name="Forest Trails"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Forest Trails")}
-          />
-          <PlaceCard
-            name="City Rides"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("City Rides")}
-          />
+          {/* Renderizamos las tarjetas de lugar, pasando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para el retraso dinámico
+            />
+          ))}
         </div>
       </div>
       <Footer />

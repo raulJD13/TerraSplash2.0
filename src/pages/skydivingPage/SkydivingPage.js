@@ -20,6 +20,12 @@ function SkydivingPage() {
     }
   };
 
+  // Array de los lugares para el mapeo dinámico
+  const places = [
+    { name: "Tandem Jump", rating: 5 },
+    { name: "High Altitude", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -28,18 +34,17 @@ function SkydivingPage() {
           <Title text="Skydiving" />
         </div>
         <div className="skydiving-page-cards">
-          <PlaceCard
-            name="Tandem Jump"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tandem Jump")}
-          />
-          <PlaceCard
-            name="High Altitude"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("High Altitude")}
-          />
+          {/* Mapeo dinámico de las tarjetas con un retraso escalonado */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para manejar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

@@ -12,20 +12,27 @@ function WindsurfingPage() {
   const handleCardClick = (type) => {
     const routes = {
       "Ocean Windsurfing": "/waterActivities/windsurfing/ocean-windsurfing",
-      "Beachside Windsurfing":
-        "/waterActivities/windsurfing/beachside-windsurfing",
-      "Windsurfing Adventures":
-        "/waterActivities/windsurfing/windsurfing-adventures",
+      "Beachside Windsurfing": "/waterActivities/windsurfing/beachside-windsurfing",
+      "Windsurfing Adventures": "/waterActivities/windsurfing/windsurfing-adventures",
       "Tropical Wind Waves": "/waterActivities/windsurfing/tropical-wind-waves",
       "Sunset Windsurfing": "/waterActivities/windsurfing/sunset-windsurfing",
-      "Professional Windsurfing":
-        "/waterActivities/windsurfing/professional-windsurfing",
+      "Professional Windsurfing": "/waterActivities/windsurfing/professional-windsurfing",
     };
 
     if (routes[type]) {
       navigate(routes[type]);
     }
   };
+
+  // Array de actividades para mapear las tarjetas
+  const activities = [
+    { name: "Ocean Windsurfing", rating: 5 },
+    { name: "Beachside Windsurfing", rating: 4 },
+    { name: "Windsurfing Adventures", rating: 3 },
+    { name: "Tropical Wind Waves", rating: 4 },
+    { name: "Sunset Windsurfing", rating: 3 },
+    { name: "Professional Windsurfing", rating: 5 },
+  ];
 
   return (
     <>
@@ -35,42 +42,16 @@ function WindsurfingPage() {
           <Title text="Windsurfing" />
         </div>
         <div className="windsurfing-page-cards">
-          <PlaceCard
-            name="Ocean Windsurfing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Ocean Windsurfing")}
-          />
-          <PlaceCard
-            name="Beachside Windsurfing"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Beachside Windsurfing")}
-          />
-          <PlaceCard
-            name="Windsurfing Adventures"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Windsurfing Adventures")}
-          />
-          <PlaceCard
-            name="Tropical Wind Waves"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Wind Waves")}
-          />
-          <PlaceCard
-            name="Sunset Windsurfing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Sunset Windsurfing")}
-          />
-          <PlaceCard
-            name="Professional Windsurfing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Professional Windsurfing")}
-          />
+          {activities.map((activity, index) => (
+            <PlaceCard
+              key={index}
+              name={activity.name}
+              rating={activity.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(activity.name)}
+              index={index} 
+            />
+          ))}
         </div>
       </div>
       <Footer />

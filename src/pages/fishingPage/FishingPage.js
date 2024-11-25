@@ -25,6 +25,16 @@ function FishingPage() {
     }
   };
 
+  // Array de lugares para mapear las tarjetas
+  const places = [
+    { name: "Deep Sea Fishing", rating: 5 },
+    { name: "Lake Serenity", rating: 4 },
+    { name: "River Rapids Fishing", rating: 3 },
+    { name: "Fishing Paradise", rating: 5 },
+    { name: "Catch and Release", rating: 4 },
+    { name: "Tropical Fishing", rating: 3 },
+  ];
+
   return (
     <>
       <Header />
@@ -33,42 +43,17 @@ function FishingPage() {
           <Title text="Fishing" />
         </div>
         <div className="fishing-page-cards">
-          <PlaceCard
-            name="Deep Sea Fishing"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Deep Sea Fishing")}
-          />
-          <PlaceCard
-            name="Lake Serenity"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Lake Serenity")}
-          />
-          <PlaceCard
-            name="River Rapids Fishing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("River Rapids Fishing")}
-          />
-          <PlaceCard
-            name="Fishing Paradise"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Fishing Paradise")}
-          />
-          <PlaceCard
-            name="Catch and Release"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Catch and Release")}
-          />
-          <PlaceCard
-            name="Tropical Fishing"
-            rating={3}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Tropical Fishing")}
-          />
+          {/* Mapeo de las tarjetas con un retraso escalonado usando el índice */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para controlar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />

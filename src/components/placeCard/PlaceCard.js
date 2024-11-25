@@ -3,7 +3,7 @@ import { StarFilled, StarOutlined } from "@ant-design/icons";
 import { FaBookmark } from "react-icons/fa";
 import "./PlaceCard.css";
 
-function PlaceCard({ name, rating, imageUrl, onClick }) {
+function PlaceCard({ name, rating, imageUrl, onClick, index }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const toggleBookmark = () => {
@@ -26,7 +26,13 @@ function PlaceCard({ name, rating, imageUrl, onClick }) {
   };
 
   return (
-    <div className="place-card" onClick={onClick}>
+    <div
+      className="place-card"
+      onClick={onClick}
+      style={{
+        animationDelay: `${index * 0.2}s`, // Retraso dinámico
+      }}
+    >
       <div className="place-card-left">
         <h3 className="place-name">{name}</h3>
         <div className="place-card-bottom">
@@ -34,7 +40,7 @@ function PlaceCard({ name, rating, imageUrl, onClick }) {
           <FaBookmark
             className={`bookmark-place-card-icon ${isBookmarked ? "selected" : ""}`}
             onClick={(e) => {
-              e.stopPropagation(); 
+              e.stopPropagation(); // Previene que el clic en el ícono propague el evento
               toggleBookmark();
             }}
           />

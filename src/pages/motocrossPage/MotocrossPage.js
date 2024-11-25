@@ -21,6 +21,12 @@ function MotocrossPage() {
     }
   };
 
+  // Array con los lugares y sus datos
+  const places = [
+    { name: "Desert Tracks", rating: 5 },
+    { name: "Forest Trails", rating: 4 },
+  ];
+
   return (
     <>
       <Header />
@@ -28,20 +34,18 @@ function MotocrossPage() {
         <div className="motocross-title">
           <Title text="Motocross" />
         </div>
-
         <div className="motocross-page-cards">
-          <PlaceCard
-            name="Desert Tracks"
-            rating={5}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Desert Tracks")}
-          />
-          <PlaceCard
-            name="Forest Trails"
-            rating={4}
-            imageUrl={TestImage}
-            onClick={() => handleCardClick("Forest Trails")}
-          />
+          {/* Mapeo dinámico de las tarjetas con retraso escalonado */}
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              imageUrl={TestImage}
+              onClick={() => handleCardClick(place.name)}
+              index={index} // Pasamos el índice para manejar el retraso de la animación
+            />
+          ))}
         </div>
       </div>
       <Footer />
