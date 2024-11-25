@@ -10,58 +10,37 @@ import "./WaterActivitesPage.css";
 function WaterActivitiesPage() {
   const navigate = useNavigate();
 
-  const handleCardClick = (type) => {
-    // Vector de rutas
-    const routes = {
-      Canoeing: "/waterActivities/canoeing",
-      Fishing: "/waterActivities/fishing",
-      Diving: "/waterActivities/diving",
-      Windsurfing: "/waterActivities/windsurfing",
-      Parasailing: "/waterActivities/parasailing",
-      "Jet Skiing": "/waterActivities/jet-skiing",
-    };
+  // Array de actividades con sus nombres y rutas
+  const activities = [
+    { text: "Canoeing", route: "/waterActivities/canoeing" },
+    { text: "Fishing", route: "/waterActivities/fishing" },
+    { text: "Diving", route: "/waterActivities/diving" },
+    { text: "Windsurfing", route: "/waterActivities/windsurfing" },
+    { text: "Parasailing", route: "/waterActivities/parasailing" },
+    { text: "Jet Skiing", route: "/waterActivities/jet-skiing" },
+  ];
 
-    if (routes[type]) {
-      navigate(routes[type]);
-    }
+  const handleCardClick = (route) => {
+    navigate(route); 
   };
 
   return (
     <>
       <Header />
       <div className="water-container">
+        <div className="water-title"></div>
         <Title text={"Water Activities"} />
         <div className="water-activities-grid">
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Canoeing"}
-            onClick={() => handleCardClick("Canoeing")}
-          />
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Fishing"}
-            onClick={() => handleCardClick("Fishing")}
-          />
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Diving"}
-            onClick={() => handleCardClick("Diving")}
-          />
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Windsurfing"}
-            onClick={() => handleCardClick("Windsurfing")}
-          />
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Parasailing"}
-            onClick={() => handleCardClick("Parasailing")}
-          />
-          <ActivitesCard
-            imageUrl={TestImage}
-            text={"Jet Skiing"}
-            onClick={() => handleCardClick("Jet Skiing")}
-          />
+          {/* Renderizar tarjetas dinámicamente con map */}
+          {activities.map((activity, index) => (
+            <ActivitesCard
+              key={index} 
+              imageUrl={TestImage} 
+              text={activity.text} 
+              onClick={() => handleCardClick(activity.route)} 
+              index={index} 
+            />
+          ))}
         </div>
       </div>
       <Footer />

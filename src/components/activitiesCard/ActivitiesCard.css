@@ -1,6 +1,19 @@
+/* Animación inicial */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Comienza desplazado hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+/* Estilos base de la tarjeta */
 .activities-card {
   position: relative;
-  width: 178px; 
+  width: 178px;
   height: 188px;
   background-size: cover;
   background-position: center;
@@ -9,16 +22,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* Animación */
+  opacity: 0; /* Comienza invisible */
+  animation: fadeInUp 0.6s ease-out forwards; /* Animación con duración de 0.6s */
 }
 
+/* Texto dentro de la tarjeta */
 .activities-card-text {
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 1.2em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   font-weight: bold;
   text-align: center;
+}
+
+/* Hover con un zoom suave */
+.activities-card:hover {
+  transform: scale(1.05); /* Incrementa ligeramente el tamaño */
+  transition: transform 0.3s ease; /* Suavidad al hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa en hover */
 }
