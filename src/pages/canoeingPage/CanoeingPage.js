@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
@@ -9,7 +8,6 @@ import FloatingButton from "../../components/floatingButton/FloatingButton";
 import "./CanoeingPage.css";
 
 function CanoeingPage() {
-  const [isExpanded, setIsExpanded] = useState(false); // Estado para controlar la expansión de los botones
   const navigate = useNavigate();
 
   const handleCardClick = (type) => {
@@ -27,16 +25,16 @@ function CanoeingPage() {
     }
   };
 
-  const handleEditActivity = () => {
-    alert("Editar una actividad existente");
+  const handleAdd = () => {
+    console.log("Añadir archivo seleccionado");
   };
 
-  const handleDeleteActivity = () => {
-    alert("Eliminar una actividad");
+  const handleEdit = () => {
+    console.log("Modificar seleccionado");
   };
 
-  const toggleButtons = () => {
-    setIsExpanded(!isExpanded); 
+  const handleDelete = () => {
+    console.log("Eliminar seleccionado");
   };
 
   return (
@@ -44,7 +42,7 @@ function CanoeingPage() {
       <Header />
       <div className="canoeing-page-container">
         <div className="title-conoeing">
-        <Title text="Canoeing" />
+          <Title text="Canoeing" />
         </div>
         <div className="canoeing-page-cards">
           <PlaceCard
@@ -84,37 +82,12 @@ function CanoeingPage() {
             onClick={() => handleCardClick("Serene Waters")}
           />
         </div>
-
-        {/* Contenedor de botones flotantes */}
-        <div className="floating-buttons-container">
-          <FloatingButton
-            icon="+"
-            onClick={toggleButtons} // Toggle para mostrar los otros botones
-            style={{ backgroundColor: "#28a745" }}
-          />
-          {isExpanded && (
-            <>
-              <FloatingButton
-                icon="✎" // Editar
-                onClick={handleEditActivity}
-                style={{
-                  backgroundColor: "#ffc107",
-                  width: "40px", // Botón más pequeño
-                  height: "40px", // Botón más pequeño
-                }}
-              />
-              <FloatingButton
-                icon="🗑️" // Eliminar
-                onClick={handleDeleteActivity}
-                style={{
-                  backgroundColor: "#dc3545",
-                  width: "40px", // Botón más pequeño
-                  height: "40px", // Botón más pequeño
-                }}
-              />
-            </>
-          )}
-        </div>
+        <FloatingButton
+          onAdd={handleAdd}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+          
+        />
       </div>
       <Footer />
     </>
