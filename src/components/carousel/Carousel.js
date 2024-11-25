@@ -42,26 +42,19 @@ const Carousel = ({ children }) => {
       <button className="carousel-button prev" onClick={handlePrev}>
         {"<"}
       </button>
-      <div
-        className="carousel-content"
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-          width: `${children.length * 100}%`,
-        }}
-      >
-        {children.map((child, index) => (
-          <div
-            className="carousel-item"
-            key={index}
-            style={{
-              flex: `0 0 ${100 / children.length}%`,
-              borderRadius: "15px",
-              overflow: "hidden",
-            }}
-          >
-            {child}
-          </div>
-        ))}
+      <div className="carousel-wrapper">
+        <div
+          className="carousel-content"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {children.map((child, index) => (
+            <div className="carousel-item" key={index}>
+              {child}
+            </div>
+          ))}
+        </div>
       </div>
       <button className="carousel-button next" onClick={handleNext}>
         {">"}
