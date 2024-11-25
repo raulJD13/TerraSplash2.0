@@ -25,7 +25,9 @@ function CyclingPage() {
     <>
       <Header />
       <div className="cycling-page-container">
-        <Title text="Cycling" />
+        <div className="cycling-title">
+          <Title text="Cycling" />
+        </div>
         <div className="cycling-page-cards">
           <PlaceCard
             name="Forest Trails"

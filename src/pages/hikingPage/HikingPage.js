@@ -25,7 +25,9 @@ function HikingPage() {
     <>
       <Header />
       <div className="hiking-page-container">
-        <Title text="Hiking" />
+        <div className="hiking-title">
+          <Title text="Hiking" />
+        </div>
         <div className="hiking-page-cards">
           <PlaceCard
             name="Mountain Trails"

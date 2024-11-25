@@ -12,11 +12,14 @@ function WindsurfingPage() {
   const handleCardClick = (type) => {
     const routes = {
       "Ocean Windsurfing": "/waterActivities/windsurfing/ocean-windsurfing",
-      "Beachside Windsurfing": "/waterActivities/windsurfing/beachside-windsurfing",
-      "Windsurfing Adventures": "/waterActivities/windsurfing/windsurfing-adventures",
+      "Beachside Windsurfing":
+        "/waterActivities/windsurfing/beachside-windsurfing",
+      "Windsurfing Adventures":
+        "/waterActivities/windsurfing/windsurfing-adventures",
       "Tropical Wind Waves": "/waterActivities/windsurfing/tropical-wind-waves",
       "Sunset Windsurfing": "/waterActivities/windsurfing/sunset-windsurfing",
-      "Professional Windsurfing": "/waterActivities/windsurfing/professional-windsurfing",
+      "Professional Windsurfing":
+        "/waterActivities/windsurfing/professional-windsurfing",
     };
 
     if (routes[type]) {
@@ -28,7 +31,9 @@ function WindsurfingPage() {
     <>
       <Header />
       <div className="windsurfing-page-container">
-        <Title text="Windsurfing" />
+        <div className="windsurfing-title">
+          <Title text="Windsurfing" />
+        </div>
         <div className="windsurfing-page-cards">
           <PlaceCard
             name="Ocean Windsurfing"

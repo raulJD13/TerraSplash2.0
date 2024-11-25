@@ -30,7 +30,9 @@ function DivingPage() {
     <>
       <Header />
       <div className="diving-page-container">
-        <Title text="Diving" />
+        <div className="diving-title">
+          <Title text="Diving" />
+        </div>
         <div className="diving-page-cards">
           <PlaceCard
             name="Coral Reef Exploration"

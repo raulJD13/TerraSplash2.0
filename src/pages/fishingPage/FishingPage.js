@@ -29,7 +29,9 @@ function FishingPage() {
     <>
       <Header />
       <div className="fishing-page-container">
-        <Title text="Fishing" />
+        <div className="fishing-title">
+          <Title text="Fishing" />
+        </div>
         <div className="fishing-page-cards">
           <PlaceCard
             name="Deep Sea Fishing"

@@ -24,7 +24,9 @@ function SkydivingPage() {
     <>
       <Header />
       <div className="skydiving-page-container">
-        <Title text="Skydiving" />
+        <div className="skydiving-title">
+          <Title text="Skydiving" />
+        </div>
         <div className="skydiving-page-cards">
           <PlaceCard
             name="Tandem Jump"

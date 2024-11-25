@@ -30,7 +30,10 @@ function JetSkiingPage() {
     <>
       <Header />
       <div className="jetskiing-page-container">
-        <Title text="Jet Skiing" />
+        <div className="jet-title">
+          <Title text="Jet Skiing" />   
+        </div>
+     
         <div className="jetskiing-page-cards">
           <PlaceCard
             name="Ocean Jet Skiing"

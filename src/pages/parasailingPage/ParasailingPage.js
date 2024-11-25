@@ -11,12 +11,15 @@ function ParasailingPage() {
 
   const handleCardClick = (type) => {
     const routes = {
-      "Sky High Parasailing": "/waterActivities/parasailing/sky-high-parasailing",
-      "Ocean View Parasailing": "/waterActivities/parasailing/ocean-view-parasailing",
+      "Sky High Parasailing":
+        "/waterActivities/parasailing/sky-high-parasailing",
+      "Ocean View Parasailing":
+        "/waterActivities/parasailing/ocean-view-parasailing",
       "Sunset Parasailing": "/waterActivities/parasailing/sunset-parasailing",
       "Island Parasailing": "/waterActivities/parasailing/island-parasailing",
       "Tropical Skies": "/waterActivities/parasailing/tropical-skies",
-      "Adventure Parasailing": "/waterActivities/parasailing/adventure-parasailing",
+      "Adventure Parasailing":
+        "/waterActivities/parasailing/adventure-parasailing",
     };
 
     if (routes[type]) {
@@ -28,7 +31,9 @@ function ParasailingPage() {
     <>
       <Header />
       <div className="parasailing-page-container">
-        <Title text="Parasailing" />
+        <div className="parasailing-title">
+          <Title text="Parasailing" />
+        </div>
         <div className="parasailing-page-cards">
           <PlaceCard
             name="Sky High Parasailing"

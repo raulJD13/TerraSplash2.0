@@ -25,7 +25,10 @@ function MotocrossPage() {
     <>
       <Header />
       <div className="motocross-page-container">
-        <Title text="Motocross" />
+        <div className="motocross-title">
+          <Title text="Motocross" />
+        </div>
+
         <div className="motocross-page-cards">
           <PlaceCard
             name="Desert Tracks"

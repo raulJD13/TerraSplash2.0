@@ -25,7 +25,10 @@ function HorsebackPage() {
     <>
       <Header />
       <div className="horseback-page-container">
-        <Title text="Horseback Riding" />
+        <div className="horseback-title">
+          <Title text="Horseback Riding" />
+        </div>
+
         <div className="horseback-page-cards">
           <PlaceCard
             name="Countryside Rides"
