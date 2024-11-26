@@ -4,22 +4,26 @@ import Title from "../../components/title/Title";
 import CardLocation from "../../components/cardLocation/CardLocation";
 import EventWeek from "../../components/eventWeek/EventWeek";
 import ImageCard from "../../components/imageCard/ImageCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
+//  simport TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import Carousel from "../../components/carousel/Carousel";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import eventOfWeek from "../../data/eventOfWeek.json";
+import mostVisited from "../../data/mostVisited.json";
+import locations from "../../data/locations.json";
+
 
 function HomePage() {
   const navigate = useNavigate();
-
-  const handleCardClick = (type) => {
-    if (type === "land") {
-      navigate("/landActivities");
-    } else if (type === "water") {
-      navigate("/waterActivities");
-    }
+  const images = {
+    "sam-wermut": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg",
+    "aleks-dahlberg": "/images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg",
+  };
+  
+  const handleCardClick = (route) => {
+    navigate(route);
   };
 
   // Refs para los contenedores
@@ -41,32 +45,31 @@ function HomePage() {
       <Header />
 
       <div
-        className={`selection-container ${isSelectionVisible ? "visible" : "hidden"}`}
+        className={`selection-container ${
+          isSelectionVisible ? "visible" : "hidden"
+        }`}
         ref={selectionRef}
       >
         <Title text="Select location" />
       </div>
 
       <div
-        className={`cardlocation-water-container ${isCardWaterVisible ? "visible" : "hidden"}`}
+        className={`cardlocation-water-container ${
+          isCardWaterVisible ? "visible" : "hidden"
+        }`}
         ref={cardWaterRef}
       >
-        <CardLocation
-          type="water"
-          imageUrl={TestImage}
-          onClick={() => handleCardClick("water")}
-        />
-      </div>
-
-      <div
-        className={`cardlocation-land-container ${isCardLandVisible ? "visible" : "hidden"}`}
-        ref={cardLandRef}
-      >
-        <CardLocation
-          type="land"
-          imageUrl={TestImage}
-          onClick={() => handleCardClick("land")}
-        />
+        <div className="card-location-container">
+          {locations.map((location) => (
+            <CardLocation
+              key={location.type}
+              type={location.type}
+              imageUrl={images[location.imageId]}
+              onClick={() => handleCardClick(location.route)}
+            />
+          ))}
+        </div>
+        ;
       </div>
 
       <div
@@ -80,13 +83,14 @@ function HomePage() {
         ref={eventRef}
       >
         <EventWeek
-          image={TestImage}
-          name="Beach Party"
-          location="Las Palmas de Gran Canaria"
-          price={25}
-          rating={4}
-          description="Join us for an amazing beach party with live music, drinks, and great vibes!"
+          image={eventOfWeek.image}
+          name={eventOfWeek.name}
+          location={eventOfWeek.location}
+          price={eventOfWeek.price}
+          rating={eventOfWeek.rating}
+          description={eventOfWeek.description}
         />
+        ;
       </div>
       <div
         className={`most-visited ${isCarouselVisible ? "visible" : "hidden"}`}
@@ -96,17 +100,20 @@ function HomePage() {
       </div>
 
       <div
-        className={`carousel-section ${isCarouselVisible ? "visible" : "hidden"}`}
+        className={`carousel-section ${
+          isCarouselVisible ? "visible" : "hidden"
+        }`}
         ref={carouselRef}
       >
         <Carousel>
-          <ImageCard
-            imageUrl={TestImage}
-            name="Playa de Maspalomas"
-            rating={4}
-          />
-          <ImageCard imageUrl={TestImage} name="Puerto de Mogán" rating={5} />
-          <ImageCard imageUrl={TestImage} name="Roque Nublo" rating={3} />
+          {mostVisited.map((activity) => (
+            <ImageCard
+              key={activity.name}
+              imageUrl={activity.imageUrl}
+              name={activity.name}
+              rating={activity.rating}
+            />
+          ))}
         </Carousel>
       </div>
       <Footer />

@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
 import "./ClimbingPage.css";
 
@@ -20,6 +19,7 @@ function ClimbingPage() {
       navigate(routes[type]);
     }
   };
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 
   // Definimos las tarjetas y sus propiedades
   const places = [

@@ -6,7 +6,7 @@ function ActivitesCard({ imageUrl, text, onClick, index }) {
       className="activities-card"
       style={{
         backgroundImage: `url(${imageUrl})`,
-        animationDelay: `${index * 0.2}s`, // Retraso dinámico (0.2s entre tarjetas)
+        animationDelay: `${index * 0.2}s`, 
       }}
       onClick={onClick}
     >

@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Map from "../../components/map/Map";
 import CommentsSection from "../../components/commentsSection/CommentsSection";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import "./TransparentKayackPage.css";
 
 function TransparentKayackPage() {
@@ -15,6 +14,8 @@ function TransparentKayackPage() {
   const availability = "3//4";
   const latitude = 28.1275;
   const length = -15.4314 ;
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
+
   return (
     <>
       <Header />

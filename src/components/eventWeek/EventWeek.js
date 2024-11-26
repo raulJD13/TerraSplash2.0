@@ -12,7 +12,7 @@ const EventWeek = ({ image, name, location, price, rating, description }) => {
   };
 
   const toggleBookmark = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setIsBookmarked((prev) => !prev);
   };
 
@@ -33,21 +33,19 @@ const EventWeek = ({ image, name, location, price, rating, description }) => {
 
   return (
     <div className="event-card">
-      {/* Imagen con barra inferior para precio y ubicación */}
       <div className="event-image-container">
         <img src={image} alt={name} className="event-image" />
         <div className="event-overlay">
           <span className="event-location">{location}</span>
           <span className="event-price">€{price}</span>
         </div>
-        {/* Bookmark con estado */}
         <FaBookmark
-          className={`bookmark-event-week-icon ${isBookmarked ? "selected" : ""}`}
+          className={`bookmark-event-week-icon ${
+            isBookmarked ? "selected" : ""
+          }`}
           onClick={toggleBookmark}
         />
       </div>
-
-      {/* Información del evento */}
       <div className="event-info">
         <h3 className="event-name">{name}</h3>
         <div className="event-details">

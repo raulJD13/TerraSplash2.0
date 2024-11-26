@@ -2,7 +2,6 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
 import FloatingButton from "../../components/floatingButton/FloatingButton";
 import "./CanoeingPage.css";
@@ -28,6 +27,7 @@ function CanoeingPage() {
   const handleAdd = () => {
     console.log("Añadir archivo seleccionado");
   };
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 
   const handleEdit = () => {
     console.log("Modificar seleccionado");

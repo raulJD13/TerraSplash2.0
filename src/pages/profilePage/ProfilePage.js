@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import PlaceCard from "../../components/placeCard/PlaceCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import "./ProfilePage.css";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 
   // Datos de ejemplo
   const favourites = [

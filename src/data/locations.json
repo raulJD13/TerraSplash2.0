@@ -1,0 +1,13 @@
+[
+    {
+      "type": "water",
+      "imageId": "sam-wermut",
+      "route": "/waterActivities"
+    },
+    {
+      "type": "land",
+      "imageId": "aleks-dahlberg",
+      "route": "/landActivities"
+    }
+  ]
+  

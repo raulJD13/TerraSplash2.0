@@ -1,21 +1,21 @@
-import { useNavigate } from 'react-router-dom';
-import DarkButton from '../../components/darkButton/DarkButton'
+import { useNavigate } from "react-router-dom";
+import DarkButton from "../../components/darkButton/DarkButton";
 import LightButton from "../../components/lightButton/LightButton";
 import "./FrontPage.css";
-import BackgroundImage from "../../images/daniel-roe-lpjb_UMOyx8-unsplash.jpg";
-import { ReactComponent as Logo } from "../../images/inicialLogo.svg";
 
 function FrontPage() {
   const navigate = useNavigate();
+  const BackgroundImage = "/images/daniel-roe-lpjb_UMOyx8-unsplash.jpg";
+  const Logo = "/images/inicialLogo.svg";  // Ruta correcta para la imagen
 
   const handleLoginClick = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   const handleRegisterClick = () => {
-    navigate('/register'); 
+    navigate("/register");
   };
-  
+
   return (
     <div className="frontpage-container">
       <div className="frontpage-image-section">
@@ -25,7 +25,7 @@ function FrontPage() {
           className="frontpage-background-image"
         />
         <div className="frontpage-logo-container">
-          <Logo className="frontpage-logo" />
+          <img src={Logo} alt="Logo" className="frontpage-logo" />  {/* Usamos la ruta */}
         </div>
       </div>
       <div className="frontpage-button-section">

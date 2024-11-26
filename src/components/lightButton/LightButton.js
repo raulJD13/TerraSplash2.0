@@ -1,13 +1,11 @@
-import { ReactComponent as LoginIcon } from '../../images/LightButton.svg';
 import './LightButton.css';
 
 function LightButton({ onClick }) {
   return (
     <button onClick={onClick} className="light-button">
-      <LoginIcon />
+      <img src="/images/LightButton.svg" alt="Sign up" />
     </button>
   );
 }
-
 
 export default LightButton;

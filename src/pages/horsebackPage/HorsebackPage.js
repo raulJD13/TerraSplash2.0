@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
 import "./HorsebackPage.css";
 
@@ -21,7 +20,8 @@ function HorsebackPage() {
     }
   };
 
-  // Array de lugares para mapear las tarjetas
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
+
   const places = [
     { name: "Countryside Rides", rating: 5 },
     { name: "Beach Rides", rating: 4 },

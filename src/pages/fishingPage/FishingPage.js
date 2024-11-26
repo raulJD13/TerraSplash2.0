@@ -2,7 +2,6 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import PlaceCard from "../../components/placeCard/PlaceCard";
-import TestImage from "../../images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
 import "./FishingPage.css";
 
@@ -24,6 +23,7 @@ function FishingPage() {
       navigate(routes[type]);
     }
   };
+  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
 
   // Array de lugares para mapear las tarjetas
   const places = [

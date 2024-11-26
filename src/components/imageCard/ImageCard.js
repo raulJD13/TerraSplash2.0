@@ -14,7 +14,7 @@ const ImageCard = ({ imageUrl, name, rating }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const toggleBookmark = (e) => {
-    e.stopPropagation(); // Evitar que el clic en el marcador afecte otros eventos
+    e.stopPropagation(); 
     setIsBookmarked(!isBookmarked);
   };
 
