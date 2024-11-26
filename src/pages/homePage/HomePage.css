@@ -24,13 +24,20 @@
   padding-bottom: 60px;
 }
 
-.cardlocation-water-container {
-  padding-bottom: 35px;
+.cardlocation-water-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Ajusta el espacio entre las cartas */
+}
+.cardlocation-land-container {
+padding-bottom: 40px;
+}
+.card-location-container {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-.cardlocation-land-container {
-  padding-bottom: 60px;
-}
 
 .event-of-the-week {
   padding-bottom: 60px;

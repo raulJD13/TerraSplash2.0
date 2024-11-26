@@ -1,6 +1,6 @@
 import "./CardLocation.css";
 
-const CardLocation = ({ type, imageUrl ,onClick}) => {
+const CardLocation = ({ type, imageUrl, onClick }) => {
   return (
     <div
       className="card-location"
