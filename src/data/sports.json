@@ -1,0 +1,75 @@
+[
+    {
+      "text": "Hiking",
+      "route": "/landActivities/hiking",
+      "imageUrl": "/images/hiking.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Climbing",
+      "route": "/landActivities/climbing",
+      "imageUrl": "/images/climbing.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Cycling",
+      "route": "/landActivities/cycling",
+      "imageUrl": "/images/cycling.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Horseback",
+      "route": "/landActivities/horseback",
+      "imageUrl": "/images/horseback.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Skydiving",
+      "route": "/landActivities/skydiving",
+      "imageUrl": "/images/skydiving.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Motocross",
+      "route": "/landActivities/motocross",
+      "imageUrl": "/images/motocross.jpg",
+      "type": "land"
+    },
+    {
+      "text": "Canoeing",
+      "route": "/waterActivities/canoeing",
+      "imageUrl": "/images/canoeing.jpg",
+      "type": "water"
+    },
+    {
+      "text": "Fishing",
+      "route": "/waterActivities/fishing",
+      "imageUrl": "/images/fishing.jpg",
+      "type": "water"
+    },
+    {
+      "text": "Diving",
+      "route": "/waterActivities/diving",
+      "imageUrl": "/images/diving.jpg",
+      "type": "water"
+    },
+    {
+      "text": "Windsurfing",
+      "route": "/waterActivities/windsurfing",
+      "imageUrl": "/images/windsurfing.jpg",
+      "type": "water"
+    },
+    {
+      "text": "Parasailing",
+      "route": "/waterActivities/parasailing",
+      "imageUrl": "/images/parasailing.jpg",
+      "type": "water"
+    },
+    {
+      "text": "Jet Skiing",
+      "route": "/waterActivities/jet-skiing",
+      "imageUrl": "/images/jetski.jpg",
+      "type": "water"
+    }
+  ]
+  

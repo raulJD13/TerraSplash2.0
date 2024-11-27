@@ -1,3 +1,7 @@
+.land-activities-title{
+  padding-top: 90px;
+}
+
 .land-title{
   padding-top: 90px;
 }
@@ -38,7 +42,7 @@
   }
   
   .animated {
-    opacity: 0; /* Por defecto oculto */
-    animation: fadeInUp 0.8s ease-out forwards; /* Aparece con efecto */
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out forwards; 
   }
   
