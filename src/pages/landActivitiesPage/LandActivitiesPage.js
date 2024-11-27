@@ -3,7 +3,8 @@ import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import ActivitesCard from "../../components/activitiesCard/ActivitiesCard";
 import { useNavigate } from "react-router-dom";
-import sports from "../../data/sports.json";
+// import sports from "../../data/sports.json";
+import activitiesData from "../../data/activities.json"
 import "./LandActivitiesPage.css";
 
 function LandActivitiesPage() {
@@ -13,7 +14,7 @@ function LandActivitiesPage() {
   };
 
   // solo terrestres
-  const landActivities = sports.filter((activity) => activity.type === "land");
+  const landActivities = activitiesData.sports.filter((activity) => activity.type === "land");
 
   return (
     <>

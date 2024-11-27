@@ -3,8 +3,9 @@ import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import ActivitesCard from "../../components/activitiesCard/ActivitiesCard";
 import { useNavigate } from "react-router-dom";
-// import waterData from "../../data/waterActivities.json";
-import sports from "../../data/sports.json";
+// import sports from "../../data/sports.json";
+import activitiesData from "../../data/activities.json"
+
 import "./WaterActivitesPage.css";
 
 function WaterActivitiesPage() {
@@ -15,7 +16,7 @@ function WaterActivitiesPage() {
   };
 
   // solo agua
-  const waterActivities = sports.filter(activity => activity.type === "water");
+  const waterActivities =  activitiesData.sports.filter((activity) => activity.type === "water");
 
 
   return (

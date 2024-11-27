@@ -6,20 +6,21 @@ import ProfilePage from "./pages/profilePage/ProfilePage";
 import RegisterPageSecond from "./pages/registerPageSecond/RegisterPageSecond";
 import HomePage from "./pages/homePage/HomePage";
 import WaterActivitiesPage from "./pages/waterActivitiesPage/WaterActivitiesPage";
-import CanoeingPage from "./pages/canoeingPage/CanoeingPage";
+/*import CanoeingPage from "./pages/canoeingPage/CanoeingPage";
 import FishingPage from "./pages/fishingPage/FishingPage";
 import DivingPage from "./pages/divingPage/DivingPage";
 import WindsurfingPage from "./pages/windsurfingPage/WindsurfingPage";
 import ParasailingPage from "./pages/parasailingPage/ParasailingPage";
-import JetSkiingPage from "./pages/jetSkiingPage/JetSkiingPage";
+import JetSkiingPage from "./pages/jetSkiingPage/JetSkiingPage";*/
 import LandaActivitiesPage from "./pages/landActivitiesPage/LandActivitiesPage";
-import HikingPage from "./pages/hikingPage/HikingPage";
+/*import HikingPage from "./pages/hikingPage/HikingPage";
 import ClimbingPage from "./pages/climbingPage/ClimbingPage";
 import CyclingPage from "./pages/cyclingPage/CyclingPage";
 import HorsebackPage from "./pages/horsebackPage/HorsebackPage";
 import SkydivingPage from "./pages/skydivingPage/SkydivingPage";
 import MotocrossPage from "./pages/motocrossPage/MotocrossPage";
-import TransparentKayackPage from "./pages/transparentKayackPage/TransparentKayackPage";
+import TransparentKayackPage from "./pages/transparentKayackPage/TransparentKayackPage";*/
+import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
           <Route path="/landActivities" element={<LandaActivitiesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
 
-          {/* Water activities */}
+          {/* Water activities 
           <Route path="/waterActivities/canoeing" element={<CanoeingPage />} />
           <Route path="/waterActivities/fishing" element={<FishingPage />} />
           <Route path="/waterActivities/diving" element={<DivingPage />} />
@@ -58,14 +59,16 @@ function App() {
           <Route
             path="/waterActivities/canoeing/transparent-kayak"
             element={<TransparentKayackPage />}
-          />
-          {/* Land activities */}
+          />*/}
+          {/* Land activities
           <Route path="/landActivities/hiking" element={<HikingPage />} />
           <Route path="/landActivities/climbing" element={<ClimbingPage />} />
           <Route path="/landActivities/cycling" element={<CyclingPage />} />
           <Route path="/landActivities/horseback" element={<HorsebackPage />} />
           <Route path="/landActivities/skydiving" element={<SkydivingPage />} />
-          <Route path="/landActivities/motocross" element={<MotocrossPage />} />
+          <Route path="/landActivities/motocross" element={<MotocrossPage />} / >*/}
+          <Route path="/activities/:type/:sport" element={<ActivitiesPage />} />
+
         </Routes>
       </Router>
     </>
