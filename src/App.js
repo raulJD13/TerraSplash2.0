@@ -8,8 +8,6 @@ import HomePage from "./pages/homePage/HomePage";
 import WaterActivitiesPage from "./pages/waterActivitiesPage/WaterActivitiesPage";
 import ActivityPage from "./pages/actitvityPage/ActivityPage";
 import LandaActivitiesPage from "./pages/landActivitiesPage/LandActivitiesPage";
-
-/*import TransparentKayackPage from "./pages/transparentKayackPage/TransparentKayackPage";*/
 import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage";
 import "@fortawesome/fontawesome-free/css/all.css";
 
@@ -29,11 +27,6 @@ function App() {
           <Route path="/waterActivities" element={<WaterActivitiesPage />} />
           <Route path="/landActivities" element={<LandaActivitiesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-
-          {/*  <Route
-            path="/waterActivities/canoeing/transparent-kayak"
-            element={<TransparentKayackPage />}
-          />*/}
           <Route path="/activities/:type/:sport" element={<ActivitiesPage />} />
           <Route path="/activities/:type/:sport/:activity" element={<ActivityPage />} />
         </Routes>
