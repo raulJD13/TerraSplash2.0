@@ -1,0 +1,68 @@
+.activity-container {
+    background-color: #f0f8ff;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    padding-bottom: 100px;
+  }
+  
+  .activity-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Aumenté el espacio inferior */
+    gap: 20px; /* Espacio entre elementos */
+  }
+  
+  .activity-info {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.8; /* Mejor separación entre líneas */
+  }
+  
+  .activity-image {
+    width: 220px; /* Aumenté el tamaño para dar más balance */
+    height: 220px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-left: 20px;
+  }
+  
+  .activity-description {
+    margin: 30px 0; /* Espacio mayor arriba y abajo */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6; /* Mejor separación de texto */
+  }
+  
+  .join-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 30px; /* Separación adicional del mapa */
+    float: right; /* Botón alineado a la derecha */
+  }
+  
+  .join-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .activity-map {
+    margin-bottom: 40px; /* Separación mayor entre mapa y comentarios */
+    margin-top: 10px;
+  }
+  
+  .comments-section {
+    margin-top: 30px;
+  ;
+  }
+  
+  .activity-title-container {
+    text-align: center; /* Centra el título */
+    margin-bottom: 40px; /* Espacio extra bajo el título */
+    padding-top: 120px;
+  }
+  

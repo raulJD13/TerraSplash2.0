@@ -14,11 +14,12 @@ function ActivitiesPage() {
   const handleCardClick = (route) => navigate(route);
 
   const filteredActivities = activitiesData.sports
-  .filter((activity) => {
-    console.log(activity); 
-    return activity.type === type && activity.name === sport;
-  })
+  .filter((activity) => 
+    activity.type.toLowerCase() === type.toLowerCase() &&
+    activity.name.toLowerCase() === sport.toLowerCase()
+  )
   .flatMap((activity) => activity.activities);
+
 
 
   const capitalizeFirstLetter = (str) => {

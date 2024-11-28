@@ -7,8 +7,51 @@
       "route": "/activities/land/hiking",
       "imageUrl": "/images/hiking.jpg",
       "activities": [
-        { "name": "Mountain Trail", "rating": 5, "route": "/activities/land/hiking/mountain-trail", "image": "/images/hiking.jpg" },
-        { "name": "Forest Walk", "rating": 4, "route": "/activities/land/hiking/forest-walk", "image": "/images/hiking.jpg" }
+        {
+          "name": "Mountain Trail",
+          "rating": 5,
+          "route": "/activities/land/hiking/mountain-trail",
+          "image": "/images/hiking.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Forest Walk",
+          "rating": 4,
+          "route": "/activities/land/hiking/forest-walk",
+          "image": "/images/hiking.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Roque Nublo",
+          "rating": 5,
+          "route": "/activities/land/hiking/roque-nublo",
+          "image": "/images/hiking.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -18,8 +61,36 @@
       "route": "/activities/land/cycling",
       "imageUrl": "/images/cycling.jpg",
       "activities": [
-        { "name": "Road Cycling", "rating": 5, "route": "/activities/land/cycling/road-cycling", "image": "/images/cycling.jpg" },
-        { "name": "Mountain Biking", "rating": 4, "route": "/activities/land/cycling/mountain-biking", "image": "/images/cycling.jpg" }
+        {
+          "name": "Road Cycling",
+          "rating": 5,
+          "route": "/activities/land/cycling/road-cycling",
+          "image": "/images/cycling.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Mountain Biking",
+          "rating": 4,
+          "route": "/activities/land/cycling/mountain-biking",
+          "image": "/images/cycling.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -29,8 +100,36 @@
       "route": "/activities/land/climbing",
       "imageUrl": "/images/climbing.jpg",
       "activities": [
-        { "name": "Rock Climbing", "rating": 5, "route": "/activities/land/climbing/rock-climbing", "image": "/images/climbing.jpg" },
-        { "name": "Bouldering", "rating": 4, "route": "/activities/land/climbing/bouldering", "image": "/images/climbing.jpg" }
+        {
+          "name": "Rock Climbing",
+          "rating": 5,
+          "route": "/activities/land/climbing/rock-climbing",
+          "image": "/images/climbing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Bouldering",
+          "rating": 4,
+          "route": "/activities/land/climbing/bouldering",
+          "image": "/images/climbing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -40,8 +139,36 @@
       "route": "/activities/land/horseback",
       "imageUrl": "/images/horseback.jpg",
       "activities": [
-        { "name": "Trail Riding", "rating": 5, "route": "/activities/land/horseback/trail-riding", "image": "/images/horseback.jpg" },
-        { "name": "Western Riding", "rating": 4, "route": "/activities/land/horseback/western-riding", "image": "/images/horseback.jpg" }
+        {
+          "name": "Trail Riding",
+          "rating": 5,
+          "route": "/activities/land/horseback/trail-riding",
+          "image": "/images/horseback.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Western Riding",
+          "rating": 4,
+          "route": "/activities/land/horseback/western-riding",
+          "image": "/images/horseback.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -51,8 +178,36 @@
       "route": "/activities/land/skydiving",
       "imageUrl": "/images/skydiving.jpg",
       "activities": [
-        { "name": "Tandem Skydive", "rating": 5, "route": "/activities/land/skydiving/tandem", "image": "/images/skydiving.jpg" },
-        { "name": "Solo Skydive", "rating": 4, "route": "/activities/land/skydiving/solo", "image": "/images/skydiving.jpg" }
+        {
+          "name": "Tandem Skydive",
+          "rating": 5,
+          "route": "/activities/land/skydiving/tandem",
+          "image": "/images/skydiving.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Solo Skydive",
+          "rating": 4,
+          "route": "/activities/land/skydiving/solo",
+          "image": "/images/skydiving.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -62,10 +217,39 @@
       "route": "/activities/land/motocross",
       "imageUrl": "/images/motocross.jpg",
       "activities": [
-        { "name": "Dirt Track Racing", "rating": 5, "route": "/activities/land/motocross/dirt-track", "image": "/images/motocross.jpg" },
-        { "name": "Enduro", "rating": 4, "route": "/activities/land/motocross/enduro", "image": "/images/motocross.jpg" }
+        {
+          "name": "Dirt Track Racing",
+          "rating": 5,
+          "route": "/activities/land/motocross/dirt-track",
+          "image": "/images/motocross.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Enduro",
+          "rating": 4,
+          "route": "/activities/land/motocross/enduro",
+          "image": "/images/motocross.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
+
     {
       "type": "water",
       "name": "Canoeing",
@@ -73,8 +257,36 @@
       "route": "/activities/water/canoeing",
       "imageUrl": "/images/canoeing.jpg",
       "activities": [
-        { "name": "Transparent Kayak", "rating": 3, "route": "/activities/water/canoeing/transparent-kayak", "image": "/images/canoeing.jpg" },
-        { "name": "Crystal Clear Waters", "rating": 4, "route": "/activities/water/canoeing/crystal-clear-waters", "image": "/images/canoeing.jpg" }
+        {
+          "name": "Transparent Kayak",
+          "rating": 3,
+          "route": "/activities/water/canoeing/transparent-kayak",
+          "image": "/images/canoeing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Crystal Clear Waters",
+          "rating": 4,
+          "route": "/activities/water/canoeing/crystal-clear-waters",
+          "image": "/images/canoeing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -84,8 +296,36 @@
       "route": "/activities/water/fishing",
       "imageUrl": "/images/fishing.jpg",
       "activities": [
-        { "name": "Deep Sea Fishing", "rating": 5, "route": "/activities/water/fishing/deep-sea-fishing", "image": "/images/fishing.jpg" },
-        { "name": "Lake Serenity", "rating": 4, "route": "/activities/water/fishing/lake-serenity", "image": "/images/fishing.jpg" }
+        {
+          "name": "Deep Sea Fishing",
+          "rating": 5,
+          "route": "/activities/water/fishing/deep-sea-fishing",
+          "image": "/images/fishing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Lake Serenity",
+          "rating": 4,
+          "route": "/activities/water/fishing/lake-serenity",
+          "image": "/images/fishing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -95,8 +335,36 @@
       "route": "/activities/water/diving",
       "imageUrl": "/images/diving.jpg",
       "activities": [
-        { "name": "Scuba Diving", "rating": 5, "route": "/activities/water/diving/scuba-diving", "image": "/images/diving.jpg" },
-        { "name": "Snorkeling", "rating": 4, "route": "/activities/water/diving/snorkeling", "image": "/images/diving.jpg" }
+        {
+          "name": "Scuba Diving",
+          "rating": 5,
+          "route": "/activities/water/diving/scuba-diving",
+          "image": "/images/diving.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Snorkeling",
+          "rating": 4,
+          "route": "/activities/water/diving/snorkeling",
+          "image": "/images/diving.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -106,8 +374,36 @@
       "route": "/activities/water/windsurfing",
       "imageUrl": "/images/windsurfing.jpg",
       "activities": [
-        { "name": "Extreme Windsurfing", "rating": 5, "route": "/activities/water/windsurfing/extreme-windsurfing", "image": "/images/windsurfing.jpg" },
-        { "name": "Relaxed Windsurfing", "rating": 4, "route": "/activities/water/windsurfing/relaxed-windsurfing", "image": "/images/windsurfing.jpg" }
+        {
+          "name": "Extreme Windsurfing",
+          "rating": 5,
+          "route": "/activities/water/windsurfing/extreme-windsurfing",
+          "image": "/images/windsurfing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Relaxed Windsurfing",
+          "rating": 4,
+          "route": "/activities/water/windsurfing/relaxed-windsurfing",
+          "image": "/images/windsurfing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -117,8 +413,36 @@
       "route": "/activities/water/parasailing",
       "imageUrl": "/images/parasailing.jpg",
       "activities": [
-        { "name": "High Altitude Parasailing", "rating": 5, "route": "/activities/water/parasailing/high-altitude", "image": "/images/parasailing.jpg" },
-        { "name": "Seaside Parasailing", "rating": 4, "route": "/activities/water/parasailing/seaside", "image": "/images/parasailing.jpg" }
+        {
+          "name": "High Altitude Parasailing",
+          "rating": 5,
+          "route": "/activities/water/parasailing/high-altitude",
+          "image": "/images/parasailing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Seaside Parasailing",
+          "rating": 4,
+          "route": "/activities/water/parasailing/seaside",
+          "image": "/images/parasailing.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     },
     {
@@ -128,8 +452,36 @@
       "route": "/activities/water/jet-skiing",
       "imageUrl": "/images/jetski.jpg",
       "activities": [
-        { "name": "Jet Ski Adventure", "rating": 5, "route": "/activities/water/jet-skiing/jet-ski-adventure", "image": "/images/jetski.jpg" },
-        { "name": "Calm Water Jet Ski", "rating": 4, "route": "/activities/water/jet-skiing/calm-water", "image": "/images/jetski.jpg" }
+        {
+          "name": "Jet Ski Adventure",
+          "rating": 5,
+          "route": "/activities/water/jet-skiing/jet-ski-adventure",
+          "image": "/images/jetski.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        },
+        {
+          "name": "Calm Water Jet Ski",
+          "rating": 4,
+          "route": "/activities/water/jet-skiing/calm-water",
+          "image": "/images/jetski.jpg",
+          "details": {
+            "location": "Mountain Ridge",
+            "difficulty": "Hard",
+            "distance": "15 km",
+            "availability": "All year",
+            "description": "A challenging trail with breathtaking views of the mountains.",
+            "latitude": 35.6586,
+            "longitude": -120.0113
+          }
+        }
       ]
     }
   ]
