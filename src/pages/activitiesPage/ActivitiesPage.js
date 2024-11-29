@@ -15,6 +15,8 @@ function ActivitiesPage() {
   const [activities, setActivities] = useState(activitiesData);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [activityToDelete, setActivityToDelete] = useState(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [activityToEdit, setActivityToEdit] = useState(null); // Guardar actividad a editar
 
   const handleCardClick = (route) => navigate(route);
 
@@ -46,8 +48,32 @@ function ActivitiesPage() {
     }
   };
 
-  const handleEdit = () => {
-    console.log("Modificar seleccionado");
+  const handleEdit = (activity) => {
+    setActivityToEdit(activity);
+    setIsEditModalOpen(true); // Abrir modal de edición
+  };
+
+  const handleSaveEdit = (editedActivity) => {
+    const updatedActivities = { ...activities };
+    const sportIndex = updatedActivities.sports.findIndex(
+      (activity) =>
+        activity.type.toLowerCase() === type.toLowerCase() &&
+        activity.name.toLowerCase() === sport.toLowerCase()
+    );
+
+    if (sportIndex !== -1) {
+      const activityIndex = updatedActivities.sports[sportIndex].activities.findIndex(
+        (activity) => activity.name === editedActivity.name
+      );
+      
+      if (activityIndex !== -1) {
+        updatedActivities.sports[sportIndex].activities[activityIndex] = editedActivity;
+        setActivities(updatedActivities);
+      }
+    }
+
+    setIsEditModalOpen(false);
+    setActivityToEdit(null);
   };
 
   const handleDelete = (activityName) => {
@@ -124,6 +150,25 @@ function ActivitiesPage() {
             ¿Estás seguro de que quieres eliminar la actividad:{" "}
             <strong>{activityToDelete?.name}</strong>?
           </p>
+        </Modal>
+
+        {/* Modal de edición de actividad */}
+        <Modal
+          title="Editar Actividad"
+          open={isEditModalOpen}
+          onCancel={() => setIsEditModalOpen(false)}
+          onOk={() => handleSaveEdit(activityToEdit)} // Guardar los cambios
+        >
+          {/* Aquí debes colocar un formulario para editar la actividad */}
+          <div>
+            <label>Nombre de la actividad</label>
+            <input
+              type="text"
+              value={activityToEdit?.name || ""}
+              onChange={(e) => setActivityToEdit({ ...activityToEdit, name: e.target.value })}
+            />
+          </div>
+          {/* Puedes agregar más campos de edición según sea necesario */}
         </Modal>
       </div>
       <Footer />
