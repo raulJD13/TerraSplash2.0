@@ -7,18 +7,28 @@ import CommentsSection from "../../components/commentsSection/CommentsSection";
 import data from "../../data/activities.json"; // Importa tu JSON
 import "./ActivityPage.css";
 
-function ActivityPage() {
-  const { type, sport, activity } = useParams(); // Obtiene los parámetros de la URL
+const ActivityPage = () => {
+  const { type, sport, activity } = useParams();
 
   // Encuentra el deporte y la actividad correspondiente
-  const sportData = data.sports.find((s) => s.type === type && s.name.toLowerCase() === sport.toLowerCase());
-  const activityData = sportData.activities.find((a) => a.route.endsWith(activity));
+  const sportData = data.sports?.find(
+    (s) => s.type === type && s.name.toLowerCase() === sport?.toLowerCase()
+  );
 
-  if (!activityData) {
-    return <p>Activity not found!</p>; // Manejo de error si no se encuentra la actividad
+  // Validar si se encontró el deporte
+  if (!sportData) {
+    return <p>Sport not found!</p>;
   }
 
-  // Extrae detalles
+  const activityData = sportData.activities?.find((a) =>
+    a.route.endsWith(activity)
+  );
+
+  // Validar si se encontró la actividad
+  if (!activityData) {
+    return <p>Activity not found!</p>;
+  }
+
   const { details } = activityData;
 
   return (
@@ -43,7 +53,11 @@ function ActivityPage() {
               <strong>Availability:</strong> {details.availability}
             </p>
           </div>
-          <img src={activityData.image} alt={activityData.name} className="activity-image" />
+          <img
+            src={activityData.image}
+            alt={activityData.name}
+            className="activity-image"
+          />
         </div>
         <div className="activity-description">
           <p>{details.description}</p>
@@ -57,6 +71,7 @@ function ActivityPage() {
       <Footer />
     </>
   );
-}
+};
+
 
 export default ActivityPage;
