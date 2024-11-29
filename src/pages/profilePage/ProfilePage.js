@@ -1,64 +1,67 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import PlaceCard from "../../components/placeCard/PlaceCard";
+import activityData from "../../data/activities.json";
 import userData from "../../data/users.json";
 import "./ProfilePage.css";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
-  const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
   const [user, setUser] = useState({});
 
+  // Cargar datos del usuario al montar el componente
   useEffect(() => {
-    setUser(userData);
+    setUser(userData); // Supone que userData contiene los datos de un único usuario
   }, []);
 
-  const favourites = [
-    TestImage,
-    TestImage,
-    TestImage,
-    TestImage,
-    TestImage,
-    TestImage,
-  ];
+  // Filtrar actividades por categorías
+  const favourites = activityData.sports
+    ?.flatMap((sport) =>
+      sport.activities.filter((activity) => activity.favourite)
+    ) || [];
 
-  const bookmarks = [
-    { id: 1, name: "Teide Volcano", rating: 5, imageUrl: TestImage },
-    { id: 2, name: "Cueva de los Verdes", rating: 4, imageUrl: TestImage },
-  ];
+  const bookmarks = activityData.sports
+    ?.flatMap((sport) =>
+      sport.activities.filter((activity) => activity.bookmark)
+    ) || [];
 
-  const activities = [
-    { id: 1, name: "Roque Nublo", rating: 4, imageUrl: TestImage },
-    { id: 2, name: "Barranco de la Vaca", rating: 5, imageUrl: TestImage },
-  ];
+  const activities = activityData.sports
+    ?.flatMap((sport) =>
+      sport.activities.filter((activity) => activity.joined)
+    ) || [];
 
+  // Renderizado del contenido de las pestañas
   const renderTabContent = () => {
     if (activeTab === "favourites") {
       return (
         <div className="favourites-grid">
-          {favourites.map((imageUrl, index) => (
+          {favourites.map((activity, index) => (
             <div key={index} className="grid-item">
-              <img src={imageUrl} alt={`Favourite ${index + 1}`} />
+              <img
+                src={activity.image}
+                alt={activity.name}
+                className="favourites-image"
+              />
             </div>
           ))}
         </div>
       );
     } else if (activeTab === "bookmarks") {
-      return bookmarks.map((bookmark) => (
+      return bookmarks.map((bookmark, index) => (
         <PlaceCard
-          key={bookmark.id}
+          key={index}
           name={bookmark.name}
           rating={bookmark.rating}
-          imageUrl={bookmark.imageUrl}
+          imageUrl={bookmark.image}
         />
       ));
     } else if (activeTab === "activities") {
-      return activities.map((activity) => (
+      return activities.map((activity, index) => (
         <PlaceCard
-          key={activity.id}
+          key={index}
           name={activity.name}
           rating={activity.rating}
-          imageUrl={activity.imageUrl}
+          imageUrl={activity.image}
         />
       ));
     } else {
@@ -71,33 +74,36 @@ function ProfilePage() {
       <div className="profile-container">
         {/* Imagen de portada */}
         <div className="cover-image">
-          <img src={TestImage} alt="Cover" />
+          <img
+            src={user.coverImage || "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg"}
+            alt="Cover"
+          />
         </div>
 
         {/* Sección del perfil */}
         <div className="profile-section">
           <div className="user-info">
             <img
-              src={user.profileImage || TestImage}
+              src={user.profileImage || "/images/user-placeholder.jpg"}
               alt="User"
               className="user-image"
             />
-            <h2 className="user-name">{user.username}</h2>
-            <p className="user-location">Las Palmas de Gran Canaria</p>
+            <h2 className="user-name">{user.username || "Username"}</h2>
+            <p className="user-location">{user.location || "Location"}</p>
           </div>
 
           {/* Estadísticas */}
           <div className="profile-stats">
             <div className="stat">
-              <h3>12</h3>
+              <h3>{favourites.length}</h3>
               <p>Favourites</p>
             </div>
             <div className="stat">
-              <h3>7</h3>
+              <h3>{bookmarks.length}</h3>
               <p>Bookmarks</p>
             </div>
             <div className="stat">
-              <h3>2</h3>
+              <h3>{activities.length}</h3>
               <p>Activities</p>
             </div>
           </div>

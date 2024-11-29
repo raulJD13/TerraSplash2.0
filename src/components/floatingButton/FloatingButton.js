@@ -52,7 +52,7 @@ const FloatingButton = ({
     deleteForm.resetFields();
   };
 
-  const handleOpenEditModal = () => setIsEditModalOpen(true);
+  //const handleOpenEditModal = () => setIsEditModalOpen(true);
   const handleCloseEditModal = () => {
     setIsEditModalOpen(false);
     editForm.resetFields();

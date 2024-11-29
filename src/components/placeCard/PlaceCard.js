@@ -40,7 +40,7 @@ function PlaceCard({ name, rating, imageUrl, onClick, index }) {
           <FaBookmark
             className={`bookmark-place-card-icon ${isBookmarked ? "selected" : ""}`}
             onClick={(e) => {
-              e.stopPropagation(); // Previene que el clic en el ícono propague el evento
+              e.stopPropagation(); 
               toggleBookmark();
             }}
           />

@@ -2,6 +2,7 @@
   "username": "Paco_1230",
   "email": "paco@gmail.com",
   "pasword": "test123",
-  "profileImage": "",
-  "backgroundImage": ""
+  "location": "Las Palmas de Gran Canaria",
+  "profileImage": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg",
+  "backgroundImage": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg"
 }

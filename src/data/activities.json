@@ -12,6 +12,9 @@
           "rating": 5,
           "route": "/activities/land/hiking/mountain-trail",
           "image": "/images/hiking.jpg",
+          "bookmark": true,
+          "favourite": true,
+          "joined": false,
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -27,6 +30,10 @@
           "rating": 4,
           "route": "/activities/land/hiking/forest-walk",
           "image": "/images/hiking.jpg",
+          "bookmark": true,
+          "favourite": true,
+          "joined": true,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -42,6 +49,10 @@
           "rating": 5,
           "route": "/activities/land/hiking/roque-nublo",
           "image": "/images/hiking.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -66,6 +77,10 @@
           "rating": 5,
           "route": "/activities/land/cycling/road-cycling",
           "image": "/images/cycling.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -81,6 +96,10 @@
           "rating": 4,
           "route": "/activities/land/cycling/mountain-biking",
           "image": "/images/cycling.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -105,6 +124,10 @@
           "rating": 5,
           "route": "/activities/land/climbing/rock-climbing",
           "image": "/images/climbing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -120,6 +143,10 @@
           "rating": 4,
           "route": "/activities/land/climbing/bouldering",
           "image": "/images/climbing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -144,6 +171,10 @@
           "rating": 5,
           "route": "/activities/land/horseback/trail-riding",
           "image": "/images/horseback.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -159,6 +190,10 @@
           "rating": 4,
           "route": "/activities/land/horseback/western-riding",
           "image": "/images/horseback.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -183,6 +218,10 @@
           "rating": 5,
           "route": "/activities/land/skydiving/tandem",
           "image": "/images/skydiving.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -198,6 +237,10 @@
           "rating": 4,
           "route": "/activities/land/skydiving/solo",
           "image": "/images/skydiving.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -222,6 +265,10 @@
           "rating": 5,
           "route": "/activities/land/motocross/dirt-track",
           "image": "/images/motocross.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -237,6 +284,10 @@
           "rating": 4,
           "route": "/activities/land/motocross/enduro",
           "image": "/images/motocross.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -262,6 +313,10 @@
           "rating": 3,
           "route": "/activities/water/canoeing/transparent-kayak",
           "image": "/images/canoeing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -277,6 +332,10 @@
           "rating": 4,
           "route": "/activities/water/canoeing/crystal-clear-waters",
           "image": "/images/canoeing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -301,6 +360,10 @@
           "rating": 5,
           "route": "/activities/water/fishing/deep-sea-fishing",
           "image": "/images/fishing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": true,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -316,6 +379,10 @@
           "rating": 4,
           "route": "/activities/water/fishing/lake-serenity",
           "image": "/images/fishing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -340,6 +407,10 @@
           "rating": 5,
           "route": "/activities/water/diving/scuba-diving",
           "image": "/images/diving.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -355,6 +426,10 @@
           "rating": 4,
           "route": "/activities/water/diving/snorkeling",
           "image": "/images/diving.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -379,6 +454,10 @@
           "rating": 5,
           "route": "/activities/water/windsurfing/extreme-windsurfing",
           "image": "/images/windsurfing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -394,6 +473,10 @@
           "rating": 4,
           "route": "/activities/water/windsurfing/relaxed-windsurfing",
           "image": "/images/windsurfing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -418,6 +501,10 @@
           "rating": 5,
           "route": "/activities/water/parasailing/high-altitude",
           "image": "/images/parasailing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -433,6 +520,10 @@
           "rating": 4,
           "route": "/activities/water/parasailing/seaside",
           "image": "/images/parasailing.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -457,6 +548,9 @@
           "rating": 5,
           "route": "/activities/water/jet-skiing/jet-ski-adventure",
           "image": "/images/jetski.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
@@ -472,6 +566,9 @@
           "rating": 4,
           "route": "/activities/water/jet-skiing/calm-water",
           "image": "/images/jetski.jpg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Hard",
