@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import { Modal } from "antd"; // Importa Modal
 import activitiesData from "../../data/activities.json";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -12,6 +13,8 @@ function ActivitiesPage() {
   const navigate = useNavigate();
   const { type, sport } = useParams();
   const [activities, setActivities] = useState(activitiesData);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [activityToDelete, setActivityToDelete] = useState(null);
 
   const handleCardClick = (route) => navigate(route);
 
@@ -34,7 +37,7 @@ function ActivitiesPage() {
         activity.type.toLowerCase() === type.toLowerCase() &&
         activity.name.toLowerCase() === sport.toLowerCase()
     );
-  
+
     if (sportIndex !== -1) {
       updatedActivities.sports[sportIndex].activities.push(newActivity);
       setActivities(updatedActivities);
@@ -42,14 +45,44 @@ function ActivitiesPage() {
       console.error("El deporte especificado no existe.");
     }
   };
-  
 
   const handleEdit = () => {
     console.log("Modificar seleccionado");
   };
 
-  const handleDelete = () => {
-    console.log("Eliminar seleccionado");
+  const handleDelete = (activityName) => {
+    const updatedActivities = { ...activities };
+
+    const sportIndex = updatedActivities.sports.findIndex(
+      (activity) =>
+        activity.type.toLowerCase() === type.toLowerCase() &&
+        activity.name.toLowerCase() === sport.toLowerCase()
+    );
+
+    if (sportIndex !== -1) {
+      const activityList = updatedActivities.sports[sportIndex].activities;
+      const filteredActivities = activityList.filter(
+        (activity) => activity.name.toLowerCase() !== activityName.toLowerCase()
+      );
+
+      updatedActivities.sports[sportIndex].activities = filteredActivities;
+      setActivities(updatedActivities);
+    } else {
+      console.error("El deporte especificado no existe.");
+    }
+  };
+
+  const handleDeleteConfirm = () => {
+    if (activityToDelete) {
+      handleDelete(activityToDelete.name);
+    }
+    setActivityToDelete(null);
+    setIsDeleteModalOpen(false);
+  };
+
+  const handleDeleteCancel = () => {
+    setActivityToDelete(null);
+    setIsDeleteModalOpen(false);
   };
 
   return (
@@ -79,6 +112,19 @@ function ActivitiesPage() {
           onEdit={handleEdit}
           onDelete={handleDelete}
         />
+        <Modal
+          title="Confirmar Eliminación"
+          open={isDeleteModalOpen}
+          onOk={handleDeleteConfirm}
+          onCancel={handleDeleteCancel}
+          okText="Eliminar"
+          cancelText="Cancelar"
+        >
+          <p>
+            ¿Estás seguro de que quieres eliminar la actividad:{" "}
+            <strong>{activityToDelete?.name}</strong>?
+          </p>
+        </Modal>
       </div>
       <Footer />
     </>

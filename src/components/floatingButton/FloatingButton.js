@@ -15,27 +15,32 @@ import {
   InputNumber,
 } from "antd";
 import { useState } from "react";
-import { useParams } from "react-router-dom"; // Importa useParams
+import { useParams } from "react-router-dom";
 import "./FloatingButton.css";
 
 const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [form] = Form.useForm();
-  const { type, sport } = useParams(); // Extrae type y sport de la URL
+  const [deleteForm] = Form.useForm();
+  const { type, sport } = useParams();
 
-  // Estados para manejar previsualización de imágenes
+  // Estados para manejar la previsualización de imágenes
   const [previewVisible, setPreviewVisible] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [fileList, setFileList] = useState([]);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleOpenAddModal = () => setIsAddModalOpen(true);
+  const handleCloseAddModal = () => {
+    setIsAddModalOpen(false);
+    form.resetFields();
+    setFileList([]);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    form.resetFields();
-    setFileList([]); // Resetea la lista de archivos al cerrar
+  const handleOpenDeleteModal = () => setIsDeleteModalOpen(true);
+  const handleCloseDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+    deleteForm.resetFields();
   };
 
   const handlePreview = async (file) => {
@@ -47,7 +52,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
     setFileList(newFileList);
   };
 
-  const handleFormSubmit = (values) => {
+  const handleAddActivity = (values) => {
     if (!type || !sport) {
       console.error("Error: type o sport no están definidos.");
       return;
@@ -61,7 +66,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
       name: values.name,
       rating: 0,
       route: activityRoute,
-      image: fileList[0]?.url || fileList[0]?.thumbUrl || defaultImage, // Usar URL de la imagen cargada
+      image: fileList[0]?.url || fileList[0]?.thumbUrl || defaultImage,
       details: {
         location: values.location,
         difficulty: values.difficulty,
@@ -73,8 +78,13 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
       },
     };
 
-    onAdd(newActivity); // Llamar la función para agregar la actividad
-    handleCloseModal();
+    onAdd(newActivity); // Llama al callback de añadir
+    handleCloseAddModal();
+  };
+
+  const handleDeleteActivity = (values) => {
+    onDelete(values.name); // Llama al callback de eliminar
+    handleCloseDeleteModal();
   };
 
   return (
@@ -92,7 +102,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
         <FloatButton
           icon={<FileAddOutlined />}
           tooltip="Añadir actividad"
-          onClick={handleOpenModal}
+          onClick={handleOpenAddModal}
         />
         <FloatButton
           icon={<EditOutlined />}
@@ -102,17 +112,18 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
         <FloatButton
           icon={<DeleteOutlined />}
           tooltip="Eliminar"
-          onClick={onDelete}
+          onClick={handleOpenDeleteModal}
         />
       </FloatButton.Group>
 
+      {/* Modal para añadir actividad */}
       <Modal
         title="Añadir Actividad"
-        open={isModalOpen}
-        onCancel={handleCloseModal}
+        open={isAddModalOpen}
+        onCancel={handleCloseAddModal}
         onOk={() => form.submit()}
       >
-        <Form form={form} layout="vertical" onFinish={handleFormSubmit}>
+        <Form form={form} layout="vertical" onFinish={handleAddActivity}>
           <Form.Item
             label="Nombre de la actividad"
             name="name"
@@ -123,9 +134,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
           <Form.Item
             label="Ubicación"
             name="location"
-            rules={[
-              { required: true, message: "Por favor ingrese la ubicación" },
-            ]}
+            rules={[{ required: true, message: "Por favor ingrese la ubicación" }]}
           >
             <Input />
           </Form.Item>
@@ -143,9 +152,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
           <Form.Item
             label="Distancia (km)"
             name="distance"
-            rules={[
-              { required: true, message: "Por favor ingrese la distancia" },
-            ]}
+            rules={[{ required: true, message: "Por favor ingrese la distancia" }]}
           >
             <InputNumber min={0} step={0.1} />
           </Form.Item>
@@ -153,10 +160,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
             label="Disponibilidad"
             name="availability"
             rules={[
-              {
-                required: true,
-                message: "Por favor seleccione la disponibilidad",
-              },
+              { required: true, message: "Seleccione la disponibilidad" },
             ]}
           >
             <Select>
@@ -168,27 +172,21 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
           <Form.Item
             label="Descripción"
             name="description"
-            rules={[
-              { required: true, message: "Por favor ingrese una descripción" },
-            ]}
+            rules={[{ required: true, message: "Ingrese una descripción" }]}
           >
             <Input.TextArea />
           </Form.Item>
           <Form.Item
             label="Latitud"
             name="latitude"
-            rules={[
-              { required: true, message: "Por favor ingrese la latitud" },
-            ]}
+            rules={[{ required: true, message: "Ingrese la latitud" }]}
           >
             <InputNumber min={-90} max={90} step={0.0001} />
           </Form.Item>
           <Form.Item
             label="Longitud"
             name="longitude"
-            rules={[
-              { required: true, message: "Por favor ingrese la longitud" },
-            ]}
+            rules={[{ required: true, message: "Ingrese la longitud" }]}
           >
             <InputNumber min={-180} max={180} step={0.0001} />
           </Form.Item>
@@ -196,7 +194,7 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
             label="Imagen"
             name="image"
             valuePropName="fileList"
-            getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
+            getValueFromEvent={(e) => Array.isArray(e) ? e : e?.fileList}
           >
             <Upload
               listType="picture-card"
@@ -216,6 +214,29 @@ const FloatingButton = ({ style = {}, onAdd, onEdit, onDelete, defaultImage }) =
         </Form>
       </Modal>
 
+      {/* Modal para eliminar actividad */}
+      <Modal
+        title="Eliminar Actividad"
+        open={isDeleteModalOpen}
+        onCancel={handleCloseDeleteModal}
+        onOk={() => deleteForm.submit()}
+      >
+        <Form
+          form={deleteForm}
+          layout="vertical"
+          onFinish={handleDeleteActivity}
+        >
+          <Form.Item
+            label="Nombre de la actividad a eliminar"
+            name="name"
+            rules={[{ required: true, message: "Ingrese el nombre" }]}
+          >
+            <Input />
+          </Form.Item>
+        </Form>
+      </Modal>
+
+      {/* Modal para previsualización */}
       <Modal
         visible={previewVisible}
         footer={null}
