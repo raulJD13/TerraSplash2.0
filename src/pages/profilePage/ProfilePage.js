@@ -1,13 +1,18 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import PlaceCard from "../../components/placeCard/PlaceCard";
+import userData from "../../data/users.json";
 import "./ProfilePage.css";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
   const TestImage = "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg";
+  const [user, setUser] = useState({});
 
-  // Datos de ejemplo
+  useEffect(() => {
+    setUser(userData);
+  }, []);
+
   const favourites = [
     TestImage,
     TestImage,
@@ -16,10 +21,12 @@ function ProfilePage() {
     TestImage,
     TestImage,
   ];
+
   const bookmarks = [
     { id: 1, name: "Teide Volcano", rating: 5, imageUrl: TestImage },
     { id: 2, name: "Cueva de los Verdes", rating: 4, imageUrl: TestImage },
   ];
+
   const activities = [
     { id: 1, name: "Roque Nublo", rating: 4, imageUrl: TestImage },
     { id: 2, name: "Barranco de la Vaca", rating: 5, imageUrl: TestImage },
@@ -70,8 +77,12 @@ function ProfilePage() {
         {/* Sección del perfil */}
         <div className="profile-section">
           <div className="user-info">
-            <img src={TestImage} alt="User" className="user-image" />
-            <h2 className="user-name">Paco</h2>
+            <img
+              src={user.profileImage || TestImage}
+              alt="User"
+              className="user-image"
+            />
+            <h2 className="user-name">{user.username}</h2>
             <p className="user-location">Las Palmas de Gran Canaria</p>
           </div>
 
@@ -114,8 +125,6 @@ function ProfilePage() {
               Activities
             </button>
           </div>
-
-          {/* Contenido dinámico según pestaña activa */}
           <div className="tabs-content">{renderTabContent()}</div>
         </div>
       </div>
