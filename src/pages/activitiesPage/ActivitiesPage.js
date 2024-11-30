@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { Modal } from "antd"; // Importa Modal
+import { Modal } from "antd";
 import activitiesData from "../../data/activities.json";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -110,6 +110,22 @@ function ActivitiesPage() {
     setActivityToDelete(null);
     setIsDeleteModalOpen(false);
   };
+  const toggleBookmark = (activityName) => {
+    const updatedActivities = { ...activities };
+
+    // Busca el deporte y la actividad correspondiente
+    updatedActivities.sports.forEach((sport) => {
+      sport.activities.forEach((activity) => {
+        if (activity.name === activityName) {
+          activity.bookmark = !activity.bookmark; // Cambia el estado de bookmark
+        }
+      });
+    });
+
+    setActivities(updatedActivities); // Actualiza el estado
+  };
+
+  
 
   return (
     <>
@@ -126,7 +142,10 @@ function ActivitiesPage() {
                 name={activity.name}
                 rating={activity.rating}
                 imageUrl={activity.image}
+                isBookmarked={activity.bookmark} // Estado del bookmark
                 onClick={() => handleCardClick(activity.route)}
+                onToggleBookmark={() => toggleBookmark(activity.name)} // Función para actualizar el estado
+
               />
             ))
           ) : (

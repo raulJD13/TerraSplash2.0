@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Map from "../../components/map/Map";
 import CommentsSection from "../../components/commentsSection/CommentsSection";
-import data from "../../data/activities.json"; // Importa tu JSON
+import data from "../../data/activities.json";
 import "./ActivityPage.css";
 
 const ActivityPage = () => {
@@ -15,21 +16,35 @@ const ActivityPage = () => {
     (s) => s.type === type && s.name.toLowerCase() === sport?.toLowerCase()
   );
 
-  // Validar si se encontró el deporte
+  const activityData = sportData?.activities?.find((a) =>
+    a.route.endsWith(activity)
+  );
+
+  // Estados iniciales (definidos siempre, aunque no se encuentren datos)
+  const [isFavourite, setIsFavourite] = useState(activityData?.favourite || false);
+  const [isJoined, setIsJoined] = useState(activityData?.joined || false);
+
   if (!sportData) {
     return <p>Sport not found!</p>;
   }
 
-  const activityData = sportData.activities?.find((a) =>
-    a.route.endsWith(activity)
-  );
-
-  // Validar si se encontró la actividad
   if (!activityData) {
     return <p>Activity not found!</p>;
   }
 
   const { details } = activityData;
+
+  const handleFavouriteClick = () => {
+    const newValue = !isFavourite;
+    setIsFavourite(newValue);
+    activityData.favourite = newValue; // Actualiza localmente
+  };
+
+  const handleJoinClick = () => {
+    const newValue = !isJoined;
+    setIsJoined(newValue);
+    activityData.joined = newValue; // Actualiza localmente
+  };
 
   return (
     <>
@@ -62,7 +77,24 @@ const ActivityPage = () => {
         <div className="activity-description">
           <p>{details.description}</p>
         </div>
-        <button className="join-button">Join</button>
+        <div className="action-section">
+          <div className="favourite-section">
+            <button
+              className={`favourite-button ${isFavourite ? "favourited" : ""}`}
+              onClick={handleFavouriteClick}
+            >
+              {isFavourite ? "Remove from Favourites" : "Add to Favourites"}
+            </button>
+          </div>
+          <div className="join-section">
+            <button
+              className={`join-button ${isJoined ? "joined" : ""}`}
+              onClick={handleJoinClick}
+            >
+              {isJoined ? "Leave" : "Join"}
+            </button>
+          </div>
+        </div>
         <div className="activity-map">
           <Map location={{ lat: details.latitude, lng: details.longitude }} />
         </div>
@@ -72,6 +104,5 @@ const ActivityPage = () => {
     </>
   );
 };
-
 
 export default ActivityPage;
