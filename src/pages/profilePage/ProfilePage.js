@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import PlaceCard from "../../components/placeCard/PlaceCard";
 import activityData from "../../data/activities.json";
@@ -8,27 +9,42 @@ import "./ProfilePage.css";
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
   const [user, setUser] = useState({});
+  const [data, setData] = useState(activityData);
+  const navigate = useNavigate();
 
   // Cargar datos del usuario al montar el componente
   useEffect(() => {
-    setUser(userData); // Supone que userData contiene los datos de un único usuario
+    setUser(userData);
   }, []);
 
   // Filtrar actividades por categorías
-  const favourites = activityData.sports
+  const favourites = data.sports
     ?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.favourite)
     ) || [];
 
-  const bookmarks = activityData.sports
+  const bookmarks = data.sports
     ?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.bookmark)
     ) || [];
 
-  const activities = activityData.sports
+  const activities = data.sports
     ?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.joined)
     ) || [];
+
+  // Función para alternar el estado de bookmark
+  const toggleBookmark = (activityName) => {
+    const updatedData = { ...data };
+    updatedData.sports.forEach((sport) => {
+      sport.activities.forEach((activity) => {
+        if (activity.name === activityName) {
+          activity.bookmark = !activity.bookmark;
+        }
+      });
+    });
+    setData(updatedData); // Actualiza el estado con la actividad modificada
+  };
 
   // Renderizado del contenido de las pestañas
   const renderTabContent = () => {
@@ -36,7 +52,11 @@ function ProfilePage() {
       return (
         <div className="favourites-grid">
           {favourites.map((activity, index) => (
-            <div key={index} className="grid-item">
+            <div
+              key={index}
+              className="grid-item"
+              onClick={() => navigate(activity.route)} // Navegar a la ruta
+            >
               <img
                 src={activity.image}
                 alt={activity.name}
@@ -53,6 +73,9 @@ function ProfilePage() {
           name={bookmark.name}
           rating={bookmark.rating}
           imageUrl={bookmark.image}
+          isBookmarked={bookmark.bookmark}
+          onToggleBookmark={() => toggleBookmark(bookmark.name)} // Alternar bookmark
+          onClick={() => navigate(bookmark.route)} // Navegar al hacer clic
         />
       ));
     } else if (activeTab === "activities") {
@@ -62,6 +85,7 @@ function ProfilePage() {
           name={activity.name}
           rating={activity.rating}
           imageUrl={activity.image}
+          onClick={() => navigate(activity.route)} // Navegar al hacer clic
         />
       ));
     } else {
