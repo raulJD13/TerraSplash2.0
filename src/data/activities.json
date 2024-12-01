@@ -8,36 +8,35 @@
       "imageUrl": "/images/hiking.jpg",
       "activities": [
         {
-          "name": "Mountain Trail",
+          "name": "Pico de las Nieves",
           "rating": 5,
-          "route": "/activities/land/hiking/mountain-trail",
-          "image": "/images/hiking.jpg",
+          "route": "/activities/land/hiking/Picos-de-las-nieves",
+          "image": "/images/Pico-de-las-nieves.jpg",
           "bookmark": true,
           "favourite": true,
           "joined": false,
           "details": {
             "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "difficulty": "Media",
+            "distance": "8 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "A hike through the highest point of Gran Canaria with panoramic views.",
+            "latitude": 27.9223,
+            "longitude": -15.5476
           }
         },
         {
-          "name": "Forest Walk",
+          "name": "La Solana - Los Roques",
           "rating": 4,
-          "route": "/activities/land/hiking/forest-walk",
-          "image": "/images/hiking.jpg",
+          "route": "/activities/land/hiking/la-solana",
+          "image": "/images/la-solana.jpeg",
           "bookmark": true,
           "favourite": true,
           "joined": true,
-
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Mogan",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "8,2 km",
             "availability": "All year",
             "description": "A challenging trail with breathtaking views of the mountains.",
             "latitude": 35.6586,
@@ -48,19 +47,19 @@
           "name": "Roque Nublo",
           "rating": 5,
           "route": "/activities/land/hiking/roque-nublo",
-          "image": "/images/hiking.jpg",
+          "image": "/images/Roque-nublo12.jpeg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
 
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Tejeda",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "2 km",
             "availability": "All year",
             "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "latitude": 27.970833333333,
+            "longitude": -15.6125
           }
         }
       ]
@@ -73,41 +72,40 @@
       "imageUrl": "/images/cycling.jpg",
       "activities": [
         {
-          "name": "Road Cycling",
+          "name": "Ciclismo en Fataga",
           "rating": 5,
-          "route": "/activities/land/cycling/road-cycling",
-          "image": "/images/cycling.jpg",
+          "route": "/activities/land/cycling/ciclismo-en-fataga",
+          "image": "/images/fataga.jpeg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
 
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Fataga",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "40 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Una ruta desafiante que atraviesa paisajes montañosos y vistas impresionantes.",
+            "latitude": 27.8964,
+            "longitude": -15.5681
           }
         },
         {
-          "name": "Mountain Biking",
+          "name": "Paseo en bici Maspalomas",
           "rating": 4,
-          "route": "/activities/land/cycling/mountain-biking",
-          "image": "/images/cycling.jpg",
-          "bookmark": false,
-          "favourite": false,
+          "route": "/activities/land/cycling/maspalomas",
+          "image": "/images/maspalomas-bici.jpg",
+          "bookmark": true,
+          "favourite": true,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
+            "location": "Maspalomas",
+            "difficulty": "Easy",
             "distance": "15 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Un paseo tranquilo por las dunas y la costa de Maspalomas.",
+            "latitude": 27.7428,
+            "longitude": -15.5987
           }
         }
       ]
@@ -120,41 +118,39 @@
       "imageUrl": "/images/climbing.jpg",
       "activities": [
         {
-          "name": "Rock Climbing",
+          "name": "Rock Climbing at Tamadaba",
           "rating": 5,
-          "route": "/activities/land/climbing/rock-climbing",
-          "image": "/images/climbing.jpg",
+          "route": "/activities/land/climbing/rock-climbing-tamadaba",
+          "image": "/images/climbing-tamadaba.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Tamadaba, Gran Canaria",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "Variable",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Tamadaba offers some of the best rock climbing spots in Gran Canaria, with stunning cliffs and routes for experienced climbers.",
+            "latitude": 28.0156,
+            "longitude": -15.7047
           }
         },
         {
-          "name": "Bouldering",
+          "name": "Bouldering in Ayacata",
           "rating": 4,
-          "route": "/activities/land/climbing/bouldering",
-          "image": "/images/climbing.jpg",
+          "route": "/activities/land/climbing/bouldering-ayacata",
+          "image": "/images/bouldering-ayacata.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Ayacata, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "Variable",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Ayacata is a hotspot for bouldering enthusiasts, featuring diverse rock formations and routes suitable for intermediate climbers.",
+            "latitude": 27.9282,
+            "longitude": -15.5997
           }
         }
       ]
@@ -167,41 +163,39 @@
       "imageUrl": "/images/horseback.jpg",
       "activities": [
         {
-          "name": "Trail Riding",
+          "name": "Trail Riding in San Mateo",
           "rating": 5,
-          "route": "/activities/land/horseback/trail-riding",
-          "image": "/images/horseback.jpg",
+          "route": "/activities/land/horseback/trail-riding-san-mateo",
+          "image": "/images/horseback-san-mateo.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "San Mateo, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "10 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Explore scenic trails in the lush countryside of San Mateo, ideal for riders seeking a blend of adventure and tranquility.",
+            "latitude": 28.0071,
+            "longitude": -15.5406
           }
         },
         {
-          "name": "Western Riding",
+          "name": "Western Riding in Maspalomas",
           "rating": 4,
-          "route": "/activities/land/horseback/western-riding",
-          "image": "/images/horseback.jpg",
+          "route": "/activities/land/horseback/western-riding-maspalomas",
+          "image": "/images/horseback-maspalomas.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Maspalomas, Gran Canaria",
+            "difficulty": "Easy",
+            "distance": "5 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Ride through the iconic dunes of Maspalomas, perfect for beginners and those looking for a relaxing equestrian experience.",
+            "latitude": 27.7413,
+            "longitude": -15.5995
           }
         }
       ]
@@ -214,41 +208,39 @@
       "imageUrl": "/images/skydiving.jpg",
       "activities": [
         {
-          "name": "Tandem Skydive",
+          "name": "Tandem Skydive over Playa del Inglés",
           "rating": 5,
-          "route": "/activities/land/skydiving/tandem",
-          "image": "/images/skydiving.jpg",
+          "route": "/activities/land/skydiving/tandem-playa-del-ingles",
+          "image": "/images/skydiving-playa-del-ingles.png",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Playa del Inglés, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "10 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Experience the thrill of freefall over the iconic beaches of Playa del Inglés, with stunning ocean views and expert guidance.",
+            "latitude": 27.7574,
+            "longitude": -15.5782
           }
         },
         {
-          "name": "Solo Skydive",
-          "rating": 4,
-          "route": "/activities/land/skydiving/solo",
-          "image": "/images/skydiving.jpg",
+          "name": "Sunset Skydive over Maspalomas",
+          "rating": 5,
+          "route": "/activities/land/skydiving/sunset-maspalomas",
+          "image": "/images/skydiving-maspalomas.jpeg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Maspalomas, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "8 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "A breathtaking skydive at sunset, offering unforgettable views of the Maspalomas dunes and Atlantic Ocean.",
+            "latitude": 27.7413,
+            "longitude": -15.5995
           }
         }
       ]
@@ -261,41 +253,57 @@
       "imageUrl": "/images/motocross.jpg",
       "activities": [
         {
-          "name": "Dirt Track Racing",
+          "name": "Dirt Track Racing in Telde",
           "rating": 5,
-          "route": "/activities/land/motocross/dirt-track",
-          "image": "/images/motocross.jpg",
+          "route": "/activities/land/motocross/dirt-track-telde",
+          "image": "/images/motocross-telde.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Telde, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "12 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Thrilling dirt track racing with a mix of curves and jumps, set against the rugged beauty of Telde's landscapes.",
+            "latitude": 27.9922,
+            "longitude": -15.4168
           }
         },
         {
-          "name": "Enduro",
+          "name": "Enduro Trails in Santa Lucía",
           "rating": 4,
-          "route": "/activities/land/motocross/enduro",
-          "image": "/images/motocross.jpg",
+          "route": "/activities/land/motocross/enduro-santa-lucia",
+          "image": "/images/motocross-santa-lucia.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Santa Lucía de Tirajana, Gran Canaria",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "20 km",
+            "availability": "Seasonal",
+            "description": "Conquer the diverse terrains of Santa Lucía, from rocky paths to sandy stretches, in this challenging enduro trail.",
+            "latitude": 27.9087,
+            "longitude": -15.5366
+          }
+        },
+        {
+          "name": "Off-Road Adventure in Fataga",
+          "rating": 5,
+          "route": "/activities/land/motocross/off-road-fataga",
+          "image": "/images/motocross-fataga.jpeg",
+          "bookmark": false,
+          "favourite": false,
+          "joined": false,
+          "details": {
+            "location": "Fataga, Gran Canaria",
+            "difficulty": "Moderate",
+            "distance": "18 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "An unforgettable off-road motocross adventure through the dramatic valleys and scenic routes of Fataga.",
+            "latitude": 27.8795,
+            "longitude": -15.5537
           }
         }
       ]
@@ -309,41 +317,39 @@
       "imageUrl": "/images/canoeing.jpg",
       "activities": [
         {
-          "name": "Transparent Kayak",
-          "rating": 3,
+          "name": "Transparent Kayak Experience",
+          "rating": 4,
           "route": "/activities/water/canoeing/transparent-kayak",
-          "image": "/images/canoeing.jpg",
+          "image": "/images/Transparent-kayak.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Puerto de Mogán",
+            "difficulty": "Easy",
+            "distance": "3 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Explore the stunning marine life of Gran Canaria's clear waters in a transparent kayak, perfect for families and nature enthusiasts.",
+            "latitude": 27.8158,
+            "longitude": -15.7593
           }
         },
         {
-          "name": "Crystal Clear Waters",
-          "rating": 4,
-          "route": "/activities/water/canoeing/crystal-clear-waters",
-          "image": "/images/canoeing.jpg",
+          "name": "Crystal Clear Lagoons",
+          "rating": 5,
+          "route": "/activities/water/canoeing/crystal-clear-lagoons",
+          "image": "/images/crystal-clear-lagoons.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
-            "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "location": "La Aldea de San Nicolás",
+            "difficulty": "Moderate",
+            "distance": "5 km",
+            "availability": "Seasonal (Spring & Summer)",
+            "description": "Navigate through the calm, crystal-clear lagoons surrounded by volcanic landscapes and untouched nature.",
+            "latitude": 27.9558,
+            "longitude": -15.7977
           }
         }
       ]
@@ -359,38 +365,36 @@
           "name": "Deep Sea Fishing",
           "rating": 5,
           "route": "/activities/water/fishing/deep-sea-fishing",
-          "image": "/images/fishing.jpg",
+          "image": "/images/deep-sea-fishing.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": true,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Mogán Harbour",
+            "difficulty": "Moderate",
+            "distance": "20 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Embark on a thrilling deep sea fishing expedition in the Atlantic Ocean, where you can catch big game fish like marlins and tuna.",
+            "latitude": 27.8186,
+            "longitude": -15.753
           }
         },
         {
-          "name": "Lake Serenity",
+          "name": "Lake Serenity Fishing",
           "rating": 4,
           "route": "/activities/water/fishing/lake-serenity",
-          "image": "/images/fishing.jpg",
+          "image": "/images/lake-serenity-fishing.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
-            "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "location": "Presa de las Niñas",
+            "difficulty": "Easy",
+            "distance": "5 km",
+            "availability": "Seasonal (Spring to Autumn)",
+            "description": "Enjoy a peaceful fishing experience at one of Gran Canaria's serene lakes, surrounded by nature and beautiful landscapes.",
+            "latitude": 27.9394,
+            "longitude": -15.8324
           }
         }
       ]
@@ -406,38 +410,36 @@
           "name": "Scuba Diving",
           "rating": 5,
           "route": "/activities/water/diving/scuba-diving",
-          "image": "/images/diving.jpg",
+          "image": "/images/scuba-diving.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Puerto de Mogán",
+            "difficulty": "Moderate",
+            "distance": "5 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Explore the vibrant marine life and underwater caves of Gran Canaria with a certified instructor in the crystal-clear waters of Puerto de Mogán.",
+            "latitude": 27.8186,
+            "longitude": -15.753
           }
         },
         {
           "name": "Snorkeling",
           "rating": 4,
           "route": "/activities/water/diving/snorkeling",
-          "image": "/images/diving.jpg",
+          "image": "/images/snorkeling.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Playa de Amadores",
+            "difficulty": "Easy",
+            "distance": "1 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Discover the colorful marine life just below the surface at Playa de Amadores, a perfect spot for beginners and families.",
+            "latitude": 27.803,
+            "longitude": -15.7464
           }
         }
       ]
@@ -453,38 +455,36 @@
           "name": "Extreme Windsurfing",
           "rating": 5,
           "route": "/activities/water/windsurfing/extreme-windsurfing",
-          "image": "/images/windsurfing.jpg",
+          "image": "/images/extreme-windsurf.jpeg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Pozo Izquierdo",
             "difficulty": "Hard",
-            "distance": "15 km",
+            "distance": "10 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "For experienced windsurfers looking for challenging conditions, Pozo Izquierdo offers powerful winds and world-class waves.",
+            "latitude": 27.9762,
+            "longitude": -15.4358
           }
         },
         {
           "name": "Relaxed Windsurfing",
           "rating": 4,
           "route": "/activities/water/windsurfing/relaxed-windsurfing",
-          "image": "/images/windsurfing.jpg",
+          "image": "/images/relaxed-windsurfing.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Playa de las Canteras",
+            "difficulty": "Easy",
+            "distance": "5 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Ideal for beginners and those looking for a relaxing experience. Enjoy steady winds and warm waters at Playa de las Canteras.",
+            "latitude": 28.14,
+            "longitude": -15.33
           }
         }
       ]
@@ -500,38 +500,36 @@
           "name": "High Altitude Parasailing",
           "rating": 5,
           "route": "/activities/water/parasailing/high-altitude",
-          "image": "/images/parasailing.jpg",
+          "image": "/images/parasailiing-high.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Maspalomas",
+            "difficulty": "Moderate",
+            "distance": "10 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Soar above the dunes of Maspalomas and enjoy panoramic views of the coast and mountains. Perfect for those seeking an exhilarating experience.",
+            "latitude": 27.7611,
+            "longitude": -15.585
           }
         },
         {
           "name": "Seaside Parasailing",
           "rating": 4,
           "route": "/activities/water/parasailing/seaside",
-          "image": "/images/parasailing.jpg",
+          "image": "/images/parasailling-sea.jpg",
           "bookmark": false,
           "favourite": false,
           "joined": false,
-
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Playa de Amadores",
+            "difficulty": "Easy",
+            "distance": "5 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "Enjoy a relaxed parasailing experience above the tranquil waters of Playa de Amadores, with stunning views of the beach and the Atlantic Ocean.",
+            "latitude": 27.8072,
+            "longitude": -15.7192
           }
         }
       ]
@@ -552,13 +550,13 @@
           "favourite": false,
           "joined": false,
           "details": {
-            "location": "Mountain Ridge",
+            "location": "Puerto Rico",
             "difficulty": "Hard",
             "distance": "15 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "An adrenaline-pumping adventure along the coastline of Puerto Rico, offering breathtaking views of cliffs and the Atlantic Ocean.",
+            "latitude": 27.7816,
+            "longitude": -15.7179
           }
         },
         {
@@ -570,13 +568,13 @@
           "favourite": false,
           "joined": false,
           "details": {
-            "location": "Mountain Ridge",
-            "difficulty": "Hard",
-            "distance": "15 km",
+            "location": "Playa de Amadores",
+            "difficulty": "Easy",
+            "distance": "10 km",
             "availability": "All year",
-            "description": "A challenging trail with breathtaking views of the mountains.",
-            "latitude": 35.6586,
-            "longitude": -120.0113
+            "description": "A relaxed jet skiing experience in the calm waters of Playa de Amadores, perfect for those who prefer a more serene ride.",
+            "latitude": 27.8072,
+            "longitude": -15.7192
           }
         }
       ]

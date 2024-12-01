@@ -48,34 +48,6 @@ function ActivitiesPage() {
     }
   };
 
-  const handleEdit = (activity) => {
-    setActivityToEdit(activity);
-    setIsEditModalOpen(true); // Abrir modal de edición
-  };
-
-  const handleSaveEdit = (editedActivity) => {
-    const updatedActivities = { ...activities };
-    const sportIndex = updatedActivities.sports.findIndex(
-      (activity) =>
-        activity.type.toLowerCase() === type.toLowerCase() &&
-        activity.name.toLowerCase() === sport.toLowerCase()
-    );
-
-    if (sportIndex !== -1) {
-      const activityIndex = updatedActivities.sports[sportIndex].activities.findIndex(
-        (activity) => activity.name === editedActivity.name
-      );
-      
-      if (activityIndex !== -1) {
-        updatedActivities.sports[sportIndex].activities[activityIndex] = editedActivity;
-        setActivities(updatedActivities);
-      }
-    }
-
-    setIsEditModalOpen(false);
-    setActivityToEdit(null);
-  };
-
   const handleDelete = (activityName) => {
     const updatedActivities = { ...activities };
 
@@ -125,8 +97,40 @@ function ActivitiesPage() {
     setActivities(updatedActivities); // Actualiza el estado
   };
 
-  
+  const handleEdit = (activity) => {
+    setActivityToEdit(activity); // Guarda los datos de la actividad seleccionada
+    setIsEditModalOpen(true); // Abre el modal de edición
+  };
+  const handleSaveEdit = (editedActivity) => {
+    const updatedActivities = { ...activities };
+    const sportIndex = updatedActivities.sports.findIndex(
+      (activity) =>
+        activity.type.toLowerCase() === type.toLowerCase() &&
+        activity.name.toLowerCase() === sport.toLowerCase()
+    );
 
+    if (sportIndex !== -1) {
+      const activityIndex = updatedActivities.sports[
+        sportIndex
+      ].activities.findIndex(
+        (activity) => activity.name === editedActivity.name
+      );
+
+      if (activityIndex !== -1) {
+        updatedActivities.sports[sportIndex].activities[activityIndex] = {
+          ...editedActivity,
+          details: {
+            ...editedActivity.details,
+          },
+        };
+        setActivities(updatedActivities);
+      }
+    }
+
+    setIsEditModalOpen(false);
+    setActivityToEdit(null);
+  };
+  
   return (
     <>
       <Header />
@@ -145,7 +149,6 @@ function ActivitiesPage() {
                 isBookmarked={activity.bookmark} // Estado del bookmark
                 onClick={() => handleCardClick(activity.route)}
                 onToggleBookmark={() => toggleBookmark(activity.name)} // Función para actualizar el estado
-
               />
             ))
           ) : (
@@ -184,7 +187,9 @@ function ActivitiesPage() {
             <input
               type="text"
               value={activityToEdit?.name || ""}
-              onChange={(e) => setActivityToEdit({ ...activityToEdit, name: e.target.value })}
+              onChange={(e) =>
+                setActivityToEdit({ ...activityToEdit, name: e.target.value })
+              }
             />
           </div>
           {/* Puedes agregar más campos de edición según sea necesario */}

@@ -54,3 +54,7 @@
 .register-button:hover {
   background-color: #333;
 }
+
+.error-text{
+  padding-left: 25px;
+}
