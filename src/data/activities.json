@@ -15,6 +15,9 @@
           "bookmark": true,
           "favourite": true,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": true,
           "details": {
             "location": "Mountain Ridge",
             "difficulty": "Media",
@@ -33,6 +36,9 @@
           "bookmark": true,
           "favourite": true,
           "joined": true,
+          "price": 0,
+          "event": false,
+          "trend": true,
           "details": {
             "location": "Mogan",
             "difficulty": "Hard",
@@ -51,6 +57,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
 
           "details": {
             "location": "Tejeda",
@@ -79,6 +88,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": true,
 
           "details": {
             "location": "Fataga",
@@ -98,6 +110,9 @@
           "bookmark": true,
           "favourite": true,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Maspalomas",
             "difficulty": "Easy",
@@ -125,6 +140,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Tamadaba, Gran Canaria",
             "difficulty": "Hard",
@@ -143,6 +161,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Ayacata, Gran Canaria",
             "difficulty": "Moderate",
@@ -170,6 +191,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "San Mateo, Gran Canaria",
             "difficulty": "Moderate",
@@ -188,6 +212,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Maspalomas, Gran Canaria",
             "difficulty": "Easy",
@@ -215,6 +242,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Playa del Inglés, Gran Canaria",
             "difficulty": "Moderate",
@@ -233,6 +263,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Maspalomas, Gran Canaria",
             "difficulty": "Moderate",
@@ -260,6 +293,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Telde, Gran Canaria",
             "difficulty": "Moderate",
@@ -278,6 +314,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Santa Lucía de Tirajana, Gran Canaria",
             "difficulty": "Hard",
@@ -296,6 +335,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Fataga, Gran Canaria",
             "difficulty": "Moderate",
@@ -324,6 +366,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Puerto de Mogán",
             "difficulty": "Easy",
@@ -342,6 +387,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "La Aldea de San Nicolás",
             "difficulty": "Moderate",
@@ -369,6 +417,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": true,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Mogán Harbour",
             "difficulty": "Moderate",
@@ -387,6 +438,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Presa de las Niñas",
             "difficulty": "Easy",
@@ -414,6 +468,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Puerto de Mogán",
             "difficulty": "Moderate",
@@ -432,6 +489,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 30,
+          "event": true,
+          "trend": false,
           "details": {
             "location": "Playa de Amadores",
             "difficulty": "Easy",
@@ -459,6 +519,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": true,
+          "trend": false,
           "details": {
             "location": "Pozo Izquierdo",
             "difficulty": "Hard",
@@ -477,6 +540,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Playa de las Canteras",
             "difficulty": "Easy",
@@ -504,6 +570,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Maspalomas",
             "difficulty": "Moderate",
@@ -522,6 +591,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": true,
           "details": {
             "location": "Playa de Amadores",
             "difficulty": "Easy",
@@ -549,6 +621,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Puerto Rico",
             "difficulty": "Hard",
@@ -567,6 +642,9 @@
           "bookmark": false,
           "favourite": false,
           "joined": false,
+          "price": 0,
+          "event": false,
+          "trend": false,
           "details": {
             "location": "Playa de Amadores",
             "difficulty": "Easy",

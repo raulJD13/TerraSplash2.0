@@ -17,23 +17,21 @@ function ProfilePage() {
     setUser(userData);
   }, []);
 
-  // Filtrar actividades por categorías
-  const favourites = data.sports
-    ?.flatMap((sport) =>
+  const favourites =
+    data.sports?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.favourite)
     ) || [];
 
-  const bookmarks = data.sports
-    ?.flatMap((sport) =>
+  const bookmarks =
+    data.sports?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.bookmark)
     ) || [];
 
-  const activities = data.sports
-    ?.flatMap((sport) =>
+  const activities =
+    data.sports?.flatMap((sport) =>
       sport.activities.filter((activity) => activity.joined)
     ) || [];
 
-  // Función para alternar el estado de bookmark
   const toggleBookmark = (activityName) => {
     const updatedData = { ...data };
     updatedData.sports.forEach((sport) => {
@@ -99,7 +97,9 @@ function ProfilePage() {
         {/* Imagen de portada */}
         <div className="cover-image">
           <img
-            src={user.coverImage || "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg"}
+            src={
+              user.coverImage || "/images/deafult-image.jpg"
+            }
             alt="Cover"
           />
         </div>

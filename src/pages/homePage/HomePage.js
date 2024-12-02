@@ -9,8 +9,7 @@ import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
-import eventOfWeek from "../../data/eventOfWeek.json";
-import mostVisited from "../../data/mostVisited.json";
+import activitiesData from "../../data/activities.json";
 import locations from "../../data/locations.json";
 
 function HomePage() {
@@ -27,16 +26,25 @@ function HomePage() {
   // Refs para los contenedores
   const selectionRef = useRef(null);
   const cardWaterRef = useRef(null);
-  const cardLandRef = useRef(null); // Ref para las cartas de "land"
+  const cardLandRef = useRef(null);
   const eventRef = useRef(null);
   const carouselRef = useRef(null);
 
   // Detectar visibilidad
   const isSelectionVisible = useIntersectionObserver(selectionRef);
   const isCardWaterVisible = useIntersectionObserver(cardWaterRef);
-  const isCardLandVisible = useIntersectionObserver(cardLandRef); // Usamos esto para las cartas de "land"
+  const isCardLandVisible = useIntersectionObserver(cardLandRef);
   const isEventVisible = useIntersectionObserver(eventRef);
   const isCarouselVisible = useIntersectionObserver(carouselRef);
+
+  // Extraer actividades
+  const extractActivities = (filterKey) =>
+    activitiesData.sports.flatMap((category) =>
+      category.activities.filter((activity) => activity[filterKey])
+    );
+
+  const eventsOfWeek = extractActivities("event");
+  const trendingActivities = extractActivities("trend");
 
   return (
     <div className="homepage-container">
@@ -93,26 +101,33 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Event Of The Week */}
-      <div
-        className={`event-of-the-week ${isEventVisible ? "visible" : "hidden"}`}
-        ref={eventRef}
-      >
-        <Title text="Event Of The Week" />
-      </div>
-      <div
-        className={`card-event-week ${isEventVisible ? "visible" : "hidden"}`}
-        ref={eventRef}
-      >
-        <EventWeek
-          image={eventOfWeek.image}
-          name={eventOfWeek.name}
-          location={eventOfWeek.location}
-          price={eventOfWeek.price}
-          rating={eventOfWeek.rating}
-          description={eventOfWeek.description}
-        />
-      </div>
+       {/* Event Of The Week */}
+       {eventsOfWeek.length > 0 && (
+        <div
+          className={`event-of-the-week ${
+            isEventVisible ? "visible" : "hidden"
+          }`}
+          ref={eventRef}
+        >
+          <div className="event-week-title">
+            <Title text="Event Of The Week" />
+          </div>
+          <div
+            className={`card-event-week ${
+              isEventVisible ? "visible" : "hidden"
+            }`}
+          >
+            <EventWeek
+              image={eventsOfWeek[0].image}
+              name={eventsOfWeek[0].name}
+              location={eventsOfWeek[0].details.location}
+              price={eventsOfWeek[0].price}
+              rating={eventsOfWeek[0].rating}
+              description={eventsOfWeek[0].details.description}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Most Visited */}
       <div
@@ -129,10 +144,10 @@ function HomePage() {
         ref={carouselRef}
       >
         <Carousel>
-          {mostVisited.map((activity) => (
+          {trendingActivities.map((activity) => (
             <ImageCard
               key={activity.name}
-              imageUrl={activity.imageUrl}
+              imageUrl={activity.image}
               name={activity.name}
               rating={activity.rating}
             />
@@ -142,7 +157,7 @@ function HomePage() {
 
       <Footer />
     </div>
-  );
+  )
 }
 
 export default HomePage;
