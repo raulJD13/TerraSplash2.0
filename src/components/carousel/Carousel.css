@@ -15,20 +15,20 @@
 
 .carousel-content {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Suaviza la animación */
-  gap:10px; /* Espacio entre los ítems */
-  padding: 0 5px; /* Opcional: un pequeño relleno lateral para no cortar los bordes */
+  transition: transform 0.5s ease-in-out; 
+  gap:10px; 
+  padding: 0 5px; 
 }
 
 .carousel-item {
-  flex: 0 0 calc(100% - 10px); /* Ajustamos el ancho del ítem para compensar el gap */
+  flex: 0 0 calc(100% - 10px); 
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff; /* Opcional: añade un fondo para ver mejor las separaciones */
-  border-radius: 10px; /* Opcional: bordes redondeados */
-  overflow: hidden; /* Asegúrate de que las imágenes no se salgan del contenedor */
+  background-color: #fff; 
+  border-radius: 10px; 
+  overflow: hidden; 
 }
 
 
