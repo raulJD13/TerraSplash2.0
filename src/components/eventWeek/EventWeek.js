@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./EventWeek.css";
 import { FaBookmark, FaStar, FaRegStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -11,35 +11,30 @@ const EventWeek = ({
   price,
   rating,
   description,
-  onBookmarkToggle, 
+  route,
+  isBookmarked: initialBookmark,
+  onBookmarkToggle,
 }) => {
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(initialBookmark);
   const navigate = useNavigate();
 
   const handleMoreInfo = () => {
-    navigate(`/event/${id}`);
+    navigate(route); 
   };
 
   const toggleBookmark = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); 
     const newBookmarkState = !isBookmarked;
     setIsBookmarked(newBookmarkState);
-    onBookmarkToggle(id, newBookmarkState); 
+    if (onBookmarkToggle) {
+      onBookmarkToggle(id, newBookmarkState); 
+    }
   };
 
   const renderStars = () => {
-    const totalStars = 5;
-    const stars = [];
-    for (let i = 1; i <= totalStars; i++) {
-      stars.push(
-        i <= rating ? (
-          <FaStar key={i} className="star-icon filled" />
-        ) : (
-          <FaRegStar key={i} className="star-icon" />
-        )
-      );
-    }
-    return stars;
+    return Array.from({ length: 5 }, (_, i) => 
+      i < rating ? <FaStar key={i} className="star-icon filled" /> : <FaRegStar key={i} className="star-icon" />
+    );
   };
 
   return (

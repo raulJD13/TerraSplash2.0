@@ -3,22 +3,27 @@ import "./ImageCard.css";
 import { FaBookmark } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const ImageCard = ({ route, imageUrl, name, rating, onBookmarkToggle }) => {
-  const [isBookmarked, setIsBookmarked] = useState(false);
+const ImageCard = ({
+  route,
+  imageUrl,
+  name,
+  rating,
+  isBookmarked: initialBookmark,
+  onBookmarkToggle,
+}) => {
+  const [isBookmarked, setIsBookmarked] = useState(initialBookmark);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate(route); // Navegar a la ruta proporcionada en el JSON
+    navigate(route);
   };
 
   const toggleBookmark = (e) => {
-    e.stopPropagation(); // Prevenir la propagación del clic
+    e.stopPropagation();
     const newBookmarkState = !isBookmarked;
     setIsBookmarked(newBookmarkState);
     if (onBookmarkToggle) {
-      onBookmarkToggle(route, newBookmarkState); // Actualizar el bookmark en el padre
-    } else {
-      console.error("onBookmarkToggle is not defined");
+      onBookmarkToggle(route, newBookmarkState);
     }
   };
 

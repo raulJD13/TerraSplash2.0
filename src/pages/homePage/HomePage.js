@@ -7,13 +7,15 @@ import ImageCard from "../../components/imageCard/ImageCard";
 import Carousel from "../../components/carousel/Carousel";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import activitiesData from "../../data/activities.json";
 import locations from "../../data/locations.json";
 
 function HomePage() {
   const navigate = useNavigate();
+  const [activities, setActivities] = useState(activitiesData);
+
   const images = {
     "sam-wermut": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg",
     "aleks-dahlberg": "/images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg",
@@ -21,6 +23,19 @@ function HomePage() {
 
   const handleCardClick = (route) => {
     navigate(route);
+  };
+
+  const handleBookmarkToggle = (identifier, isBookmarked) => {
+    // Actualizar el estado de las actividades
+    const updatedActivities = { ...activities };
+    updatedActivities.sports.forEach((category) => {
+      category.activities.forEach((activity) => {
+        if (activity.route === identifier || activity.name === identifier) {
+          activity.bookmark = isBookmarked;
+        }
+      });
+    });
+    setActivities(updatedActivities);
   };
 
   // Refs para los contenedores
@@ -39,7 +54,7 @@ function HomePage() {
 
   // Extraer actividades
   const extractActivities = (filterKey) =>
-    activitiesData.sports.flatMap((category) =>
+    activities.sports.flatMap((category) =>
       category.activities.filter((activity) => activity[filterKey])
     );
 
@@ -101,8 +116,8 @@ function HomePage() {
         </div>
       </div>
 
-       {/* Event Of The Week */}
-       {eventsOfWeek.length > 0 && (
+      {/* Event Of The Week */}
+      {eventsOfWeek.length > 0 && (
         <div
           className={`event-of-the-week ${
             isEventVisible ? "visible" : "hidden"
@@ -118,12 +133,16 @@ function HomePage() {
             }`}
           >
             <EventWeek
+              id={eventsOfWeek[0].name}
+              route={eventsOfWeek[0].route}
               image={eventsOfWeek[0].image}
               name={eventsOfWeek[0].name}
               location={eventsOfWeek[0].details.location}
               price={eventsOfWeek[0].price}
               rating={eventsOfWeek[0].rating}
               description={eventsOfWeek[0].details.description}
+              isBookmarked={eventsOfWeek[0].bookmark}
+              onBookmarkToggle={handleBookmarkToggle}
             />
           </div>
         </div>
@@ -147,9 +166,12 @@ function HomePage() {
           {trendingActivities.map((activity) => (
             <ImageCard
               key={activity.name}
+              route={activity.route}
               imageUrl={activity.image}
               name={activity.name}
               rating={activity.rating}
+              isBookmarked={activity.bookmark}
+              onBookmarkToggle={handleBookmarkToggle}
             />
           ))}
         </Carousel>
@@ -157,7 +179,7 @@ function HomePage() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
 export default HomePage;
