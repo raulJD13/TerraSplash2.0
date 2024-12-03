@@ -11,7 +11,7 @@ function PlaceCard({
   onToggleBookmark,
 }) {
   const handleBookmarkClick = (e) => {
-    e.stopPropagation(); // Evita que el evento onClick del contenedor se dispare
+    e.stopPropagation(); 
     if (onToggleBookmark) {
       onToggleBookmark();
     }

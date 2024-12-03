@@ -16,7 +16,7 @@ function ActivitiesPage() {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [activityToDelete, setActivityToDelete] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [activityToEdit, setActivityToEdit] = useState(null); // Guardar actividad a editar
+  const [activityToEdit, setActivityToEdit] = useState(null);
 
   const handleCardClick = (route) => navigate(route);
 
@@ -85,21 +85,20 @@ function ActivitiesPage() {
   const toggleBookmark = (activityName) => {
     const updatedActivities = { ...activities };
 
-    // Busca el deporte y la actividad correspondiente
     updatedActivities.sports.forEach((sport) => {
       sport.activities.forEach((activity) => {
         if (activity.name === activityName) {
-          activity.bookmark = !activity.bookmark; // Cambia el estado de bookmark
+          activity.bookmark = !activity.bookmark;
         }
       });
     });
 
-    setActivities(updatedActivities); // Actualiza el estado
+    setActivities(updatedActivities);
   };
 
   const handleEdit = (activity) => {
-    setActivityToEdit(activity); // Guarda los datos de la actividad seleccionada
-    setIsEditModalOpen(true); // Abre el modal de edición
+    setActivityToEdit(activity);
+    setIsEditModalOpen(true);
   };
   const handleSaveEdit = (editedActivity) => {
     const updatedActivities = { ...activities };
@@ -130,7 +129,7 @@ function ActivitiesPage() {
     setIsEditModalOpen(false);
     setActivityToEdit(null);
   };
-  
+
   return (
     <>
       <Header />
@@ -146,9 +145,9 @@ function ActivitiesPage() {
                 name={activity.name}
                 rating={activity.rating}
                 imageUrl={activity.image}
-                isBookmarked={activity.bookmark} // Estado del bookmark
+                isBookmarked={activity.bookmark}
                 onClick={() => handleCardClick(activity.route)}
-                onToggleBookmark={() => toggleBookmark(activity.name)} // Función para actualizar el estado
+                onToggleBookmark={() => toggleBookmark(activity.name)}
               />
             ))
           ) : (
@@ -179,9 +178,8 @@ function ActivitiesPage() {
           title="Editar Actividad"
           open={isEditModalOpen}
           onCancel={() => setIsEditModalOpen(false)}
-          onOk={() => handleSaveEdit(activityToEdit)} // Guardar los cambios
+          onOk={() => handleSaveEdit(activityToEdit)}
         >
-          {/* Aquí debes colocar un formulario para editar la actividad */}
           <div>
             <label>Nombre de la actividad</label>
             <input
@@ -192,7 +190,6 @@ function ActivitiesPage() {
               }
             />
           </div>
-          {/* Puedes agregar más campos de edición según sea necesario */}
         </Modal>
       </div>
       <Footer />
