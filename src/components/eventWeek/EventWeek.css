@@ -1,6 +1,7 @@
 .event-card {
   position: relative;
-  width: 320px;
+  width: 100%; /* Ancho completo para ser responsive */
+  max-width: 320px; /* Ancho máximo de la tarjeta */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -19,7 +20,7 @@
 
 .event-image {
   width: 100%;
-  height: 350px;
+  height: 350px; /* Altura base */
   object-fit: cover;
 }
 
@@ -123,4 +124,35 @@
 
 .more-info-button:hover {
   background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .event-card {
+    max-width: 480px; /* Aumenta el ancho máximo */
+  }
+
+  .event-image {
+    height: 450px; /* Incrementa la altura */
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-card {
+    max-width: 600px; /* Aumenta el ancho máximo para pantallas grandes */
+  }
+
+  .event-image {
+    height: 500px; /* Incrementa la altura */
+  }
+}
+
+@media (min-width: 1440px) {
+  .event-card {
+    max-width: 800px; /* Aumenta el ancho máximo en pantallas muy grandes */
+  }
+
+  .event-image {
+    height: 600px; /* Incrementa la altura */
+  }
 }

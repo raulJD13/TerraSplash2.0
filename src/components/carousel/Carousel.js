@@ -20,7 +20,7 @@ const Carousel = ({ children }) => {
   }, [children.length]);
 
   useEffect(() => {
-    if (isManual) return; // Si es manual, no activar el temporizador automático
+    if (isManual) return;
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === children.length - 1 ? 0 : prevIndex + 1
@@ -31,7 +31,6 @@ const Carousel = ({ children }) => {
 
   useEffect(() => {
     if (isManual) {
-      // Desactiva el modo manual después de un tiempo para que el temporizador vuelva
       const manualTimeout = setTimeout(() => setIsManual(false), 5000);
       return () => clearTimeout(manualTimeout);
     }

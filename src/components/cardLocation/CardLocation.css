@@ -1,22 +1,27 @@
 .card-location {
-  width: 380px;
-  height: 199px;
+  width: 90%; 
+  max-width: 380px; 
+  min-width: 200px; 
+  height: auto; 
+  aspect-ratio: 16 / 9; 
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
+  background-size: cover; 
+  background-position: center; 
+  background-color: #ccc; 
   cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1; 
+  transform: translateY(0); 
   animation: fadeIn 0.8s ease-out forwards; 
 }
 
 .card-location:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
   transform: translateY(-5px); 
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
 
 .card-location .overlay {
   position: absolute;
@@ -29,7 +34,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 30px;
+  font-size: 1.5rem; 
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease; 
 }
@@ -39,14 +44,23 @@
   transform: scale(1.02); 
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media (min-width: 768px) {
+  .card-location {
+    max-width: 90%; 
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .card-location .overlay {
+    font-size: 2rem; 
   }
 }
 
+@media (min-width: 1024px) {
+  .card-location {
+    max-width: 90%; 
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-location {
+    max-width: 90%; 
+  }
+}
