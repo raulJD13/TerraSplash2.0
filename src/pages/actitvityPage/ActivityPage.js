@@ -11,7 +11,6 @@ import "./ActivityPage.css";
 const ActivityPage = () => {
   const { type, sport, activity } = useParams();
 
-  // Encuentra el deporte y la actividad correspondiente
   const sportData = data.sports?.find(
     (s) => s.type === type && s.name.toLowerCase() === sport?.toLowerCase()
   );
@@ -20,9 +19,9 @@ const ActivityPage = () => {
     a.route.endsWith(activity)
   );
 
-  // Estados iniciales (definidos siempre, aunque no se encuentren datos)
   const [isFavourite, setIsFavourite] = useState(activityData?.favourite || false);
   const [isJoined, setIsJoined] = useState(activityData?.joined || false);
+  const [rating, setRating] = useState(activityData?.rating || 0);
 
   if (!sportData) {
     return <p>Sport not found!</p>;
@@ -37,13 +36,18 @@ const ActivityPage = () => {
   const handleFavouriteClick = () => {
     const newValue = !isFavourite;
     setIsFavourite(newValue);
-    activityData.favourite = newValue; // Actualiza localmente
+    activityData.favourite = newValue;
   };
 
   const handleJoinClick = () => {
     const newValue = !isJoined;
     setIsJoined(newValue);
-    activityData.joined = newValue; // Actualiza localmente
+    activityData.joined = newValue;
+  };
+
+  const handleRatingClick = (newRating) => {
+    setRating(newRating);
+    activityData.rating = newRating; 
   };
 
   return (
@@ -94,6 +98,9 @@ const ActivityPage = () => {
               {isJoined ? "Leave" : "Join"}
             </button>
           </div>
+          <div className="rating-section">
+            <RatingStars rating={rating} onClick={handleRatingClick} />
+          </div>
         </div>
         <div className="activity-map">
           <Map location={{ lat: details.latitude, lng: details.longitude }} />
@@ -102,6 +109,29 @@ const ActivityPage = () => {
       </div>
       <Footer />
     </>
+  );
+};
+
+const RatingStars = ({ rating, onClick }) => {
+  const [hover, setHover] = useState(0);
+
+  return (
+    <div className="stars">
+      {[...Array(5)].map((star, index) => {
+        index += 1;
+        return (
+          <span
+            key={index}
+            className={index <= (hover || rating) ? "star selected" : "star"}
+            onClick={() => onClick(index)}
+            onMouseEnter={() => setHover(index)}
+            onMouseLeave={() => setHover(rating)}
+          >
+            &#9733;
+          </span>
+        );
+      })}
+    </div>
   );
 };
 
