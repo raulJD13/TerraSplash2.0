@@ -2,9 +2,7 @@
   padding-top: 90px;
 }
 
-.water-title {
-  padding-top: 90px;
-}
+
 
 .water-container {
   background-color: #f0f8ff;
@@ -29,4 +27,20 @@
   max-width: 800px;
   justify-content: center;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .water-activities-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    width: calc(100% - 60px);
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .water-activities-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    width: calc(100% - 50px);
+    max-width: 1200px;
+  }
 }

@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: stretch;
+  cursor: pointer;
+
 }
 
 .image-card-img {
