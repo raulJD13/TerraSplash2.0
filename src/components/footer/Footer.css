@@ -33,3 +33,11 @@
   color: #1890ff;
   transform: scale(1.2); 
 }
+
+.user-profile-icon,
+.footer-profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
