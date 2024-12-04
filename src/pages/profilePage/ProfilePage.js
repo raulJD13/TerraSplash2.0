@@ -1,21 +1,21 @@
-import  { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import PlaceCard from "../../components/placeCard/PlaceCard";
 import activityData from "../../data/activities.json";
-import userData from "../../data/users.json";
+import { useAuth } from "../../contexts/AuthContext";
 import "./ProfilePage.css";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
-  const [user, setUser] = useState({});
   const [data, setData] = useState(activityData);
+  const { currentUser } = useAuth(); // Obtén el usuario actual del contexto
   const navigate = useNavigate();
 
-  // Cargar datos del usuario al montar el componente
-  useEffect(() => {
-    setUser(userData);
-  }, []);
+  if (!currentUser) {
+    navigate("/login"); // Redirige al login si no hay usuario
+    return null;
+  }
 
   const favourites =
     data.sports?.flatMap((sport) =>
@@ -44,7 +44,6 @@ function ProfilePage() {
     setData(updatedData); // Actualiza el estado con la actividad modificada
   };
 
-  // Renderizado del contenido de las pestañas
   const renderTabContent = () => {
     if (activeTab === "favourites") {
       return (
@@ -94,29 +93,26 @@ function ProfilePage() {
   return (
     <>
       <div className="profile-container">
-        {/* Imagen de portada */}
         <div className="cover-image">
           <img
             src={
-              user.coverImage || "/images/deafult-image.jpg"
+              currentUser.coverImage || "/images/default-image.jpg"
             }
             alt="Cover"
           />
         </div>
 
-        {/* Sección del perfil */}
         <div className="profile-section">
           <div className="user-info">
             <img
-              src={user.profileImage || "/images/user-placeholder.jpg"}
+              src={currentUser.profileImage || "/images/user-placeholder.jpg"}
               alt="User"
               className="user-image"
             />
-            <h2 className="user-name">{user.username || "Username"}</h2>
-            <p className="user-location">{user.location || "Location"}</p>
+            <h2 className="user-name">{currentUser.username || "Username"}</h2>
+            <p className="user-location">{currentUser.location || "Location"}</p>
           </div>
 
-          {/* Estadísticas */}
           <div className="profile-stats">
             <div className="stat">
               <h3>{favourites.length}</h3>
@@ -133,7 +129,6 @@ function ProfilePage() {
           </div>
         </div>
 
-        {/* Navegación entre pestañas */}
         <div className="profile-tabs">
           <div className="tabs-header">
             <button

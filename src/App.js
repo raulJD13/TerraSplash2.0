@@ -9,11 +9,12 @@ import WaterActivitiesPage from "./pages/waterActivitiesPage/WaterActivitiesPage
 import ActivityPage from "./pages/actitvityPage/ActivityPage";
 import LandaActivitiesPage from "./pages/landActivitiesPage/LandActivitiesPage";
 import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage";
+import { AuthProvider } from "./contexts/AuthContext";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
         <Routes>
           {/* Front and authentication */}
@@ -31,7 +32,7 @@ function App() {
           <Route path="/activities/:type/:sport/:activity" element={<ActivityPage />} />
         </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }
 

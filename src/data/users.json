@@ -7,7 +7,7 @@
       "password": "test123",
       "location": "Las Palmas de Gran Canaria",
       "profileImage": "/images/user-default.png",
-      "backgroundImage": "/images/deafult-image.jpg"
+      "backgroundImage": "/images/default-image.png"
     },
     {
       "id": "c7c7",
@@ -16,13 +16,58 @@
       "username": "raul01",
       "location": "",
       "profileImage": "/images/user-default.png",
-      "backgroundImage": "/images/default-image.jpg"
+      "backgroundImage": "/images/default-image.png"
     },
     {
       "id": "5320",
       "email": "lala@gmail.com",
       "password": "test123",
       "username": "lala12",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.png"
+    },
+    {
+      "id": "3cfb",
+      "email": "jose@gmail.com",
+      "password": "test123",
+      "username": "josito",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.png"
+    },
+    {
+      "id": "88f6",
+      "email": "maria@gmail.com",
+      "password": "test123",
+      "username": "",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.jpg"
+    },
+    {
+      "id": "5e99",
+      "email": "julia@gmail.com",
+      "password": "test123",
+      "username": "",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.jpg"
+    },
+    {
+      "id": "0d97",
+      "email": "paulo@gmail.com",
+      "password": "test123",
+      "username": "paulorojo",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.jpg"
+    },
+    {
+      "id": "c3d1",
+      "email": "marcos@gmail.com",
+      "password": "test123",
+      "username": "marcoPolo12",
       "location": "Las Palmas de Gran Canaria",
       "profileImage": "/images/user-default.png",
       "backgroundImage": "/images/default-image.jpg"

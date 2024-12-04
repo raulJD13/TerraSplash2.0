@@ -35,6 +35,14 @@ Este proyecto se trabaja en dos ordenadores (por ejemplo, uno en clase y otro en
      ```bash
      git pull origin main
      ```
+### Instalar json-server en el sistema
+   - npm install -g json-server
+   
+### Importante para activar servidor json
+   - json-server --watch Ruta/users.json --port 3001
+   - json-server --watch C:/Users/jimen/OneDrive/Escritorio/Development/DAD/terrasplash/TerraSplash2.0/src/data/users.json --port 3001
+   - json-server --watch /Users/rauljimenez/Development/DAD/React-Projects/TerraSplash2.0/terrasplash/src/data/users.json --port 3001
+
 
 ### Notas Importantes
 - **Evita trabajar en ambos ordenadores al mismo tiempo sin hacer `push` o `pull`** antes de cambiar, para evitar conflictos.

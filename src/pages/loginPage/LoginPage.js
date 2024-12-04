@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 const BASE_URL = "http://localhost:3001/users";
 
@@ -19,11 +20,14 @@ function LoginPage() {
 
   const handleBackClick = () => navigate("/");
 
+  const { login } = useAuth();
+
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const user = await validateUser(email, password);
       if (user) {
+        login(user); // Guarda el usuario en el estado global
         navigate("/home");
       } else {
         setError("Invalid email or password.");

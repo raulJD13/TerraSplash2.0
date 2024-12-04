@@ -4,15 +4,6 @@ import "./RegisterPage.css";
 
 const BASE_URL = "http://localhost:3001/users";
 
-async function addUser(newUser) {
-  const response = await fetch(BASE_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(newUser),
-  });
-  if (!response.ok) throw new Error("Error adding user.");
-}
-
 function RegisterPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -23,15 +14,22 @@ function RegisterPage() {
   const handleNextClick = async (event) => {
     event.preventDefault();
     try {
-      await addUser({
+      const newUser = {
         email,
         password,
         username: "",
-        location: "Las Palmas de Gran Canaria", // Valor predeterminado
+        location: "Las Palmas de Gran Canaria",
         profileImage: "/images/user-default.png",
         backgroundImage: "/images/default-image.jpg",
+      };
+      const response = await fetch(BASE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
       });
-      navigate("/registersecond");
+      if (!response.ok) throw new Error("Error adding user.");
+      const createdUser = await response.json(); // Obtener el usuario creado
+      navigate("/registersecond", { state: { userId: createdUser.id } }); // Pasar el ID al siguiente paso
     } catch (err) {
       alert("Error registering user. Please try again.");
     }
