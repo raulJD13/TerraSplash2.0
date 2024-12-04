@@ -1,8 +1,31 @@
 {
-  "username": "Paco_1230",
-  "email": "paco@gmail.com",
-  "pasword": "test123",
-  "location": "Las Palmas de Gran Canaria",
-  "profileImage": "/images/user-default.png",
-  "backgroundImage": "/images/deafult-image.jpg"
+  "users": [
+    {
+      "id": "1",
+      "username": "Paco_1230",
+      "email": "paco@gmail.com",
+      "password": "test123",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/deafult-image.jpg"
+    },
+    {
+      "id": "c7c7",
+      "email": "raul@gmail.com",
+      "password": "test123",
+      "username": "raul01",
+      "location": "",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.jpg"
+    },
+    {
+      "id": "5320",
+      "email": "lala@gmail.com",
+      "password": "test123",
+      "username": "lala12",
+      "location": "Las Palmas de Gran Canaria",
+      "profileImage": "/images/user-default.png",
+      "backgroundImage": "/images/default-image.jpg"
+    }
+  ]
 }
