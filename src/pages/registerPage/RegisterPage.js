@@ -20,7 +20,7 @@ function RegisterPage() {
         username: "",
         location: "Las Palmas de Gran Canaria",
         profileImage: "/images/user-default.png",
-        backgroundImage: "/images/default-image.jpg",
+        backgroundImage: "/images/default-image.png",
       };
       const response = await fetch(BASE_URL, {
         method: "POST",

@@ -6,16 +6,50 @@ import activityData from "../../data/activities.json";
 import { useAuth } from "../../contexts/AuthContext";
 import "./ProfilePage.css";
 
+const BASE_URL = "http://localhost:3001/users"; // Endpoint para actualizar usuario
+
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
   const [data, setData] = useState(activityData);
-  const { currentUser } = useAuth(); // Obtén el usuario actual del contexto
+  const { currentUser, login } = useAuth(); // Obtén el usuario actual del contexto y método login
   const navigate = useNavigate();
 
   if (!currentUser) {
     navigate("/login"); // Redirige al login si no hay usuario
     return null;
   }
+
+  const handleImageChange = async (type) => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+
+    fileInput.onchange = async () => {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const updatedUser = { ...currentUser, [type]: reader.result };
+
+          try {
+            const response = await fetch(`${BASE_URL}/${currentUser.id}`, {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ [type]: reader.result }),
+            });
+            if (!response.ok) throw new Error("Error updating user.");
+
+            login(updatedUser); // Actualiza el usuario en el contexto
+          } catch (err) {
+            alert("Error updating image. Please try again.");
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    fileInput.click();
+  };
 
   const favourites =
     data.sports?.flatMap((sport) =>
@@ -93,11 +127,12 @@ function ProfilePage() {
   return (
     <>
       <div className="profile-container">
-        <div className="cover-image">
+        <div
+          className="cover-image"
+          onClick={() => handleImageChange("coverImage")}
+        >
           <img
-            src={
-              currentUser.coverImage || "/images/default-image.jpg"
-            }
+            src={currentUser.coverImage || "/images/default-image.png"}
             alt="Cover"
           />
         </div>
@@ -108,9 +143,12 @@ function ProfilePage() {
               src={currentUser.profileImage || "/images/user-placeholder.jpg"}
               alt="User"
               className="user-image"
+              onClick={() => handleImageChange("profileImage")}
             />
             <h2 className="user-name">{currentUser.username || "Username"}</h2>
-            <p className="user-location">{currentUser.location || "Location"}</p>
+            <p className="user-location">
+              {currentUser.location || "Location"}
+            </p>
           </div>
 
           <div className="profile-stats">
