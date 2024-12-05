@@ -11,6 +11,7 @@ function LandActivitiesPage() {
   const handleCardClick = (route) => {
     navigate(route);
   };
+  const handleBackClick = () => navigate("/home");
 
   // solo terrestres
   const landActivities = activitiesData.sports.filter((activity) => activity.type === "land");
@@ -19,6 +20,9 @@ function LandActivitiesPage() {
     <>
       <Header />
       <div className="land-container">
+      <button className="register-back-button-page" onClick={handleBackClick}>
+          ↩
+        </button>
         <div className="land-activities-title"></div>
         <Title text="Land Activities" />
         <div className="land-activities-grid">
