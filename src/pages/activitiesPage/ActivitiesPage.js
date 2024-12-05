@@ -15,8 +15,7 @@ function ActivitiesPage() {
   const [activities, setActivities] = useState(activitiesData);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [activityToDelete, setActivityToDelete] = useState(null);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [activityToEdit, setActivityToEdit] = useState(null);
+
 
   const handleCardClick = (route) => navigate(route);
 
@@ -82,6 +81,7 @@ function ActivitiesPage() {
     setActivityToDelete(null);
     setIsDeleteModalOpen(false);
   };
+
   const toggleBookmark = (activityName) => {
     const updatedActivities = { ...activities };
 
@@ -96,39 +96,9 @@ function ActivitiesPage() {
     setActivities(updatedActivities);
   };
 
-  const handleEdit = (activity) => {
-    setActivityToEdit(activity);
-    setIsEditModalOpen(true);
-  };
-  const handleSaveEdit = (editedActivity) => {
-    const updatedActivities = { ...activities };
-    const sportIndex = updatedActivities.sports.findIndex(
-      (activity) =>
-        activity.type.toLowerCase() === type.toLowerCase() &&
-        activity.name.toLowerCase() === sport.toLowerCase()
-    );
+  
 
-    if (sportIndex !== -1) {
-      const activityIndex = updatedActivities.sports[
-        sportIndex
-      ].activities.findIndex(
-        (activity) => activity.name === editedActivity.name
-      );
-
-      if (activityIndex !== -1) {
-        updatedActivities.sports[sportIndex].activities[activityIndex] = {
-          ...editedActivity,
-          details: {
-            ...editedActivity.details,
-          },
-        };
-        setActivities(updatedActivities);
-      }
-    }
-
-    setIsEditModalOpen(false);
-    setActivityToEdit(null);
-  };
+  
 
   return (
     <>
@@ -156,7 +126,6 @@ function ActivitiesPage() {
         </div>
         <FloatingButton
           onAdd={handleAdd}
-          onEdit={handleEdit}
           onDelete={handleDelete}
         />
         <Modal
@@ -171,25 +140,6 @@ function ActivitiesPage() {
             ¿Estás seguro de que quieres eliminar la actividad:{" "}
             <strong>{activityToDelete?.name}</strong>?
           </p>
-        </Modal>
-
-        {/* Modal de edición de actividad */}
-        <Modal
-          title="Editar Actividad"
-          open={isEditModalOpen}
-          onCancel={() => setIsEditModalOpen(false)}
-          onOk={() => handleSaveEdit(activityToEdit)}
-        >
-          <div>
-            <label>Nombre de la actividad</label>
-            <input
-              type="text"
-              value={activityToEdit?.name || ""}
-              onChange={(e) =>
-                setActivityToEdit({ ...activityToEdit, name: e.target.value })
-              }
-            />
-          </div>
         </Modal>
       </div>
       <Footer />

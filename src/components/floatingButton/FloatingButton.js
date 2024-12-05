@@ -1,7 +1,6 @@
 import {
   PlusOutlined,
   FileAddOutlined,
-  EditOutlined,
   DeleteOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
@@ -21,16 +20,13 @@ import "./FloatingButton.css";
 const FloatingButton = ({
   style = {},
   onAdd,
-  onEdit,
   onDelete,
   defaultImage,
 }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [form] = Form.useForm();
   const [deleteForm] = Form.useForm();
-  const [editForm] = Form.useForm();
   const { type, sport } = useParams();
 
   // Estados para manejar la previsualización de imágenes
@@ -53,11 +49,7 @@ const FloatingButton = ({
   };
 
   //const handleOpenEditModal = () => setIsEditModalOpen(true);
-  const handleCloseEditModal = () => {
-    setIsEditModalOpen(false);
-    editForm.resetFields();
-    setFileList([]);
-  };
+
 
   // Manejo de imágenes
   const handlePreview = async (file) => {
@@ -68,24 +60,7 @@ const FloatingButton = ({
   const handleChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
-  const handleEditActivity = (values) => {
-    const updatedActivity = {
-      name: values.name,
-      image: fileList[0]?.url || fileList[0]?.thumbUrl || defaultImage,
-      details: {
-        location: values.location,
-        difficulty: values.difficulty,
-        distance: values.distance,
-        availability: values.availability,
-        description: values.description,
-        latitude: values.latitude,
-        longitude: values.longitude,
-      },
-    };
-
-    onEdit(updatedActivity);
-    handleCloseEditModal();
-  };
+  
   // Lógica para añadir actividad
   const handleAddActivity = (values) => {
     if (!type || !sport) {
@@ -138,11 +113,6 @@ const FloatingButton = ({
           icon={<FileAddOutlined />}
           tooltip="Añadir actividad"
           onClick={handleOpenAddModal}
-        />
-        <FloatButton
-          icon={<EditOutlined />}
-          tooltip="Modificar"
-          onClick={onEdit}
         />
         <FloatButton
           icon={<DeleteOutlined />}
@@ -274,86 +244,7 @@ const FloatingButton = ({
           </Form.Item>
         </Form>
       </Modal>
-      {/* Modal para modificar actividad */}
-      <Modal
-        title="Modificar Actividad"
-        open={isEditModalOpen}
-        onCancel={handleCloseEditModal}
-        onOk={() => editForm.submit()}
-      >
-        <Form form={editForm} layout="vertical" onFinish={handleEditActivity}>
-          <Form.Item
-            label="Nombre de la actividad"
-            name="name"
-            rules={[{ required: true, message: "Ingrese el nombre" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label="Ubicación"
-            name="location"
-            rules={[
-              { required: true, message: "Por favor ingrese la ubicación" },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label="Dificultad"
-            name="difficulty"
-            rules={[{ required: true, message: "Seleccione la dificultad" }]}
-          >
-            <Select>
-              <Select.Option value="easy">Fácil</Select.Option>
-              <Select.Option value="medium">Intermedia</Select.Option>
-              <Select.Option value="hard">Difícil</Select.Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
-            label="Distancia (km)"
-            name="distance"
-            rules={[
-              { required: true, message: "Por favor ingrese la distancia" },
-            ]}
-          >
-            <InputNumber min={0} step={0.1} />
-          </Form.Item>
-          <Form.Item
-            label="Disponibilidad"
-            name="availability"
-            rules={[
-              { required: true, message: "Seleccione la disponibilidad" },
-            ]}
-          >
-            <Select>
-              <Select.Option value="all-year">Todo el año</Select.Option>
-              <Select.Option value="summer">Verano</Select.Option>
-              <Select.Option value="winter">Invierno</Select.Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
-            label="Descripción"
-            name="description"
-            rules={[{ required: true, message: "Ingrese una descripción" }]}
-          >
-            <Input.TextArea />
-          </Form.Item>
-          <Form.Item
-            label="Latitud"
-            name="latitude"
-            rules={[{ required: true, message: "Ingrese la latitud" }]}
-          >
-            <InputNumber min={-90} max={90} step={0.0001} />
-          </Form.Item>
-          <Form.Item
-            label="Longitud"
-            name="longitude"
-            rules={[{ required: true, message: "Ingrese la longitud" }]}
-          >
-            <InputNumber min={-180} max={180} step={0.0001} />
-          </Form.Item>
-        </Form>
-      </Modal>
+      
 
       {/* Modal para previsualización */}
       <Modal
