@@ -9,9 +9,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px;
+  padding: 50px ;
   min-height: 100vh;
   box-sizing: border-box;
+  padding-bottom: 150px; 
+
 }
 
 .activities-page-cards {

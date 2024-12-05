@@ -28,10 +28,13 @@
 }
 
 .activity-description {
-  margin: 30px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word; 
+  margin: 20px 0;
   font-size: 1rem;
   color: #333;
   line-height: 1.6;
+  text-align: justify; 
 }
 
 .join-button {
