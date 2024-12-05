@@ -11,11 +11,11 @@ const BASE_URL = "http://localhost:3001/users"; // Endpoint para actualizar usua
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("favourites");
   const [data, setData] = useState(activityData);
-  const { currentUser, login } = useAuth(); // Obtén el usuario actual del contexto y método login
+  const { currentUser, login } = useAuth(); 
   const navigate = useNavigate();
 
   if (!currentUser) {
-    navigate("/login"); // Redirige al login si no hay usuario
+    navigate("/login"); 
     return null;
   }
 
@@ -39,7 +39,7 @@ function ProfilePage() {
             });
             if (!response.ok) throw new Error("Error updating user.");
 
-            login(updatedUser); // Actualiza el usuario en el contexto
+            login(updatedUser); 
           } catch (err) {
             alert("Error updating image. Please try again.");
           }
@@ -75,7 +75,7 @@ function ProfilePage() {
         }
       });
     });
-    setData(updatedData); // Actualiza el estado con la actividad modificada
+    setData(updatedData); 
   };
 
   const renderTabContent = () => {
@@ -86,7 +86,7 @@ function ProfilePage() {
             <div
               key={index}
               className="grid-item"
-              onClick={() => navigate(activity.route)} // Navegar a la ruta
+              onClick={() => navigate(activity.route)} 
             >
               <img
                 src={activity.image}
@@ -105,8 +105,8 @@ function ProfilePage() {
           rating={bookmark.rating}
           imageUrl={bookmark.image}
           isBookmarked={bookmark.bookmark}
-          onToggleBookmark={() => toggleBookmark(bookmark.name)} // Alternar bookmark
-          onClick={() => navigate(bookmark.route)} // Navegar al hacer clic
+          onToggleBookmark={() => toggleBookmark(bookmark.name)} 
+          onClick={() => navigate(bookmark.route)}
         />
       ));
     } else if (activeTab === "activities") {
@@ -116,7 +116,7 @@ function ProfilePage() {
           name={activity.name}
           rating={activity.rating}
           imageUrl={activity.image}
-          onClick={() => navigate(activity.route)} // Navegar al hacer clic
+          onClick={() => navigate(activity.route)}
         />
       ));
     } else {

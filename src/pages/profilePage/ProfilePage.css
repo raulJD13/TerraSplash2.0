@@ -1,3 +1,4 @@
+/* Contenedor principal de la página de perfil */
 .profile-container {
   background-color: #f0f8ff;
   font-family: Arial, sans-serif;
@@ -5,15 +6,18 @@
   padding-bottom: 60px;
 }
 
+/* Imagen de portada */
 .cover-image img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  cursor: pointer;
 }
 
+/* Sección de información del perfil */
 .profile-section {
   text-align: center;
-  margin-top: -60px; 
+  margin-top: -60px;
 }
 
 .user-image {
@@ -22,11 +26,13 @@
   border-radius: 50%;
   border: 4px solid white;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .user-name {
   font-size: 1.5rem;
   margin: 10px 0 5px;
+  color: #333;
 }
 
 .user-location {
@@ -34,6 +40,7 @@
   color: #666;
 }
 
+/* Estadísticas del perfil */
 .profile-stats {
   display: flex;
   justify-content: space-around;
@@ -52,6 +59,7 @@
   margin: 5px 0 0;
 }
 
+/* Tabs (favourites, bookmarks, activities) */
 .profile-tabs {
   margin-top: 20px;
 }
@@ -77,76 +85,34 @@
   border-bottom: 2px solid #007bff;
 }
 
-
+/* Contenido de las tabs */
 .tabs-content {
   padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 
+/* Grid para las tarjetas de favoritos */
 .favourites-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr); /* Forzar 3 columnas */
+  gap: 20px;
   padding-top: 20px;
+  justify-items: center; /* Centra los elementos en la cuadrícula */
+}
 
-  padding-bottom: 60px;
+/* Ajuste de las imágenes dentro de la cuadrícula */
+.favourites-grid .grid-item {
+  width: 100%;
+  max-width: 300px; /* Tamaño máximo por columna */
+  height: 200px; /* Altura fija */
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .favourites-grid .grid-item img {
   width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  height: 200px;
-}
-
-.place-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-.place-card-left {
-  flex: 1;
-}
-
-.place-name {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-.place-rating {
-  display: flex;
-  margin-bottom: 5px;
-}
-
-.bookmark-icon {
-  font-size: 1.2rem;
-  color: #007bff;
-  cursor: pointer;
-}
-
-.place-card-image {
-  width: 100px;
-  height: 100px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-.cover-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.user-image img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
+  height: 100%;
+  object-fit: cover; /* Imagen bien escalada */
+  border-radius: inherit; /* Mantiene el borde redondeado */
 }
