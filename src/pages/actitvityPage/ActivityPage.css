@@ -83,6 +83,7 @@
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 30px;
+  gap: 20px;
 }
 
 .rating-section {
@@ -122,3 +123,4 @@
 .star.selected {
   color: #ffcc00;
 }
+
