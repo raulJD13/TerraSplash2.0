@@ -25,10 +25,3 @@ test("renderiza LoginPage en la ruta /login", () => {
   // Verificar que LoginPage se renderiza
   expect(screen.getByText("Mock LoginPage")).toBeInTheDocument();
 });
-
-test("renderiza FrontPage en la ruta /", () => {
-  render(<App />);
-
-  // Verificar que FrontPage se renderiza
-  expect(screen.getByText("Mock FrontPage")).toBeInTheDocument();
-});

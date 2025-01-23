@@ -2,7 +2,7 @@ import './Title.css';
 
 const Title = ({ text }) => {
   return (
-    <div className="selection-word">
+    <div className="selection-word" data-testid="title">
       {text}
     </div>
   );
