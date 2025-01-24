@@ -11,19 +11,20 @@ function PlaceCard({
   onToggleBookmark,
 }) {
   const handleBookmarkClick = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     if (onToggleBookmark) {
       onToggleBookmark();
     }
   };
 
   return (
-    <div className="place-card" onClick={onClick}>
+    <div className="place-card" data-testid="place-card" onClick={onClick}>
       <div className="place-card-left">
         <h3 className="place-name">{name}</h3>
         <div className="place-card-bottom">
           <div className="place-rating">{renderStars(rating)}</div>
           <FaBookmark
+            data-testid="bookmark-icon"
             className={`bookmark-place-card-icon ${
               isBookmarked ? "selected" : ""
             }`}
@@ -43,9 +44,9 @@ function renderStars(rating) {
   const totalStars = 5;
   return Array.from({ length: totalStars }, (_, i) =>
     i < rating ? (
-      <StarFilled key={i} style={{ color: "#FFD700" }} />
+      <StarFilled key={i} data-testid="star-filled" style={{ color: "#FFD700" }} />
     ) : (
-      <StarOutlined key={i} style={{ color: "#d3d3d3" }} />
+      <StarOutlined key={i} data-testid="star-outlined" style={{ color: "#d3d3d3" }} />
     )
   );
 }

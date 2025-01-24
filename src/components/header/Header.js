@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import { UserOutlined } from "@ant-design/icons";
-import { useAuth } from "../../contexts/AuthContext"; // Importamos el contexto de autenticación
+import { useAuth } from "../../contexts/AuthContext";
 
 function Header() {
   const navigate = useNavigate();
-  const { currentUser } = useAuth(); // Obtenemos el usuario actual
+  const { currentUser } = useAuth();
 
   const goToHomePage = () => {
     navigate("/home");
@@ -29,7 +29,10 @@ function Header() {
             className="user-profile-icon"
           />
         ) : (
-          <UserOutlined style={{ fontSize: "32px", color: "#333" }} />
+          <UserOutlined
+            data-testid="user-outlined-icon"
+            style={{ fontSize: "32px", color: "#333" }}
+          />
         )}
       </div>
     </header>
