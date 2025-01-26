@@ -3,7 +3,7 @@ import "./ActivitiesCard.css";
 function ActivitesCard({ imageUrl, text, onClick, index }) {
   return (
     <div
-      data-testid="activities-card" // Añadido para pruebas
+      data-testid="activities-card" 
       className="activities-card"
       style={{
         backgroundImage: `url(${imageUrl})`,

@@ -4,7 +4,6 @@ import { MemoryRouter } from "react-router-dom"; // Importamos MemoryRouter
 import EventWeek from "./EventWeek";
 import { useNavigate } from "react-router-dom";
 
-// Mock de useNavigate
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: jest.fn(),
