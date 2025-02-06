@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import DarkButton from "../../components/darkButton/DarkButton";
 import LightButton from "../../components/lightButton/LightButton";
 import "./FrontPage.css";
@@ -6,7 +7,18 @@ import "./FrontPage.css";
 function FrontPage() {
   const navigate = useNavigate();
   const BackgroundImage = "/images/daniel-roe-lpjb_UMOyx8-unsplash.jpg";
-  const Logo = "/images/inicialLogo.svg";  // Ruta correcta para la imagen
+  const Logo = "/images/inicialLogo.svg";
+  const InfoIcon = "/images/icon-informacion.svg"; // Ruta del icono
+
+  const [showInfoIcon, setShowInfoIcon] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowInfoIcon(true);
+    }, 3000);
+
+    return () => clearTimeout(timer); // Limpiar el temporizador al desmontar
+  }, []);
 
   const handleLoginClick = () => {
     navigate("/login");
@@ -18,16 +30,25 @@ function FrontPage() {
 
   return (
     <div className="frontpage-container">
+      {/* Icono de información con animación de aparición */}
+      {showInfoIcon && (
+        <a
+          href="/manual-de-usuario.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="front-info-icon fade-in"
+        >
+          <img src={InfoIcon} alt="Información" />
+        </a>
+      )}
+
       <div className="frontpage-image-section">
-        <img
-          src={BackgroundImage}
-          alt="Background"
-          className="frontpage-background-image"
-        />
+        <img src={BackgroundImage} alt="Background" className="frontpage-background-image" />
         <div className="frontpage-logo-container">
-          <img src={Logo} alt="Logo" className="frontpage-logo" />  {/* Usamos la ruta */}
+          <img src={Logo} alt="Logo" className="frontpage-logo" />
         </div>
       </div>
+
       <div className="frontpage-button-section">
         <LightButton onClick={handleLoginClick} />
         <DarkButton onClick={handleRegisterClick} />

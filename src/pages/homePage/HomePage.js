@@ -11,15 +11,19 @@ import { useRef, useState } from "react";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import activitiesData from "../../data/activities.json";
 import locations from "../../data/locations.json";
+import { useEffect } from "react";
 
 function HomePage() {
   const navigate = useNavigate();
   const [activities, setActivities] = useState(activitiesData);
+  const [showInfoIcon, setShowInfoIcon] = useState(false); // Estado para mostrar el icono
 
   const images = {
     "sam-wermut": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg",
     "aleks-dahlberg": "/images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg",
   };
+
+  const InfoIcon = "/images/icon-informacion.svg"; // Ruta del icono
 
   const handleCardClick = (route) => {
     navigate(route);
@@ -61,9 +65,28 @@ function HomePage() {
   const eventsOfWeek = extractActivities("event");
   const trendingActivities = extractActivities("trend");
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowInfoIcon(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="homepage-container">
       <Header />
+      {/* Icono de información */}
+      {showInfoIcon && (
+        <a
+          href="/manual-de-usuario.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="home-info-icon fade-in"
+        >
+          <img src={InfoIcon} alt="Información" />
+        </a>
+      )}
 
       <div
         className={`selection-container ${
