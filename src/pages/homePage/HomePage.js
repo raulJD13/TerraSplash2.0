@@ -16,14 +16,14 @@ import { useEffect } from "react";
 function HomePage() {
   const navigate = useNavigate();
   const [activities, setActivities] = useState(activitiesData);
-  const [showInfoIcon, setShowInfoIcon] = useState(false); // Estado para mostrar el icono
+  const [showInfoIcon, setShowInfoIcon] = useState(false); 
 
   const images = {
     "sam-wermut": "/images/sam-wermut-XvKaRS_0Jik-unsplash.jpg",
     "aleks-dahlberg": "/images/aleks-dahlberg-pVATCBKLH8w-unsplash.jpg",
   };
 
-  const InfoIcon = "/images/icon-informacion.svg"; // Ruta del icono
+  const InfoIcon = "/images/icon-informacion.svg";
 
   const handleCardClick = (route) => {
     navigate(route);
