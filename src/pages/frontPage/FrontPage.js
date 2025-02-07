@@ -8,7 +8,7 @@ function FrontPage() {
   const navigate = useNavigate();
   const BackgroundImage = "/images/daniel-roe-lpjb_UMOyx8-unsplash.jpg";
   const Logo = "/images/inicialLogo.svg";
-  const InfoIcon = "/images/icon-informacion.svg"; // Ruta del icono
+  const InfoIcon = "/images/icon-informacion.svg"; 
 
   const [showInfoIcon, setShowInfoIcon] = useState(false);
 
@@ -33,7 +33,7 @@ function FrontPage() {
       {/* Icono de información con animación de aparición */}
       {showInfoIcon && (
         <a
-          href="/manual-de-usuario.html"
+          href="/DocumentacionAyuda/DocumentacionAyuda/Manual%20de%20Usuario%20TerraSplash.html"
           target="_blank"
           rel="noopener noreferrer"
           className="front-info-icon fade-in"
@@ -43,7 +43,11 @@ function FrontPage() {
       )}
 
       <div className="frontpage-image-section">
-        <img src={BackgroundImage} alt="Background" className="frontpage-background-image" />
+        <img
+          src={BackgroundImage}
+          alt="Background"
+          className="frontpage-background-image"
+        />
         <div className="frontpage-logo-container">
           <img src={Logo} alt="Logo" className="frontpage-logo" />
         </div>
