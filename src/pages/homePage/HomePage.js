@@ -79,8 +79,8 @@ function HomePage() {
       {/* Icono de información */}
       {showInfoIcon && (
         <a
-          href="/manual-de-usuario.html"
-          target="_blank"
+        href="/DocumentacionAyuda/DocumentacionAyuda/Manual%20de%20Usuario%20TerraSplash.html"
+        target="_blank"
           rel="noopener noreferrer"
           className="home-info-icon fade-in"
         >
