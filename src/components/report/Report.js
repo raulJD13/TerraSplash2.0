@@ -3,7 +3,7 @@ import { useTable } from "react-table";
 import { Bar } from "react-chartjs-2";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import activitiesData from "../../data/activities.json"; 
+import activitiesData from "../../data/activities.json";
 
 const Report = () => {
   const [data, setData] = useState([]);
@@ -11,7 +11,6 @@ const Report = () => {
 
   // 🔹 Cargar datos del JSON
   useEffect(() => {
-    // Extraer actividades del JSON
     const extractedData = activitiesData.sports.flatMap((sport) =>
       sport.activities.map((activity) => ({
         name: activity.name,
@@ -67,8 +66,23 @@ const Report = () => {
   // 🔹 Exportar a PDF
   const exportToPDF = () => {
     const doc = new jsPDF();
+    
+    // 🔹 Título del reporte
+    doc.setFontSize(16);
     doc.text("Reporte de Actividades", 10, 10);
+
+    // 🔹 Texto introductorio (ahora bien posicionado debajo del título)
+    doc.setFontSize(12);
+    const introText =
+      "Este informe presenta un análisis detallado de las actividades deportivas registradas en la aplicación. " +
+      "Incluye su ubicación, dificultad, distancia y puntuación. También se añade un gráfico para una mejor interpretación.";
+    
+    const splitText = doc.splitTextToSize(introText, 180);
+    doc.text(splitText, 10, 20);
+
+    // 🔹 Agregar la tabla asegurando que empiece después del texto
     doc.autoTable({
+      startY: 40, // 📌 Ajustado para comenzar después del texto
       head: [["Actividad", "Ubicación", "Dificultad", "Distancia", "Puntuación", "Categoría"]],
       body: data.map((activity) => [
         activity.name,
@@ -78,15 +92,18 @@ const Report = () => {
         activity.rating,
         activity.category,
       ]),
+      margin: { top: 10 },
     });
 
-    // Capturar el gráfico como imagen y agregarlo al PDF
-    if (chartRef.current) {
-      const image = chartRef.current.toBase64Image();
-      doc.addImage(image, "PNG", 10, 80, 180, 100);
-    }
-
-    doc.save("informe_actividades.pdf");
+    // 🔹 Capturar el gráfico y agregarlo al PDF
+    setTimeout(() => {
+      if (chartRef.current) {
+        const image = chartRef.current.toBase64Image();
+        const finalY = doc.lastAutoTable.finalY + 10; // 📌 Asegura que el gráfico no se solape
+        doc.addImage(image, "PNG", 10, finalY, 180, 100);
+      }
+      doc.save("informe_actividades.pdf");
+    }, 500);
   };
 
   return (
