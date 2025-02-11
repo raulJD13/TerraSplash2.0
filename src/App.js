@@ -9,6 +9,8 @@ import WaterActivitiesPage from "./pages/waterActivitiesPage/WaterActivitiesPage
 import ActivityPage from "./pages/actitvityPage/ActivityPage";
 import LandaActivitiesPage from "./pages/landActivitiesPage/LandActivitiesPage";
 import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage";
+import ReportsPage from "./pages/reportPage/ReportsPage";
+
 import { AuthProvider } from "./contexts/AuthContext";
 import "@fortawesome/fontawesome-free/css/all.css";
 
@@ -23,6 +25,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/registersecond" element={<RegisterPageSecond />} />
+          <Route path="/reports" element={<ReportsPage />} />
           {/* Home and activity categories */}
           <Route path="/home" element={<HomePage />} />
           <Route path="/waterActivities" element={<WaterActivitiesPage />} />

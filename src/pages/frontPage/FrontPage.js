@@ -9,15 +9,15 @@ function FrontPage() {
   const BackgroundImage = "/images/daniel-roe-lpjb_UMOyx8-unsplash.jpg";
   const Logo = "/images/inicialLogo.svg";
   const InfoIcon = "/images/icon-informacion.svg"; 
+  const ReportIcon = "/images/report-icon.svg"; // Nuevo icono de reportes
 
-  const [showInfoIcon, setShowInfoIcon] = useState(false);
+  const [showIcons, setShowIcons] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowInfoIcon(true);
+      setShowIcons(true);
     }, 3000);
-
-    return () => clearTimeout(timer); // Limpiar el temporizador al desmontar
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLoginClick = () => {
@@ -28,10 +28,14 @@ function FrontPage() {
     navigate("/register");
   };
 
+  const handleReportsClick = () => {
+    navigate("/reports");
+  };
+
   return (
     <div className="frontpage-container">
-      {/* Icono de información con animación de aparición */}
-      {showInfoIcon && (
+      {/* Icono de información */}
+      {showIcons && (
         <a
           href="/DocumentacionAyuda/DocumentacionAyuda/Manual%20de%20Usuario%20TerraSplash.html"
           target="_blank"
@@ -42,12 +46,15 @@ function FrontPage() {
         </a>
       )}
 
+      {/* Icono de reportes debajo del de información */}
+      {showIcons && (
+        <div className="front-report-icon fade-in" onClick={handleReportsClick}>
+          <img src={ReportIcon} alt="Reportes" />
+        </div>
+      )}
+
       <div className="frontpage-image-section">
-        <img
-          src={BackgroundImage}
-          alt="Background"
-          className="frontpage-background-image"
-        />
+        <img src={BackgroundImage} alt="Background" className="frontpage-background-image" />
         <div className="frontpage-logo-container">
           <img src={Logo} alt="Logo" className="frontpage-logo" />
         </div>

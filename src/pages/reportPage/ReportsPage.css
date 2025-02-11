@@ -1,0 +1,63 @@
+/* 🔹 Estilos generales de la página */
+.reports-page {
+  background-color: #f0f8ff;
+  padding: 40px;
+  text-align: center;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* 🔹 Título principal */
+.title-report {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Contenedor del gráfico */
+.chart-container-report {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Botones generales */
+.btn-report {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* 🔹 Botón principal (Exportar PDF) */
+.btn-primary-report {
+  background-color: #007bff;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn-primary-report:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 🔹 Botón secundario (Volver al inicio) */
+.btn-secondary-report {
+  background-color: #28a745;
+  color: white;
+  margin-top: 15px;
+}
+
+.btn-secondary-report:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* 🔹 Texto de carga */
+.loading-text-report {
+  font-size: 18px;
+  color: #555;
+}
