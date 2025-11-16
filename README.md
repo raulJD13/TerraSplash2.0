@@ -14,7 +14,7 @@ Este proyecto se trabaja en dos ordenadores (por ejemplo, uno en clase y otro en
      ```
 
 ### 2. Antes de empezar a trabajar (en cualquiera de los dos ordenadores)
-   - Asegúrate de tener la última versión del proyecto desde GitHub ejecutando:
+   - Asegúrate de tener la última versión del proyecto desde GitHub ejecutando:E
      ```bash
      git pull origin main
      ```
